@@ -48,9 +48,9 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Aalto scientific computing guide'
-copyright = u'2017, Aalto Science-IT'
-author = u'Aalto Science-IT'
+project = u'Computer Scientists\' Cheatsheet'
+copyright = u'2017, Seyoung Park'
+author = u'Seyoung Park'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
