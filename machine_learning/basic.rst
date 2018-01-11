@@ -1,9 +1,9 @@
-=====
-Basic
-=====
+=================
+Linear Regression
+=================
 
 Gradient Descent
-----------------
+################
 
 Repeat until convergence
 
@@ -25,7 +25,7 @@ Be careful not to update :math:`\theta` separately. Update them all together at 
 
 
 Bivariate Gradient Descent
-##########################
+--------------------------
 
 .. math::
    \begin{split}
@@ -52,10 +52,19 @@ Here :math:`x_0^i` is 0.
 
 
 Multivariate gradient descent
-###############################
+-----------------------------
 
 Repeat until convergence
 
 .. math::
 
       \theta_j &:= \theta_j - \alpha \frac{1}{m} \sum^{m}_{i=1}(h_\theta(x^i) - y^i) x_j^i \nonumber
+
+
+
+Normal Equation
+###############
+In linear gression, instead of a loop as above, gradient descent can be expressed in a non-loop equation:
+
+.. math::
+   \theta = (X^TX)^{-1}X^Ty
