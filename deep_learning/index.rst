@@ -6,3 +6,4 @@ Deep Learning
    :maxdepth: 2
 
    basic.rst 
+   cnn.rst

@@ -78,6 +78,8 @@ Regularization
 * Overfitting: low bias, high variance
 * Underfitting: high bias, low variance
 
+Watch `Andrew Ng's lecture <https://www.coursera.org/learn/machine-learning/lecture/QrMXd/regularized-linear-regression>`_.
+
 Example
 #######
 Say we want to make the following function more quadratic:

@@ -9,7 +9,7 @@ Used for classification. We want :math:`\theta \leq h_\theta (x) \leq 1`.
 
 :math:`\frac{1}{1 + e^{-\theta^T x}}` is a `sigmoid/logistic function <sigmoid_>`_
 
-.. figure:: /images/Logistic-curve.svg
+.. figure:: /images/machine_learning/Logistic-curve.svg
    :align: center
    :alt: alternate text
    :figclass: align-center

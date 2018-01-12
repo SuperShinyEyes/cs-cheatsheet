@@ -8,3 +8,4 @@ Machine Learning
    linear_regression.rst 
    logistic_regression.rst
    data_manipulation.rst
+   algorithms.rst
