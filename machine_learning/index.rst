@@ -8,4 +8,6 @@ Machine Learning
    linear_regression.rst 
    logistic_regression.rst
    data_manipulation.rst
+   cross_validation.rst
    algorithms.rst
+   glossaries.rst

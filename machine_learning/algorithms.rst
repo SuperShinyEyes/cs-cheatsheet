@@ -27,3 +27,10 @@ L2(Euclidean) distance
 
 More generic. Values stay the same even when the coordinate system changes.
 
+
+
+Disadvantage
+^^^^^^^^^^^^
+
+* The classifier must remember all of the training data and store it for future comparisons
+* Not suitable for images. Classifying a test image is expensive since it requires a comparison to all training images and images contain millions of pixels. Don't even talk about videos.
