@@ -61,7 +61,7 @@ Repeat until convergence
 
 .. math::
 
-      \theta_j &:= \theta_j - \alpha \frac{1}{m} \sum^{m}_{i=1}(h_\theta(x^i) - y^i) x_j^i \nonumber
+  \theta_j := \theta_j - \alpha \frac{1}{m} \sum^{m}_{i=1}(h_\theta(x^i) - y^i) x_j^i 
 
 
 
@@ -119,7 +119,7 @@ Repeat until convergence
 The above can be represented as:
 
 .. math::
-   \theta_j &:= \theta_j(1 - \alpha\frac{\lambda}{m}) - \alpha\frac{1}{m} \sum^{m}_{i=1}(h_\theta(x^i) - y^i) x_j^i
+   \theta_j := \theta_j(1 - \alpha\frac{\lambda}{m}) - \alpha\frac{1}{m} \sum^{m}_{i=1}(h_\theta(x^i) - y^i) x_j^i
 
 :math:`1 - \alpha\frac{\lambda}{m}` is always less than 1. Thus, regularized.
 
@@ -160,7 +160,7 @@ where L is a pseudo-diagonal matrix of
        0       & 0 & 0 & \dots & 0 \\
        0       & 1 & 0 & \dots & 0 \\
        0       & 0 & 1 & \dots & 0 \\
-       \hdotsfor{5} \\
+       \hdotsfor{5}\\
        0       & 0 & 0 & \dots & 1
    \end{bmatrix}, & \text{size is $(n+1)\times(n+1)$}
    \end{align}
