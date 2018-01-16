@@ -19,6 +19,7 @@ These docs are mainly maintained by `Seyoung Park
    machine_learning/index
    deep_learning/index
    computer_graphics/index
+   ai/index
 
 
 Metadocs
