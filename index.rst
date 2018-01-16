@@ -15,6 +15,7 @@ These docs are mainly maintained by `Seyoung Park
 .. toctree::
    :maxdepth: 3 
 
+   subjects/linear_algebra/index
    subjects/bayesian/index
    subjects/machine_learning/index
    subjects/deep_learning/index
