@@ -15,11 +15,11 @@ These docs are mainly maintained by `Seyoung Park
 .. toctree::
    :maxdepth: 3 
 
-   bayesian/index
-   machine_learning/index
-   deep_learning/index
-   computer_graphics/index
-   ai/index
+   subjects/bayesian/index
+   subjects/machine_learning/index
+   subjects/deep_learning/index
+   subjects/computer_graphics/index
+   subjects/ai/index
 
 
 Metadocs
