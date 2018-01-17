@@ -7,3 +7,4 @@ Bayesian
 
    fundamentals.rst
    probabilities_and_statistics.rst
+   references.rst
