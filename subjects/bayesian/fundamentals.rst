@@ -55,4 +55,19 @@ Bayesian vs. Frequentist
 Conjugate priors
 ################
 
-Suppose we have data with likelihood function :math:`p(x|\theta)` depending on a hypothesized parameter. Also suppose the prior distribution for :math:`\theta` is one of a family of parameterized distributions. **If the posterior distribution for :math:`\theta` is in this family** then we say the prior is a conjugate prior for the likelihood.
+Suppose we have data with likelihood function :math:`p(x|\theta)` depending on a hypothesized parameter. Also suppose the prior distribution for :math:`\theta` is one of a family of parameterized distributions. If the posterior distribution for :math:`\theta` is in this family then we say the prior is a conjugate prior for the likelihood.
+
+Examples
+^^^^^^^^
+* *Beta* is conjugate to Bernoulli
+* Gaussian is conjugate to Gaussian
+* Any exponential family has a conjugate prior
+
+==================================================  ====================================  ====  ====================================  ==================================================
+Prior                                               Hypothesis                            data  Likelihood                            Posterior
+==================================================  ====================================  ====  ====================================  ==================================================
+:math:`beta(a,b)`                                   :math:`\theta \in [0,1]`              x     :math:`Bernoulli(\theta)`             :math:`beta(a+1, b)` or :math:`beta(a, b+1)`
+:math:`beta(a,b)`                                   :math:`\theta \in [0,1]`              x     :math:`Binomial(N, \theta)`           :math:`beta(a+x, b+N-x)`
+:math:`beta(a,b)`                                   :math:`\theta \in [0,1]`              x     :math:`geometric(\theta)`             :math:`beta(a+x, b+1)`
+:math:`\mathcal{N}(\mu_{prior}, \sigma_{prior}^2)`  :math:`\theta \in (-\infty,\infty)`   x     :math:`\mathcal{N}(\theta,\sigma^2)`  :math:`\mathcal{N}(\theta_{post},\sigma_{post}^2)`
+==================================================  ====================================  ====  ====================================  ==================================================
