@@ -209,3 +209,15 @@ Cumulative Distribution Function(CDF)
 
 .. math::
   F_X: \mathbb{R} \longrightarrow [0, 1] \quad F_X(x) = P[X \leq x]
+
+-------------------------------
+
+Exchangability & i.i.d
+######################
+
+.. math::
+    \text{i.i.d(independently and identically distributed)} \Rightarrow \text{exchangable} \\
+    \text{, but} \\
+    \text{i.i.d(independently and identically distributed)} \nLeftarrow \text{exchangable}
+
+Coin tossing is a good example; :math:`[P(H,H,T) = P(T,H,H)] \Longrightarrow` events are independent and their order can be exchanged.

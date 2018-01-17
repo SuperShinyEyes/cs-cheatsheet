@@ -2,29 +2,47 @@
 Linear Regression
 =================
 
-Cost Function
--------------
+Consider a hypothesis function as a linear function of x.
+
+.. math::
+  \begin{align}
+  h_{\theta}(x) = \theta_0 +\theta_1x_1 + \theta_2x_2 && \text{($\theta_i$'s are parameters/weights)}
+  \end{align}
+
+To simplify our notation, we introduce the convention of let the intercept be 1: :math:`x_0 = 1`.
+
+.. math::
+  h(x) = \sum_{i=0}^n \theta_i x_i = \theta^Tx
+
+How do we learn the parameters? Make :math:`h(x)` close to :math:`y`. In other words, make the cost as small as possible. Cost function :math:`J(\theta)`,
+
+.. math::
+  J(\theta) = \frac{1}{2} \sum_{i=1}^m (h_\theta(x^i) - y^i)^2
 
 Gradient Descent
-################
+================
+This is the tool to minimize your cost. Following is how it works.
 
-Repeat until convergence
+
+Repeat until convergence {
 
 .. math::
    \begin{align}
       \theta_j &:= \theta_j - \alpha \frac{\delta}{\delta\theta_j}J(\theta_0, \theta_1),   &\text{(for j = 0 and j = 1)} \nonumber
    \end{align}
 
+}
+
 Be careful not to update :math:`\theta` separately. Update them all together at the end of each loop. i.e.,
 
 .. math::
-    temp_0 &:= \theta_0 - \alpha  \frac{\delta}{\delta\theta_j}J(\theta_0, \theta_1) 
+    temp_0 &:= \theta_0 - \alpha  \frac{\delta}{\delta\theta_j}J(\theta_0, \theta_1)
 
     temp_1 &:= \theta_1 - \alpha  \frac{\delta}{\delta\theta_j}J(\theta_0, \theta_1)
 
-    \theta_0 &:= temp_0 
-      
-    \theta_1 &:= temp_1 
+    \theta_0 &:= temp_0
+
+    \theta_1 &:= temp_1
 
 
 Bivariate Gradient Descent
@@ -33,7 +51,7 @@ Bivariate Gradient Descent
 .. math::
    \begin{split}
       \frac{\delta}{\delta\theta_j}J(\theta_0, \theta_1) &= \frac{\delta}{\delta\theta_j}J(\theta_0, \theta_1) \frac{1}{2m} \sum^{m}_{i=1}(h_\theta(x^i) - y^i)^2 \\
-      &= \frac{\delta}{\delta\theta_j}J(\theta_0, \theta_1) \frac{1}{2m} \sum^{m}_{i=1}(\theta_0 + \theta_1 x^i - y^i)^2 
+      &= \frac{\delta}{\delta\theta_j}J(\theta_0, \theta_1) \frac{1}{2m} \sum^{m}_{i=1}(\theta_0 + \theta_1 x^i - y^i)^2
    \end{split}
 
 .. math::
@@ -43,7 +61,7 @@ Bivariate Gradient Descent
    \end{array}
 
 
-Repeat until convergence
+Repeat until convergence {
 
 .. math::
    \begin{array}{ll}
@@ -51,19 +69,21 @@ Repeat until convergence
       \theta_1 &:= \theta_1 - \alpha \frac{1}{m} \sum^{m}_{i=1}(h_\theta(x^i) - y^i) x_1^i
    \end{array}
 
+}
+
 Here :math:`x_0^i` is 0.
 
 
 Multivariate gradient descent
 ###############################
 
-Repeat until convergence
+Repeat until convergence {
 
 .. math::
 
-  \theta_j := \theta_j - \alpha \frac{1}{m} \sum^{m}_{i=1}(h_\theta(x^i) - y^i) x_j^i 
+  \theta_j := \theta_j - \alpha \frac{1}{m} \sum^{m}_{i=1}(h_\theta(x^i) - y^i) x_j^i
 
-
+}
 
 Normal Equation
 ###############
@@ -74,7 +94,7 @@ In linear gression, instead of a loop as above, gradient descent can be expresse
 
 
 Regularization
---------------
+==============
 * Overfitting: low bias, high variance
 * Underfitting: high bias, low variance
 
@@ -92,7 +112,7 @@ Without actually removing :math:`\theta_3x^3 + \theta_4x^4` or changing the form
 .. math::
    \text{min}_\theta \frac{1}{2m} \sum^{m}_{i=1}(h_\theta(x^i) - y^i)^2 + 1000 \theta_3^2 + 1000 \theta_4^2
 
-We could also regularize all of our theta parameters in a single summation 
+We could also regularize all of our theta parameters in a single summation
 
 .. math::
    \text{min}_\theta \frac{1}{2m} \sum^{m}_{i=1}(h_\theta(x^i) - y^i)^2 + \lambda \sum^{n}_{j=1}\theta_j^2
@@ -102,17 +122,19 @@ The square in the second sum comes from the first sum.
 
 Regularization - Gradient Descent
 #################################
-Repeat until convergence
+Repeat until convergence {
 
 .. math::
    \begin{align}
-      \theta_0 &:= \theta_0 - \alpha \frac{1}{m} \sum^{m}_{i=1}(h_\theta(x^i) - y^i) x_0^i, &\text{(Don't penalize the intercept $\theta_0$)} \nonumber 
+      \theta_0 &:= \theta_0 - \alpha \frac{1}{m} \sum^{m}_{i=1}(h_\theta(x^i) - y^i) x_0^i &&\text{(Don't penalize the intercept $\theta_0$)} \nonumber \\
+      \theta_j &:= \theta_j - \alpha \Bigg[
+        \bigg(
+          \frac{1}{m} \sum^{m}_{i=1}\Big(h_\theta(x^i) - y^i\Big) x_j^i
+        \bigg) + \frac{\lambda}{m}\theta_j
+      \Bigg]   && j \in {1,2,...,n}
    \end{align}
 
-.. math::
-   \begin{align}
-   \theta_j &:= \theta_j - \alpha [(\frac{1}{m} \sum^{m}_{i=1}(h_\theta(x^i) - y^i) x_j^i) + \frac{\lambda}{m}\theta_j],   & j \in {1,2,...,n} \nonumber
-   \end{align}
+}
 
 :math:`\frac{\lambda}{m}` is a *regularization performer*.
 
@@ -130,32 +152,32 @@ Regularization - Normal Equation
 
 .. math::
    \begin{align}
-   X &= 
+   X &=
    \begin{bmatrix}
        (x^1)^T \\
        \vdots\\
-       (x^m)^T 
+       (x^m)^T
    \end{bmatrix}, & \text{size is $(m)\times(n+1)$}
    \end{align}
-   
+
 .. math::
    \begin{align}
-   \vec{y} &= 
+   \vec{y} &=
    \begin{bmatrix}
        y^1 \\
        \vdots\\
-       y^m 
+       y^m
    \end{bmatrix}, & \text{size is $(m)\times(1)$}
-   \end{align}   
+   \end{align}
 
 .. math::
    \theta = (X^TX + \lambda L)^{-1}X^T\vec{y}
 
-where L is a pseudo-diagonal matrix of 
+where L is a pseudo-diagonal matrix of
 
 .. math::
    \begin{align}
-   L &= 
+   L &=
    \begin{bmatrix}
        0       & 0 & 0 & \dots & 0 \\
        0       & 1 & 0 & \dots & 0 \\
