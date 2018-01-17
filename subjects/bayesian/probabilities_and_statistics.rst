@@ -2,6 +2,12 @@
 Probabilities and Statistics
 ============================
 
+Odds
+####
+
+.. math::
+  O(E) = \frac{P(E)}{P(\bar{E})}
+
 Variance and Standard Deviation
 ###############################
 Spread of probability mass about the mean.

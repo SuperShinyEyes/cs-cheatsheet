@@ -1,6 +1,6 @@
-============================
-Fundamentals – Bayesian 
-============================
+=======================
+Fundamentals – Bayesian
+=======================
 
 Probabilistic modeling
 ======================
@@ -10,7 +10,7 @@ The goal of probabilistic modeling:
 * Classify the samples into groups
 * Create prediction for future observations
 * Select between competing hypothesis
-* Estimate a parameter, such as the mean of a population  
+* Estimate a parameter, such as the mean of a population
 
 How do we run probabilistic modeling?
 
@@ -27,6 +27,32 @@ Bayesian Theory
    :alt: alternate text
    :figclass: align-center
 
-   < `Yee Whye Teh: On Bayesian Deep Learning and Deep Bayesian Learning`_ > 
+   < `Yee Whye Teh: On Bayesian Deep Learning and Deep Bayesian Learning`_ >
 
-.. _`Yee Whye Teh: On Bayesian Deep Learning and Deep Bayesian Learning`: https://youtu.be/9saauSBgmcQ?t=374  
+.. _`Yee Whye Teh: On Bayesian Deep Learning and Deep Bayesian Learning`: https://youtu.be/9saauSBgmcQ?t=374
+
+Terminologies
+#############
+
+* Data: The data are results of the experiment.
+* Hypothesis: A possible answer to the question being asked.
+* Likelihood: The likelihood given a hypothesis is the probability of data given the hypothesis. Likelihood is **NOT** a probability of the hypothesis.
+* Prior of the hypothesis: probability of the hypothesis prior to collecting data.
+* Posterior of the hypothesis: probability of the hypothesis given the data.
+
+Bayesian vs. Frequentist
+########################
+
+* In Probability domain
+  They all use Bayes' formula when a prior :math:`p(\theta)` is known.
+
+* In Statistics domain
+  In statistics prior is unknown and it's where the two diverge.
+
+  * Bayesians: they need a prior, so they develop one from the best information they have.
+  * Frequentists: They draw inferences from likelihood func.
+
+Conjugate priors
+################
+
+Suppose we have data with likelihood function :math:`p(x|\theta)` depending on a hypothesized parameter. Also suppose the prior distribution for :math:`\theta` is one of a family of parameterized distributions. **If the posterior distribution for :math:`\theta` is in this family** then we say the prior is a conjugate prior for the likelihood.
