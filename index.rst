@@ -21,6 +21,7 @@ These docs are mainly maintained by `Seyoung Park
    subjects/deep_learning/index
    subjects/computer_graphics/index
    subjects/ai/index
+   subjects/unix/index
 
 
 Metadocs
