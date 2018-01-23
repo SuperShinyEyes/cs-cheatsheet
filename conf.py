@@ -320,4 +320,4 @@ def setup(app):
 
 # -- text color ---------------
 # https://stackoverflow.com/questions/3702865/sphinx-restructuredtext-set-color-for-a-single-word
-rst_epilog = "\n.. include:: ~/.special.rst\n"
+rst_epilog = "\n.. include:: .special.rst\n"
