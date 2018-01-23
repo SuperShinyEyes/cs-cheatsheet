@@ -66,3 +66,19 @@ Back-propagation
 Method for computing the gradient for training the network. It's contrary to stockastic gradient descent which is used to perform learning using the gradient. It's an algorithm that computes the chain rule of calculus , with a specific order of operations that is highly efficient [Goodfellow-et-al]_. It modifies the connection weight parameters layer-by-layer starting from the output layer and progressing toward the input layer.
 
 .. [Goodfellow-et-al] Deep Learning
+
+
+Learning rate vs. Momentum
+==========================
+When performing gradient descent, **learning rate** measures how much the current situation affects the next step, while **momentum** measures how much past steps affect the next step. [Quara-What-is-the-difference-between-momentum-and-learning-rate]_
+
+.. [Quara-What-is-the-difference-between-momentum-and-learning-rate] https://www.quora.com/What-is-the-difference-between-momentum-and-learning-rate
+
+.. figure:: /images/deep_learning/1obtV.gif
+   :align: center
+   :alt: alternate text
+   :figclass: align-center
+
+   < Momentum and other gradient descent techiques visualized. `Source <Stackoverflow_momentum_gif_>`_  >
+
+.. _Stackoverflow_momentum_gif: https://stackoverflow.com/a/44225502/3067013
