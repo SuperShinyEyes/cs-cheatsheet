@@ -4,7 +4,7 @@ Basic
 
 
 Intro
-#####
+=====
 .. figure:: /images/deep_learning/NN_image.jpg
    :align: center
    :alt: alternate text
@@ -41,7 +41,7 @@ If a network has :math:`S_j` units in layer *j* and :math:`S_{j+1}` units in lay
 
 
 Cost Function
-#############
+=============
 
 .. math::
    J(\theta) = - \frac{1}{m} \sum^{m}_{i=1} \sum^{K}_{k=1} [y_k^i \log((h_\theta (x^i))_k) + (1-y_k^i)\log(1-(h_\theta(x^i))_k)] \\
@@ -50,3 +50,19 @@ Cost Function
 Here :math:`\lambda` is regularized term.
 
 
+Epochs, batches and iterations
+==============================
+
+* Epoch: A single through of an entire dataset
+* Batch: A single dataset can be divided into batches.
+* Iteration: A number of batches to complete an epoch.
+
+.. math::
+  \text{A number of dataset $=$ Batch $\times$ Iteration}
+
+
+Back-propagation
+================
+Method for computing the gradient for training the network. It's contrary to stockastic gradient descent which is used to perform learning using the gradient. It's an algorithm that computes the chain rule of calculus , with a specific order of operations that is highly efficient [Goodfellow-et-al]_. It modifies the connection weight parameters layer-by-layer starting from the output layer and progressing toward the input layer.
+
+.. [Goodfellow-et-al] Deep Learning

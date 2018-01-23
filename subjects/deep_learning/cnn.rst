@@ -11,3 +11,4 @@ Intro
 
    < Mechamisom of CNN. >
 
+Regular Neural Nets don’t scale well to full images.

@@ -23,9 +23,23 @@ The idea of logistic regression is
 * Suppose predict :math:`y = 1` if :math:`h_\theta (x) \geq 0.5`
 * Suppose predict :math:`y = 0` if :math:`h_\theta (x) < 0.5`
 
+Linearity of Logistic Regression
+================================
+From `Stackoverflow <Why is logistic regression a linear model?_>`_.
+
+.. _Why is logistic regression a linear model?: https://stats.stackexchange.com/questions/88603/why-is-logistic-regression-a-linear-model
+
+The logistic regression model is of the form,
+
+.. math::
+
+  \mathrm{logit}(p_i) = \mathrm{ln}\left(\frac{p_i}{1-p_i}\right) = \beta_0 + \beta_1 x_{1,i} + \beta_2 x_{2,i} + \cdots + \beta_p x_{p,i}.
+
+It is called a generalized linear model not because the estimated probability is linear, but because the logit of the estimated probability response is a linear function of the parameters.
+
 
 Cost Function
--------------
+=============
 
 .. math::
       \text{cost}(h_\theta(x), y) = \left\{
@@ -68,7 +82,7 @@ Normal Equation of Gradient Descent
 
 
 Regularization
---------------
+==============
 
 .. math::
    J(\theta) = - \frac{1}{m} \sum^{m}_{i=1} [y^i \log(h_\theta (x^i)) + (1-y^i)\log(1-h_\theta(x^i))] + \frac{\lambda}{2m} \sum^{n}_{j=1}\theta_j^2
