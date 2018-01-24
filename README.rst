@@ -2,10 +2,14 @@
 About these docs
 ================
 
-These docs originally came from the Triton User Guide, but now serves
-as a general Aalto scientific computing guide.  The intention is a
-good central resources for researchers, kept up to date by the whole
-community.
+These docs are literally my digitized master studies and Aalto University.
+I make notes about courses I take. Much content is brought from somewhere
+else such as blogs, Stackoverflow, Wikipedia and etc. I try to be strict
+with citation as much as possible. You may fork it or do whatever you may
+want to do.
+
+The structure of this docs is forked from Aalto University CS-IT documentation
+page, http://scicomp.aalto.fi. I work there.
 
 Contributing
 ~~~~~~~~~~~~
