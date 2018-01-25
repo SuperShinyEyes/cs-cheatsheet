@@ -6,5 +6,5 @@ Bayesian
    :maxdepth: 2
 
    fundamentals.rst
-   probabilities_and_statistics.rst
+   bayesian_network.rst
    references.rst

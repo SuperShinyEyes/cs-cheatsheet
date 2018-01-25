@@ -1,6 +1,6 @@
-============================
-Probabilities and Statistics
-============================
+============
+Fundamentals
+============
 
 Odds
 ====
@@ -39,8 +39,8 @@ Standard error(SE) of a parameter is the standard deviation(SV) of its sampling 
 where *n* is the sample size.
 
 `Standard Deviation vs. SEM <CrossValidated_Difference_between_standard_error_and_standard_deviation_>`_
-##########################
-SD quantifies scatter, and SEM how precisely you know the true mean of the population. SEM takes into account both the values of the SD and the sample size. They both use the same units of the data. SEM, by definition, is always smaller than the SD. SEM gets smaller as your sample size, :math:`n`, gets larger. This makes sense, because the mean of a large sample is likely to be closer to the true population mean than is mean of a small sample. 
+########################################################################################################
+SD quantifies scatter, and SEM how precisely you know the true mean of the population. SEM takes into account both the values of the SD and the sample size. They both use the same units of the data. SEM, by definition, is always smaller than the SD. SEM gets smaller as your sample size, :math:`n`, gets larger. This makes sense, because the mean of a large sample is likely to be closer to the true population mean than is mean of a small sample.
 
 .. _CrossValidated_Difference_between_standard_error_and_standard_deviation: https://stats.stackexchange.com/a/32385
 

@@ -15,6 +15,7 @@ These docs are mainly maintained by `Seyoung Park <http://www.seyoung.xyz>`_.
    :maxdepth: 3
 
    subjects/linear_algebra/index
+   subjects/prob_stat/index
    subjects/bayesian/index
    subjects/machine_learning/index
    subjects/deep_learning/index
