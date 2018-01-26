@@ -22,6 +22,13 @@ How do we run probabilistic modeling?
 Bayesian Theory
 ===============
 
+.. math::
+  
+  \begin{align}
+  P(A|B) &= \frac{P(B|A)}{P(B)}  \times P(A) \\
+  \text{posterior} &= \frac{\text{Likelihood}}{\text{Marginal likelihood/Evidence}} \times \text{prior}
+  \end{align}
+
 .. figure:: /images/bayesian/bayesian_outline.png
    :align: center
    :alt: alternate text

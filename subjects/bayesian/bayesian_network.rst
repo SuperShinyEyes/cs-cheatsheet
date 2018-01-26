@@ -152,7 +152,24 @@ Two graphs are **Markov equivalent** if they
    < A markov equivalent example >
 
 
+Graph
+==============
 
+.. figure:: /images/bayesian/dag.png
+  :scale: 50 %
+  :align: center
+  :alt: alternate text
+  :figclass: align-center
+
+* Parent: pa(D) = {A,C}
+* Children: ch(D) = E
+* Family: A node itself and its parents. 
+  
+  * fa(E) = {B,D,E,F}
+
+* Markov blanket: A node itself, its parents, children and the parents of its children. 
+  
+  * MB(B) = {A,B,C,D,E,F}
 
 
 

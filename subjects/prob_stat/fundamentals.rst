@@ -54,13 +54,28 @@ Joint distribution
 ==================
 A probability distribution for two or more variables. OR  A joint distribution is a distribution which is joint.
 
-Conditional distribution
-========================
 
-For random variables A and B, :math:`P(A|B)` is the probability distribution which describes the change in A when B is changed.
+Conditional
+===========
+
+Conditional Probabilities
+#########################
+
+.. math::
+
+  P(A|B) = \frac{A \cap B}{P(B)}
+
+Conditional distribution
+########################
+For random variables A and B, :math:`P(A|B)` is the probability distribution which describes the change in A when B is changed. Therefore the distribution sums to 1 over all the events in A.
+
+.. math::
+  A = {a_1, a_2,  ... a_n}
+
+  \sum_{i=1}^n P(a_i | B) = 1
 
 Conditional independence
-========================
+########################
 :math:`X \perp\!\!\!\perp Y | Z` denotes that variable X and Y are conditionally independent of each other, given the state of variable Z.
 
 .. math::
@@ -69,7 +84,7 @@ Conditional independence
 Intuitively, this means that if we know the value of Z, knowing in addition the value of Y does not provide any information about the value of X. Indeed, provided :math:`P(y,z) > 0`, we have
 
 .. math::
-  X \perp\!\!\!\perp Y | Z \Longrightarrow P_{X,Y |Z}(x,y|z) = P_{X|Z}(x|z)
+  X \perp\!\!\!\perp Y | Z \Longrightarrow P_{X,|Y,Z}(x|y,z) = P_{X|Z}(x|z)
 
 Proof:
 
@@ -77,7 +92,7 @@ Proof:
   \begin{align}
   p(x|y,z) &= \frac{p(x,y,z)}{ p(y,z) } = \frac{p(x,y|z)p(z)}{p(z)p(y|z)} \\
           &= \frac{p(x|z)p(y|z)p(z)}{p(z)p(y|z)} = p(x|z)\\
-  p(x,y,z) &= p(xjy,z)p(yjz)p(z) \quad \text{(General chain rule of probability)}
+  p(x,y,z) &= p(x|y,z)p(y|z)p(z) \quad \text{(General chain rule of probability)}
   \end{align}
 
 Intuitive examples
@@ -92,6 +107,8 @@ Intuitive examples
   * Is Y independent of Z? **NO**
   * Is Y conditionally independent of Z given X? **NO**
 
+------------------------------------------------------------------------------------------------------
+
 Marginal distribution
 =====================
 
@@ -101,6 +118,14 @@ Consider a joint probability distribution :math:`P(\theta 1, \theta 2)`.  A marg
  P(\theta_1) = \int P(\theta_1, \theta_2)d \theta_2
 
 It gives the probabilities of the variables without reference to the other variables. The contrary of conditional distribution.
+
+For discrete random variables, the marginal probability mass function(PMF) can be written as :math:`P(X=x)`.
+
+.. math::
+
+  P(X=x) = \sum_y P(X=x,Y=y) = \sum_y P(X=x | Y=y)P(Y=y)
+
+where :math:`P(X=x,Y=y)` is the joint distribution of X and Y.
 
 Marginal independence
 #####################
