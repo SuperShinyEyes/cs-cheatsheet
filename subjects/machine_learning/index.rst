@@ -13,3 +13,4 @@ Machine Learning
   cross_validation.rst
   algorithms.rst
   glossaries.rst
+  project_management.rst

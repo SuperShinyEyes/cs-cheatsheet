@@ -11,4 +11,15 @@ Intro
 
    < Mechamisom of CNN. >
 
-Regular Neural Nets don’t scale well to full images.
+CNN is robust for images compared to Regular Neural Nets because images are huge! A single image have millions of features and an image dataset can have millions of images as well.
+
+Convolution operation
+#####################
+
+
+
+Convolution
+===========
+
+Pooling
+=======
