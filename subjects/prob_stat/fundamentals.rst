@@ -55,15 +55,32 @@ Joint distribution
 A probability distribution for two or more variables. OR  A joint distribution is a distribution which is joint.
 
 
-Conditional
-===========
-
 Conditional Probabilities
-#########################
+=========================
 
 .. math::
 
   P(A|B) = \frac{A \cap B}{P(B)}
+
+
+Multiplication Rule
+###################
+Reference: Introduction to Probability by Bertsekas pg.24.
+Assuming that all of the conditioning events have positive probability,
+
+.. math::
+  P(\cap_{i=1}^{n} A_i) = P(A_1)P(A_2|A_1)P(A_3|A_1 \cap A_2) \cdots P(A_n|\cap_{i=1}^{n-1} A_i)
+
+Total Probability Theorem
+#########################
+Let :math:`A_1,\cdots ,A_n` be disjoint events and assume that :math:`P(A_i) > 0` for all *i*. Then, for any event B, we have
+
+.. math::
+  \begin{split}
+  P(B) &= P(A_1 \cap B) + \cdots +  P(A_n \cap B) \\
+       &= P(A_1)P(B|A_1)+ \cdots + P(A_n)P(B|A_n)
+  \end{split}
+
 
 Conditional distribution
 ########################

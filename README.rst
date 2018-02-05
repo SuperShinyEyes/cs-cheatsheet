@@ -80,6 +80,29 @@ A very quick guide is below.
 
 ----
 
+Header style::
+   
+   \=====
+   Title
+   \=====
+
+   Heading1
+   \=======
+
+   Heading2
+   \#######
+
+   Heading3
+   \^^^^^^^
+   
+   Heading4
+   \*******
+   
+   Heading5
+   \+++++++
+
+----
+
 ``Inline code/monospace``, *emphasis*, **strong emphasis**
 
 ::
@@ -89,7 +112,7 @@ A very quick guide is below.
 ----
 
 ::
-
+   
    Block quote
    Block quote
 
