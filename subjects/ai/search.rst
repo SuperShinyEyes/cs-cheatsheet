@@ -199,6 +199,76 @@ Choosing a Heuristic Function for :math:`A^{*}`
 
 -------------------------------------------------------------------------------
 
+Markov Decision Processes
+=========================
+An MDP is defined by:
+  * A set of states :math:`s \in S`
+  * A set of actions :math:`a \in A`
+  * A transition_function/model/dynamics :math:`T(s,a,s')`
+
+    * prob that :math:`a` from :math:`s` leads to :math:`s'`, i.e., :math:`P(s'|a,s)`
+
+  * A reward(cost) function :math:`R(s,a,s')`
+
+    * aka :math:`R(s')` or :math:`R(s)`
+    * We want to maximize the reward/cost.
+
+  * A start state
+  * Maybe a terminal state
+
+* MDPs are non-deterministic/stochastic search problems
+
+What is Markov about MDPs?
+##########################
+"Markov" means that given the present state, the **future and the past are independent**. For MDP, "Markov" means **action outcomes depend only on the current state**.
+
+.. math::
+  P(S_{t+1} = s'| S_{t} = s_t, A_{t} = a_t, \cdots , S_{0} = s_0) \\
+  = P(S_{t+1} = s'| S_{t} = s_t, A_{t} = a_t)
+
+In deterministic search problems, you want an optimal **plan**. In MDP, you want an optimal **policy(choice of action fo each state)** :math:`\pi*: S \Rightarrow A`. A policy :math:`\pi` gives an action for each state and hopefully maximizes expected utility(sum of discounted rewards). An explicit policy defines a reflex agent.
+
+.. figure:: /images/ai/optimal_policies.png
+  :align: center
+  :alt: alternate text
+  :figclass: align-center
+
+  < Optimal policies. The optimal policy is R(s) = -0.4. When the cost is very bad the agent will behave in a depressing manner. `Berkeley AI <https://youtu.be/wKx4MuLfe0M>`_ >
+
+Discounting
+###########
+Rewards' value gets discounted over time. Discounting happens because 
+
+* sooner rewards probably have higher utility than later rewards
+* helps our algorithm converge.
+
+Discounting Example: discount of 0.5
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+* :math:`U([1,2,3]) = 1*1 + 0.5*2 + 0.25*3`
+* :math:`U([1,2,3]) < U([3,2,1])`
+
+
+Recursive definition of value
+#############################
+
+.. math::
+  \begin{align}
+  Q^*(s,a) &= \sum_{s'}T(s,a,s') \big[ R(s,a,s') + \gamma V^*(s') \big] \\
+  V^*(s) &= \max_a Q^*(s,a)\\
+         &= \max_a \sum_{s'}T(s,a,s') \big[ R(s,a,s') + \gamma V^*(s') \big]
+  \end{align}
+
+
+
+
+
+
+
+
+
+
+--------------------
+
 
 Glossaries
 ==========

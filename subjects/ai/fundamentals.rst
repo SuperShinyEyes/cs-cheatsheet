@@ -16,3 +16,4 @@ Logic
 
 .. _`functionally complete`: https://en.wikipedia.org/wiki/Functional_completeness
 .. _`Read Stackoverflow for more detail`: https://stackoverflow.com/a/33161222/3067013
+
