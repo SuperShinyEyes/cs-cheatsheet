@@ -7,4 +7,5 @@ Bayesian
 
    fundamentals.rst
    bayesian_network.rst
+   practices.rst
    references.rst

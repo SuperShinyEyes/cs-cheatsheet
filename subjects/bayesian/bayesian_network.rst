@@ -68,7 +68,8 @@ Example 2
 
 Here's my real life example about marginal independence. Say you won a $1M lottery(C). You can either buy a $1M house(A) or buy a $1M Ferrari(B). If you've bought a Ferrari, you haven't bought a house for sure.
 
------------------------------------------------------------------------------------------
+
+------------------------
 
 Collider
 ========
@@ -82,15 +83,16 @@ A cllider (v-structure, head-to-head meeting) has two incoming arrows along a ch
    < Source: Aalto course CS-E4820: Advanced probabilistic methods >
 
 
+
 -----------------------------------------------------------------------------------------
 
 D-Connection & D-Separation
 ===========================
 
-* **A path** between variables *A* and *B* **is blocked** by a set of variables :math:`\mathcal{C}`, if there is a 
+* **A path** between variables *A* and *B* **is blocked** by a set of variables :math:`\mathcal{C}`, if 
 
-  * collider in the path such that neither the collider nor any of its descendasnts is in the conditioning **set** :math:`\mathcal{C}`.
-  * non-collider in the path that is in the conditioning **set** :math:`\mathcal{C}`.
+  * there is a collider in the path such that neither the collider nor any of its descendasnts is in the conditioning **set** :math:`\mathcal{C}`.
+  * there is a non-collider in the path that is in the conditioning **set** :math:`\mathcal{C}`.
 
 * Sets of variables :math:`\mathcal{A}` and :math:`\mathcal{B}` are **d-separated** by :math:`\mathcal{C}` if all paths between :math:`\mathcal{A}` and :math:`\mathcal{B}` are blocked by :math:`\mathcal{C}`.
   
@@ -98,6 +100,11 @@ D-Connection & D-Separation
 
   * :math:`\mathcal{X}` and :math:`\mathcal{Y}` are d-separated by :math:`\mathcal{Z}` in :math:`G` iff they are not d-connected by :math:`\mathcal{Z}` in :math:`G`.
 
+
+Bottom line
+###########
+* Non-collider in the conditioning set :math:`\Rightarrow` Blocked :math:`\Rightarrow` d-separated :math:`\Rightarrow` **conditionally independent** *BUT* **unconditionally dependent**
+* Collider or its descendants in the conditioning set :math:`\Rightarrow` Not blocked :math:`\Rightarrow` d-connected :math:`\Rightarrow` **conditionally dependent** *BUT* **unconditionally independent**
 
 Examples
 ########
@@ -170,8 +177,5 @@ Graph
 * Markov blanket: A node itself, its parents, children and the parents of its children. 
   
   * MB(B) = {A,B,C,D,E,F}
-
-
-
 
 -----------------------------------------------------------------------------------------

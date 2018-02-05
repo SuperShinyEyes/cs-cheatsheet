@@ -124,6 +124,85 @@ Intuitive examples
   * Is Y independent of Z? **NO**
   * Is Y conditionally independent of Z given X? **NO**
 
+
+Practices
+#########
+
+Example 1.
+^^^^^^^^^^
+Consider the Bayesian network which represents Mr Holmes’ burglary worries as given in the figure: (B)urglar, (A)larm, (W)atson, Mrs (G)ibbon. All vari- ables are binary with states True and False.
+
+.. figure:: /images/prob_stats/conditional_prob_counting.png
+   :align: center
+   :alt: alternate text
+   :figclass: align-center
+
+   < Source: Aalto course CS-E4820: Advanced probabilistic methods >
+
+Part a). :math:`p(B|W)`
+***********************
+
+.. math::
+    p(B|W) = \frac{p(B,W)}{p(W)}
+
+Let's separate the numerator and denominator. Numerator:
+
+.. math::
+  \begin{align}
+      p(B,W) &= p(W|B)p(B)\\
+      p(W|B) &= p(W|A)p(A|B) + p(W|\bar{A})p(\bar{A}|B) = 0.896 \\
+      p(B,W) &= 0.896 * 0.01 = 0.00896
+  \end{align}
+
+Now denominator:
+
+.. math::
+  \begin{align}
+      p(W) &= p(W|B)p(B) + p(W|\bar{B})p(\bar{B})\\
+      &= 0.52376
+  \end{align}
+
+.. math::
+    p(B|W) = \frac{p(B,W)}{p(W)} = \frac{0.00896}{0.52376} \approx 0.0171
+
+
+Part b). :math:`p(B|W,\bar{G})`
+*******************************
+
+.. math::
+    p(B|W,\bar{G}) = \frac{p(B,W,\bar{G})}{p(W,\bar{G})}
+
+Again, Let's separate the numerator and denominator.  Numerator:
+
+.. math::
+  \begin{align}
+      p(B,W,\bar{G}) &= p(W,\bar{G}|B)p(B) \\
+      p(W,\bar{G}|B) &= p(W|A)p(\bar{G}|A)p(A|B) + p(W|\bar{A})p(\bar{G}|\bar{A})p(\bar{A}|B) \\
+      &= .2713 \\
+      p(B,W,\bar{G}) &= 0.002713
+  \end{align}
+
+Now denominator:
+
+.. math::
+  \begin{align}
+      p(W,\bar{G}) &= p(W,\bar{G}|B)p(B) + p(W,\bar{G}|\bar{B})p(\bar{B}) \\
+      p(W,\bar{G}|\bar{B}) &= P(W|A)p(\bar{G}|A)p(A|\bar{B}) \\
+                        &+ P(W|\bar{A})p(\bar{G}|\bar{A})p(\bar{A}|\bar{B})\\
+      &= 0.3935\\
+      p(W,\bar{G}) &= 0.002713 +  0.389565 &= 0.392278
+  \end{align}
+
+Therefore, 
+
+.. math::
+  \begin{align}
+      p(B|W,\bar{G}) &= \frac{p(B,W,\bar{G})}{p(W,\bar{G})} \\
+      &= \frac{0.002713}{0.392278} \approx 6.916 \times 10^{-3} 
+  \end{align}
+
+
+
 ------------------------------------------------------------------------------------------------------
 
 Marginal distribution
