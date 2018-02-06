@@ -199,8 +199,19 @@ Choosing a Heuristic Function for :math:`A^{*}`
 
 -------------------------------------------------------------------------------
 
+.. note::
+  The following part is is made by studying
+    1. Aalto University CS-E4800 - AI
+    2. Reinforcement Learning: An Introduction by Sutton
+    3. Berkeley AI
+
+
+
 Markov Decision Processes
 =========================
+
+
+
 An MDP is defined by:
   * A set of states :math:`s \in S`
   * A set of actions :math:`a \in A`
@@ -276,6 +287,7 @@ A value function obeys the recursive relation:
   \begin{align}
   v_{\pi}(s) = R(s, \pi(s)) + \gamma v_{\pi}(\mathcal{T}(s, \pi(s))), && \text{aka Bellman equation}
   \end{align}
+  :label: bellman
 
 This recursive property could be exploited in order to accurately estimate the value function from previous experience. 
 
@@ -285,8 +297,28 @@ Given a policy :math:`\pi`, we define its **action-value function** :math:`q_{\p
 .. math::
  q_{\pi}(s,a) = \underbrace{R(s_t,a_t)}_\text{take action $a_t$} + \underbrace{\sum_{j=1}^{\infty} \gamma^j R(s_{t+j}, a_{t+j})}_\text{then follows $\pi$} \text{ with } s_{t+1} = \mathcal{T}(s_t, a_t), \text{ and } a_t = \pi(s_t)
 
+Using value functions we can compare the quality of different policies. In particular, we say that policy :math:`\pi'` is at least as good as, or **dominates**, policy :math:`\pi` if
 
+.. math::
+  v_{\pi'}(s) \geq v_{\pi}(s) \text{ for all states } s \in \mathcal{S}
 
+Note, for a given MDP there may be **more than one optimal policy**. However,  all optimal policies for a particular MDP share the same optimal value function :math:`v_∗(s)`. Thus, if :math:`\pi_*' is an optimal policy, its value function is given as
+
+.. math::
+  v_{\pi_*}(s) = v_{*}(s) := \max_{\pi} v_{\pi}(s),
+  :label: value-function
+
+where the maximization is over all possible policies :math:`\pi : \mathcal{S} \Rightarrow \mathcal{A}`. Similarily, all optimal policies share the same optimal action-value function
+
+.. math::
+  q_{\pi_*}(s,a) = q_{*}(s,a) := \max_{\pi} q_{\pi}(s,a).
+
+If we insert the recursive relation :eq:`bellman` satisfied by any value function into :eq:`value-function`, we obtain an analogous recursive relation for the optimal value function, i.e.,
+
+.. math::
+  v_{*}(s) = \max_{a \in \mathcal{A}} \Big[R(s, a) + \gamma v_{*}(\mathcal{T}(s, a)) \Big]
+
+This relation is also known as the **Bellman optimality equation**.
 
 Discounting
 ###########
