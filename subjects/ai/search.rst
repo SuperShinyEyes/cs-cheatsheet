@@ -226,14 +226,67 @@ What is Markov about MDPs?
   P(S_{t+1} = s'| S_{t} = s_t, A_{t} = a_t, \cdots , S_{0} = s_0) \\
   = P(S_{t+1} = s'| S_{t} = s_t, A_{t} = a_t)
 
-In deterministic search problems, you want an optimal **plan**. In MDP, you want an optimal **policy(choice of action fo each state)** :math:`\pi*: S \Rightarrow A`. A policy :math:`\pi` gives an action for each state and hopefully maximizes expected utility(sum of discounted rewards). An explicit policy defines a reflex agent.
+Policies
+########
+
+In deterministic search problems, you want an optimal **plan**. In MDP, you want an optimal **policy(choice of action fo each state)** 
+
+.. math::
+  \pi*: S \Rightarrow A, a = \pi(s)
+
+A policy :math:`\pi` gives an action for each state and hopefully maximizes expected utility(sum of discounted rewards). An explicit policy defines a reflex agent.
 
 .. figure:: /images/ai/optimal_policies.png
+  :scale: 20%
   :align: center
   :alt: alternate text
   :figclass: align-center
 
   < Optimal policies. The optimal policy is R(s) = -0.4. When the cost is very bad the agent will behave in a depressing manner. `Berkeley AI <https://youtu.be/wKx4MuLfe0M>`_ >
+
+We can compute optimal policies by solving the mathematical optimization problem
+
+.. math::
+  \max_{\pi}G_t \text{ such that } s_{t+1} = \mathcal{T}(s_t,\pi(s_t))
+
+Value Functions
+^^^^^^^^^^^^^^^
+A value-function
+
+.. math::
+  \begin{align}
+  v_{\pi}: \mathcal{S} \Rightarrow \mathbb{R}, &&(s \in \mathcal{S} \text{ with a single number } v_{\pi}(s) \in \mathbb{R})
+  \end{align}
+
+is a foundation of many efficient methods for computing optimal policies. 
+
+We define the value :math:`v_{\pi}(s_t)` of the state :math:`s_t`as the resulting return by following the policy :math:`\pi` starting at time :math:`t` from state :math:`s_t`,
+
+.. math::
+  v_{\pi}(s_t) = G_t = \sum_{j=0}^{\infty} \gamma^j R(s_{t+j}, \pi(s_{t+j})) \text{ with } s_{t+1} = \mathcal{T}(s_t, \pi(s_t))
+
+Once we fix the starting state :math:`s_t = s`, the sequence of actions  :math:`a_t` and states :math:`s_t` in the above equation is completely determined by the policy :math:`\pi` and transition model :math:`\mathcal{T}` since 
+
+.. math::
+ s_{t+1} = \mathcal{T}(s_t, a_t), \text{ and } a_t = \pi(s_t)
+
+A value function obeys the recursive relation:
+
+.. math::
+  \begin{align}
+  v_{\pi}(s) = R(s, \pi(s)) + \gamma v_{\pi}(\mathcal{T}(s, \pi(s))), && \text{aka Bellman equation}
+  \end{align}
+
+This recursive property could be exploited in order to accurately estimate the value function from previous experience. 
+
+Given a policy :math:`\pi`, we define its **action-value function** :math:`q_{\pi}(s,a)` as the return obtained if the agent starts from state :math:`s_t =s`, takes action :math:`a` and then acts according to the policy :math:`\pi`, i.e.,
+
+
+.. math::
+ q_{\pi}(s,a) = \underbrace{R(s_t,a_t)}_\text{take action $a_t$} + \underbrace{\sum_{j=1}^{\infty} \gamma^j R(s_{t+j}, a_{t+j})}_\text{then follows $\pi$} \text{ with } s_{t+1} = \mathcal{T}(s_t, a_t), \text{ and } a_t = \pi(s_t)
+
+
+
 
 Discounting
 ###########
@@ -246,6 +299,36 @@ Discounting Example: discount of 0.5
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
 * :math:`U([1,2,3]) = 1*1 + 0.5*2 + 0.25*3`
 * :math:`U([1,2,3]) < U([3,2,1])`
+
+Rewards & Returns(sum of rewards)
+#################################
+As a consequence of taking the action :math:`a_t`, the agent receives a numerical **reward**
+
+.. math::
+  R_{t+1} = R(s_t,a_t)
+  
+In many applications the overall goal is not to maximize the immediate reward :math:`R_{t+1}` but to maximize a long-term(cumulative) reward, i.e., the **expected discounted return**:
+
+.. math::
+  G_t \doteq R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3} + \cdots = \sum_{k=0}^{\infty} \gamma^k R_{t+k+1}
+
+where :math:`\gamma` is a parameter :math:`0 \leq \gamma \leq 1`, is called the discount rate.
+
+Returns at successive time steps are related to each other:
+
+.. math::
+  \begin{align}
+  G_t &\doteq R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3} + \cdots \\
+      &= R_{t+1} + \gamma(R_{t+2} + \gamma R_{t+3} + \gamma^2 R_{t+4} + \cdots )\\
+      &= R_{t+1} + \gamma G_{t+1}
+  \end{align}
+
+Although the return :math:`G_t` is a sum of an infinite number of terms, it is still finite if the reward is nonzero and constant, if :math:`\gamma  < 1`. For example, if the reward is a constant +1, then the return is
+
+.. math::
+  G_t = \sum_{k=0}^{\infty} \gamma^k = \frac{1}{1-\gamma}
+
+
 
 
 Recursive definition of value
