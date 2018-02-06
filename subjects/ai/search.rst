@@ -201,7 +201,7 @@ Choosing a Heuristic Function for :math:`A^{*}`
 
 .. note::
   The following part is is made by studying
-    1. Aalto University CS-E4800 - AI
+    1. `Aalto University CS-E4800 - AI <https://mycourses.aalto.fi/mod/astra/exercise.php?id=683#equation-equ_def_cumreward>`_
     2. `Reinforcement Learning: An Introduction by Sutton <http://www.incompleteideas.net/book/bookdraft2017nov5.pdf>`_
     3. `Berkeley AI <https://youtu.be/wKx4MuLfe0M>`_
 

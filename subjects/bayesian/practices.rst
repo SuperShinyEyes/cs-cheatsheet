@@ -26,7 +26,7 @@ Q. Conditional independence from Bayesian network
 
 * :math:`C \perp\!\!\!\perp D | A,B` 
   
-  * True
+  * False. Path C – D is not blocked. Therfore it is not conditionally dependent.
 
 * :math:`B \perp\!\!\!\perp F | A,C` 
   
