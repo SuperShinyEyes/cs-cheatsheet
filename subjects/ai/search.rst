@@ -202,8 +202,8 @@ Choosing a Heuristic Function for :math:`A^{*}`
 .. note::
   The following part is is made by studying
     1. Aalto University CS-E4800 - AI
-    2. Reinforcement Learning: An Introduction by Sutton
-    3. Berkeley AI
+    2. `Reinforcement Learning: An Introduction by Sutton <http://www.incompleteideas.net/book/bookdraft2017nov5.pdf>`_
+    3. `Berkeley AI <https://youtu.be/wKx4MuLfe0M>`_
 
 
 
@@ -319,6 +319,23 @@ If we insert the recursive relation :eq:`bellman` satisfied by any value functio
   v_{*}(s) = \max_{a \in \mathcal{A}} \Big[R(s, a) + \gamma v_{*}(\mathcal{T}(s, a)) \Big]
 
 This relation is also known as the **Bellman optimality equation**.
+
+
+Stochastic Policies
+###################
+A stochastic policy is specified by the conditional probability 
+
+.. math::
+  P(a_t = a | s_t = s)
+
+Similarly, a stochastic model for state transition
+and rewards is obtained by specifying the conditional probability
+
+.. math::
+  P(s_{t+1} = s', R_{t+1} = r | a_t = a,s_t = s) \in [0,1]
+
+of the new state at time :math:`t` being :math:`s′` and the reward obtained being :math:`r`, when the current state is :math:`s_t = s` and the agent takes action :math:`a_t = a`. Note that deterministic policies and transition models are special cases of the stochastic models.
+
 
 Discounting
 ###########
