@@ -82,3 +82,7 @@ When performing gradient descent, **learning rate** measures how much the curren
    < Momentum and other gradient descent techiques visualized. `Source <Stackoverflow_momentum_gif_>`_  >
 
 .. _Stackoverflow_momentum_gif: https://stackoverflow.com/a/44225502/3067013
+
+
+-----------------------------
+

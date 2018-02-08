@@ -8,3 +8,4 @@ Deep Learning
    basic.rst
    regularization.rst
    cnn.rst
+   exam.rst
