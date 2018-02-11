@@ -6,6 +6,7 @@ Deep Learning
    :maxdepth: 2
 
    fundamentals.rst
+   gradient_descent.rst
    regularization.rst
    cnn.rst
    exam.rst

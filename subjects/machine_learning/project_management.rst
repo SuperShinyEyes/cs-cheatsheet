@@ -62,12 +62,23 @@ Write **Related work** section like you would in your thesis. During this phase 
 
 Tune your hyperparameters
 =========================
+In NN, you have to make several choices:
+
+* optimization methods
+* cost function
+* hidden activation function (e.g. ReLu)
+* output activation function (e.g. softmax)
+* regularization parameters
+* depth of network
+* width of each hidden layer
+
 This is a very time consuming phase. You could run grid search but they can be exhuasting. Instead, you could do a step-by-step tuning. For a CNN model for Fashion-MNIST my team tuned in the following order:
 
   1. regularization parameters
   2. activation functions
   3. dropout rates
   4. optimization methods
+
 
 
 Check which class of data is hard to train
