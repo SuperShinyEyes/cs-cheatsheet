@@ -9,4 +9,5 @@ Deep Learning
    gradient_descent.rst
    regularization.rst
    cnn.rst
+   rnn.rst
    exam.rst

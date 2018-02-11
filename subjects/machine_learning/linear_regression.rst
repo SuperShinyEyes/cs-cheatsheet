@@ -98,6 +98,8 @@ Regularization
 * Overfitting: low bias, high variance
 * Underfitting: high bias, low variance
 
+You could think bias in respect of the training dataset, and variance the test set. If a model overfits the bias would be almost 0 because it perfectly fits the training set. However, it wouldn't be a good model for new dataset so results in high variance.
+
 Watch `Andrew Ng's lecture <https://www.coursera.org/learn/machine-learning/lecture/QrMXd/regularized-linear-regression>`_.
 
 Example
