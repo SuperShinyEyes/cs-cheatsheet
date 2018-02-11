@@ -5,7 +5,7 @@ Deep Learning
 .. toctree::
    :maxdepth: 2
 
-   basic.rst
+   fundamentals.rst
    regularization.rst
    cnn.rst
    exam.rst
