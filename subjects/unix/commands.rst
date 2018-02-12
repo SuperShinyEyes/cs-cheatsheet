@@ -1,9 +1,19 @@
-=====
-Linux
-=====
-
+========
 Commands
 ========
+
+grep
+####
+
+.. code-block:: bash
+
+  // https://stackoverflow.com/a/16957078
+  grep -rnw '/path/to/somewhere/' -e 'pattern'
+  grep -rnw --exclude=\*.{html,js}  "Welcome"
+
+
+Processes
+#########
 
 Show process tree
 
@@ -47,11 +57,13 @@ Samba
 #####
 
 .. code-block:: bash
-
-  net ads search cn="jackie chan"
+  
+  net ads search samaccountname="username"
+  net ads search co="korea" cn
+  net ads search cn="famil-name first-name"
   net ads search mail=email samaccountname
-  net ads search cn="jackie chan" samaccountname
-  net ads search cn="jackie chan" samaccountname mail
+  net ads search cn="famil-name first-name" samaccountname
+  net ads search cn="famil-name first-name" samaccountname mail
 
 
 System

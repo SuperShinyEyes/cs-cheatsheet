@@ -5,6 +5,7 @@ UNIX
 .. toctree::
   :maxdepth: 2
 
-  linux.rst
+  commands.rst
   containers.rst
+  backup_server.rst
   references.rst

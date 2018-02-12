@@ -1,5 +1,5 @@
 ========================
-Recurrent neural network
+Recurrent Neural Network
 ========================
 
 .. note::
@@ -39,7 +39,7 @@ RNN is a specialized NN for processing sequential data :math:`x^{(1)}, \cdots, x
 
 Vanishing & exploding gradient problem
 ======================================
-Here's a simple recurrence without input or activation function: 
+If a computatinal graph is deep and a shared parameters are repeatedly multiplied, as in RNN, there may be either a vanishing or exploding gradient problem. Here's a simple recurrence without input or activation function: 
 
 .. math::
   h^{(t)} = W^T h^{(t-1)}
@@ -61,7 +61,7 @@ This can be also presented as several multiplications by the same weight matrix
 We can thus conclude that:
 
 .. math::
-  h^{(t)} =  \mathcal{Q \Lambda Q^T} h^{(0)}
+  h^{(t)} =  \mathcal{Q \Lambda^t Q^T} h^{(0)}
 
 Since the eigenvalues are raised to the power of t, the gradient will explode if the largest eigenvalue is >1, and vanish if the largest eigenvalue is < 1
 
@@ -74,4 +74,3 @@ You can solve this issue by clipping gradients; just clip the gradient if it is 
 
 
 
-  
