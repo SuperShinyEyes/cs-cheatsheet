@@ -134,10 +134,40 @@ where the factor :math:`\frac{P(E|H)}{P(E)}` represents the impact/support of :m
 
 Everyday-life example
 #####################
-I found a very intuitive example which is about inferring gender of a person with long hair [3]_. Suppose you saw a person dropped his/her wallet. You try to tell the person about it. The person is facing away from you and has long hair. You'd assume it's a woman because women generally have long hair while men don't. We can build a hypothesis/prior :math:`H`, "A long-haired person is a woman". However, if you saw the same long-haired person queing in front of a male's toilet you'd assume it's a man. Here we have new data/evidence :math:`E`, "A long-haired person is queing in front of a male's toilet". As well, we have likelihood :math:`P(E|H)`, "A long-haired person is queing in front of a male's toilet given the hypothesis, a long-haired person is a woman", and posterior :math:`P(H|E)`, "A long-haired person is a woman given the event a long-haired person is queing in front of a male's toilet"
+I found a very intuitive example which is about inferring gender of a person with long hair [3]_. Suppose you saw a person dropped his/her wallet. You try to tell the person about it. The person is facing away from you and has long hair. You'd assume it's a woman because women generally have long hair while men don't. 
 
-Here, the likelihood :math:`P(E|H)` would be low as :math:`P(E|H) = \frac{P(E \cap H)}{P(H)}` and it's a common sense that :math:`P(H)` (which is a denominator of the likelihood) is pretty highly true. Does it mean that the hypothesis is strong? Not in all cases. The posterior is low because if a person is queing in front of a male's toilet the best hypothesis is that it's he.
+We can build 
 
+* hypothesis/prior :math:`P(H)`, *"is a woman"*
+* data/evidence :math:`P(E)`, *"has long hair"*
+
+Let's make a naive assumption. There are 100 people in a shopping mall building. 50% of them are women and every woman has long hair. 10 men have long hair. Then we get
+
+* likelihood :math:`P(E|H) = \frac{50}{50} = 1.0`
+* posterior :math:`P(H|E) = \frac{50}{60} = 0.83`
+
+In the shopping mall, the hypothesis is strong given the evidence.
+
+With Bayes' theorem, you can update the degree of belief by updating prior knowledge/hypothesis. Let's update our naive assumption. Now we are in a rock festival with full of Finnish heavy metal bands. Virtually **everyone** has long hair. There are 100 people in the room, 90 men and 10 women. We now get
+
+* hypothesis/prior :math:`P(H) = 0.1`, 
+* data/evidence :math:`P(E) = 1.0`
+* likelihood :math:`P(E|H) = \frac{10}{10} = 1`
+* posterior :math:`P(H|E) = \frac{10}{100} = 0.1`
+
+In the rock festival, the hypothesis is weak given the evidence.
+
+If you're still confused with basic probability theory, we can talk about other concepts using the same example as well.
+
+.. rubric:: Joint probability
+
+Joint probability literally means *"joint"* probability such as *“What is the probability that someone is a woman with short hair?”*, :math:`P(woman)\cdot{P(short-haired|woman)}`.
+
+.. rubric:: Marginal probability
+
+Marginal probability is just a sum of probabilities. Let's say we want to get marginal probability, *"What is the probability that a person has short hair?"*. It is expressed as
+
+.. math:: P(\text{person has short hair}) = P(\text{is female $\cap$ has short hair}) + P(\text{is male $\cap$ has short hair}) 
 ----------------------------------------------------------------------------------------
 
 .. rubric:: References
