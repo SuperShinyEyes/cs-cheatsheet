@@ -22,6 +22,7 @@ These docs are mainly maintained by `Seyoung Park <http://www.seyoung.xyz>`_.
    subjects/computer_graphics/index
    subjects/ai/index
    subjects/unix/index
+   subjects/papers/papers
 
 
 Metadocs

@@ -10,4 +10,5 @@ Deep Learning
    regularization.rst
    cnn.rst
    rnn.rst
+   network_comparisons.rst
    exam.rst
