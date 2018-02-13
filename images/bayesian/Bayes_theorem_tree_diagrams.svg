@@ -1,0 +1,939 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   width="470.08109"
+   height="776.02136"
+   id="svg2"
+   inkscape:version="0.48.1 r9760"
+   sodipodi:docname="bayes_theorem_tree_diagrams.svg">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="1"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1680"
+     inkscape:window-height="992"
+     id="namedview3144"
+     showgrid="false"
+     inkscape:zoom="1.0966193"
+     inkscape:cx="142.552"
+     inkscape:cy="439.80576"
+     inkscape:window-x="1276"
+     inkscape:window-y="-3"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g5893"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid3146" />
+  </sodipodi:namedview>
+  <defs
+     id="defs4">
+    <marker
+       refX="0"
+       refY="0"
+       orient="auto"
+       id="Arrow1Lend"
+       style="overflow:visible">
+      <path
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         id="path5087"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;marker-start:none"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       refX="0"
+       refY="0"
+       orient="auto"
+       id="Arrow1Lend-0"
+       style="overflow:visible">
+      <path
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         id="path5087-9"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;marker-start:none"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       refX="0"
+       refY="0"
+       orient="auto"
+       id="Arrow1Lend-3"
+       style="overflow:visible">
+      <path
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         id="path5087-5"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;marker-start:none"
+         inkscape:connector-curvature="0" />
+    </marker>
+  </defs>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <rect
+     style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+     id="rect3165"
+     width="470.08109"
+     height="776.02136"
+     x="0"
+     y="0" />
+  <g
+     transform="translate(739.99396,-306.40574)"
+     id="layer1">
+    <path
+       d="M -685.38048,459.24302 -560.24107,393.1479"
+       id="path2985"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:connector-curvature="0" />
+    <path
+       d="m -560.66243,393.02648 171.88354,38.59081"
+       id="path2985-8-4"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:connector-curvature="0" />
+    <path
+       d="m -560.4669,393.3371 172.59064,-52.73295"
+       id="path2985-8-4-4"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:connector-curvature="0" />
+    <text
+       x="-575.58484"
+       y="423.74429"
+       id="text3908"
+       xml:space="preserve"
+       style="font-size:32px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       sodipodi:linespacing="125%"><tspan
+         x="-575.58484"
+         y="423.74429"
+         id="tspan3910"
+         style="font-size:18px">P(A)</tspan></text>
+    <text
+       x="-374.39542"
+       y="343.8269"
+       id="text3908-2"
+       xml:space="preserve"
+       style="font-size:32px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       sodipodi:linespacing="125%"><tspan
+         x="-374.39542"
+         y="343.8269"
+         id="tspan3910-5"
+         style="font-size:18px">P(A ∩ B)</tspan></text>
+    <path
+       d="m -727.61286,383.43918 a 5.6568542,5.6568542 0 1 1 -3.3e-4,-0.0615"
+       transform="translate(173.24116,9.1923882)"
+       id="path3933"
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       inkscape:connector-curvature="0" />
+    <path
+       d="m -727.61286,383.43918 a 5.6568542,5.6568542 0 1 1 -3.3e-4,-0.0615"
+       transform="translate(46.669029,77.781733)"
+       id="path3933-0"
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       inkscape:connector-curvature="0" />
+    <path
+       d="m -727.61286,383.43918 a 5.6568542,5.6568542 0 1 1 -3.3e-4,-0.0615"
+       transform="translate(342.94677,48.790356)"
+       id="path3933-0-9-6-8"
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       inkscape:connector-curvature="0" />
+    <path
+       d="m -727.61286,383.43918 a 5.6568542,5.6568542 0 1 1 -3.3e-4,-0.0615"
+       transform="translate(344.36099,-44.547738)"
+       id="path3933-0-9-6-8-4"
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       inkscape:connector-curvature="0" />
+    <g
+       transform="translate(0.44454361,-1.1087572)"
+       id="g5558">
+      <rect
+         width="38.358776"
+         height="20.964645"
+         x="-637.50171"
+         y="415.12747"
+         id="rect3094-5-0"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+      <text
+         x="-636.0249"
+         y="431.50818"
+         id="text3908-5"
+         xml:space="preserve"
+         style="font-size:32px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;font-family:Sans"
+         sodipodi:linespacing="125%"><tspan
+           x="-636.0249"
+           y="431.50818"
+           id="tspan3910-52"
+           style="font-size:18px;fill:#ff0000;fill-opacity:1;stroke:none">P(A)</tspan></text>
+    </g>
+    <rect
+       width="56.386154"
+       height="20.963209"
+       x="-494.86664"
+       y="356.18826"
+       id="rect3094-5-8-9-0-1-1"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+    <text
+       x="-494.2684"
+       y="371.57697"
+       id="text3908-5-1-9-1-7-8-9-8-6"
+       xml:space="preserve"
+       style="font-size:32px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;font-family:Sans"
+       sodipodi:linespacing="125%"><tspan
+         x="-494.2684"
+         y="371.57697"
+         id="tspan3910-52-5-9-9-6-2-2-7-3"
+         style="font-size:18px;fill:#ff0000">P(B|A)</tspan></text>
+    <path
+       d="m -685.22966,462.15031 125.13941,66.09513"
+       id="path2985-0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:connector-curvature="0" />
+    <path
+       d="m -560.51161,528.36686 171.88354,-38.59082"
+       id="path2985-8-4-7"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:connector-curvature="0" />
+    <path
+       d="m -560.31608,528.05624 172.59064,52.73295"
+       id="path2985-8-4-4-4"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:connector-curvature="0" />
+    <path
+       d="m -727.61286,383.43918 a 5.6568542,5.6568542 0 1 1 -3.3e-4,-0.0615"
+       transform="matrix(1,0,0,-1,173.39198,912.20094)"
+       id="path3933-02"
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       inkscape:connector-curvature="0" />
+    <path
+       d="m -727.61286,383.43918 a 5.6568542,5.6568542 0 1 1 -3.3e-4,-0.0615"
+       transform="matrix(1,0,0,-1,343.09758,872.60298)"
+       id="path3933-0-9-6-8-6"
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       inkscape:connector-curvature="0" />
+    <path
+       d="m -727.61286,383.43918 a 5.6568542,5.6568542 0 1 1 -3.3e-4,-0.0615"
+       transform="matrix(1,0,0,-1,344.51178,965.94106)"
+       id="path3933-0-9-6-8-4-9"
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       inkscape:connector-curvature="0" />
+    <g
+       id="g4621">
+      <text
+         x="-374.50284"
+         y="439.28635"
+         id="text3908-2-7"
+         xml:space="preserve"
+         style="font-size:32px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         sodipodi:linespacing="125%"><tspan
+           x="-374.50284"
+           y="439.28635"
+           id="tspan3910-5-4"
+           style="font-size:18px">P(A ∩ B)</tspan></text>
+      <path
+         d="m -318.3105,423.73535 9.20204,0"
+         id="path4529"
+         style="fill:none;stroke:#000000;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         inkscape:connector-curvature="0" />
+    </g>
+    <g
+       id="g4616">
+      <text
+         x="-374.2446"
+         y="496.07715"
+         id="text3908-2-9"
+         xml:space="preserve"
+         style="font-size:32px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         sodipodi:linespacing="125%"><tspan
+           x="-374.2446"
+           y="496.07715"
+           id="tspan3910-5-0"
+           style="font-size:18px">P(A ∩ B)</tspan></text>
+      <path
+         d="m -354.60102,480.86218 9.20204,0"
+         id="path4529-4"
+         style="fill:none;stroke:#000000;stroke-width:1.22474492;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         inkscape:connector-curvature="0" />
+    </g>
+    <g
+       id="g4610">
+      <text
+         x="-373.6449"
+         y="589.41534"
+         id="text3908-2-7-0"
+         xml:space="preserve"
+         style="font-size:32px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         sodipodi:linespacing="125%"><tspan
+           x="-373.6449"
+           y="589.41534"
+           id="tspan3910-5-4-3"
+           style="font-size:18px">P(A ∩ B)</tspan></text>
+      <path
+         d="m -353.85102,574.11218 9.20204,0"
+         id="path4529-4-4"
+         style="fill:none;stroke:#000000;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m -317.35102,574.11218 9.20204,0"
+         id="path4529-4-4-6"
+         style="fill:none;stroke:#000000;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         inkscape:connector-curvature="0" />
+    </g>
+    <g
+       id="g4649">
+      <text
+         x="-575.43402"
+         y="563.26654"
+         id="text3908-3"
+         xml:space="preserve"
+         style="font-size:32px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         sodipodi:linespacing="125%"><tspan
+           x="-575.43402"
+           y="563.26654"
+           id="tspan3910-7"
+           style="font-size:18px">P(A)</tspan></text>
+      <path
+         d="m -556.10102,547.86218 9.20204,0"
+         id="path4529-4-4-7"
+         style="fill:none;stroke:#000000;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         inkscape:connector-curvature="0" />
+    </g>
+    <g
+       transform="translate(4.7463204,0.875)"
+       id="g5613">
+      <rect
+         width="57.196781"
+         height="24.384092"
+         x="-497.52277"
+         y="544.0036"
+         id="rect3094-5-8-9-0-1-7"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+      <g
+         id="g4713">
+        <text
+           x="-496.94595"
+           y="562.01099"
+           id="text3908-5-1-9-1-7-8-9-8-0"
+           xml:space="preserve"
+           style="font-size:32px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;font-family:Sans"
+           sodipodi:linespacing="125%"><tspan
+             x="-496.94595"
+             y="562.01099"
+             id="tspan3910-52-5-9-9-6-2-2-7-6"
+             style="font-size:18px;fill:#ff0000">P(B|A)</tspan></text>
+        <path
+           d="m -477.65545,546.78084 9.20204,0"
+           id="path4529-4-4-7-2"
+           style="fill:#ff0000;stroke:#ff0000;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+           inkscape:connector-curvature="0" />
+        <path
+           d="m -459.4369,546.86052 9.20204,0"
+           id="path4529-4-4-7-2-9"
+           style="fill:#ff0000;stroke:#ff0000;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+           inkscape:connector-curvature="0" />
+      </g>
+    </g>
+    <g
+       transform="translate(3.6213204,2.5)"
+       id="g5606">
+      <rect
+         width="57.035347"
+         height="23.722113"
+         x="-496.7424"
+         y="494.17398"
+         id="rect3094-5-8-9-0-1-1-4"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+      <g
+         id="g4708">
+        <text
+           x="-496.23883"
+           y="511.8064"
+           id="text3908-5-1-9-1-7-8-9-8-6-1"
+           xml:space="preserve"
+           style="font-size:32px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;font-family:Sans"
+           sodipodi:linespacing="125%"><tspan
+             x="-496.23883"
+             y="511.8064"
+             id="tspan3910-52-5-9-9-6-2-2-7-3-3"
+             style="font-size:18px;fill:#ff0000">P(B|A)</tspan></text>
+        <path
+           d="m -458.16838,496.74961 9.20204,0"
+           id="path4529-4-4-7-2-7"
+           style="fill:#ff0000;stroke:#ff0000;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+           inkscape:connector-curvature="0" />
+      </g>
+    </g>
+    <g
+       transform="translate(2.1213204,0)"
+       id="g5599">
+      <rect
+         width="55.974773"
+         height="23.655302"
+         x="-495.81741"
+         y="403.86255"
+         id="rect3094-5-8-9-0-1"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+      <g
+         id="g4703">
+        <text
+           x="-495.68256"
+           y="421.78156"
+           id="text3908-5-1-9-1-7-8-9-8"
+           xml:space="preserve"
+           style="font-size:32px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;font-family:Sans"
+           sodipodi:linespacing="125%"><tspan
+             x="-495.68256"
+             y="421.78156"
+             id="tspan3910-52-5-9-9-6-2-2-7"
+             style="font-size:18px;fill:#ff0000">P(B|A)</tspan></text>
+        <path
+           d="m -476.59479,406.3681 9.20204,0"
+           id="path4529-4-4-7-2-5"
+           style="fill:#ff0000;stroke:#ff0000;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+           inkscape:connector-curvature="0" />
+      </g>
+    </g>
+    <g
+       transform="translate(0.20710678,2.75)"
+       id="g5587">
+      <rect
+         width="37.108776"
+         height="20.964645"
+         x="-636.35089"
+         y="483.89621"
+         id="rect3094-5-0-5"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+      <g
+         id="g4756">
+        <text
+           x="-635.87408"
+           y="501.02692"
+           id="text3908-5-8"
+           xml:space="preserve"
+           style="font-size:32px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;font-family:Sans"
+           sodipodi:linespacing="125%"><tspan
+             x="-635.87408"
+             y="501.02692"
+             id="tspan3910-52-7"
+             style="font-size:18px;fill:#ff0000">P(A)</tspan></text>
+        <path
+           d="m -616.60194,485.6161 9.20204,0"
+           id="path4529-4-4-7-2-4"
+           style="fill:#ff0000;stroke:#ff0000;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+           inkscape:connector-curvature="0" />
+      </g>
+    </g>
+    <g
+       transform="translate(-11.436609,0)"
+       id="g5893">
+      <text
+         x="-682.70801"
+         y="710.34979"
+         id="text4984"
+         xml:space="preserve"
+         style="font-size:32px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         sodipodi:linespacing="125%"><tspan
+           x="-682.70801"
+           y="710.34979"
+           id="tspan4986"
+           style="font-size:20px">P(α|β) P(β)  =  P(α ∩ β)  =  P(β|α) P(α)</tspan></text>
+      <rect
+         width="399.5"
+         height="37"
+         x="-692.94366"
+         y="685.76166"
+         id="rect4988"
+         style="fill:none;stroke:#000000;stroke-width:1.5;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+    </g>
+    <switch allowReorder="yes">
+     <text systemLanguage="uk"
+       x="-718.89484"
+       y="772.38306"
+       id="text4995"
+       xml:space="preserve"
+       style="font-size:32px;font-style:normal;font-weight:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       sodipodi:linespacing="125%"><tspan
+         x="-718.89484"
+         y="772.38306"
+         id="tspan4997"
+         style="font-size:15px;text-align:start;text-anchor:start;fill:#000080">Знання будь-якого з</tspan><tspan
+         x="-718.89484"
+         y="791.13306"
+         id="tspan5003"
+         style="font-size:15px;text-align:start;text-anchor:start;fill:#000080">3 незалежних значень</tspan><tspan
+         x="-718.89484"
+         y="809.88306"
+         id="tspan5015"
+         style="font-size:15px;text-align:start;text-anchor:start;fill:#000080">є достатнім для виведення</tspan><tspan
+         x="-718.89484"
+         y="828.63306"
+         id="tspan5029"
+         style="font-size:15px;text-align:start;text-anchor:start;fill:#000080">усіх 24 значень</tspan></text>
+     <text
+       x="-718.89484"
+       y="772.38306"
+       id="text4995"
+       xml:space="preserve"
+       style="font-size:32px;font-style:normal;font-weight:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       sodipodi:linespacing="125%"><tspan
+         x="-718.89484"
+         y="772.38306"
+         id="tspan4997"
+         style="font-size:15px;text-align:start;text-anchor:start;fill:#000080">Knowledge of any</tspan><tspan
+         x="-718.89484"
+         y="791.13306"
+         id="tspan5003"
+         style="font-size:15px;text-align:start;text-anchor:start;fill:#000080">3 independent values</tspan><tspan
+         x="-718.89484"
+         y="809.88306"
+         id="tspan5015"
+         style="font-size:15px;text-align:start;text-anchor:start;fill:#000080">is sufficient to deduce</tspan><tspan
+         x="-718.89484"
+         y="828.63306"
+         id="tspan5029"
+         style="font-size:15px;text-align:start;text-anchor:start;fill:#000080">all 24 values</tspan></text>
+    </switch>
+    <switch allowReorder="yes">
+     <text systemLanguage="uk"
+       x="-714.56775"
+       y="595.30322"
+       id="text4995-2"
+       xml:space="preserve"
+       style="font-size:32px;font-style:normal;font-weight:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       sodipodi:linespacing="125%"><tspan
+         x="-714.56775"
+         y="595.30322"
+         id="tspan5003-5"
+         style="font-size:15px;text-align:start;text-anchor:start;fill:#000080">Знання однієї</tspan><tspan
+         x="-714.56775"
+         y="614.05322"
+         id="tspan5069"
+         style="font-size:15px;text-align:start;text-anchor:start;fill:#000080">діаграми є достатнім</tspan><tspan
+         x="-714.56775"
+         y="632.80322"
+         id="tspan5029-2"
+         style="font-size:15px;text-align:start;text-anchor:start;fill:#000080">для виведення іншої</tspan></text>
+     <text
+       x="-714.56775"
+       y="595.30322"
+       id="text4995-2"
+       xml:space="preserve"
+       style="font-size:32px;font-style:normal;font-weight:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       sodipodi:linespacing="125%"><tspan
+         x="-714.56775"
+         y="595.30322"
+         id="tspan5003-5"
+         style="font-size:15px;text-align:start;text-anchor:start;fill:#000080">Knowledge of one</tspan><tspan
+         x="-714.56775"
+         y="614.05322"
+         id="tspan5069"
+         style="font-size:15px;text-align:start;text-anchor:start;fill:#000080">diagram is sufficient</tspan><tspan
+         x="-714.56775"
+         y="632.80322"
+         id="tspan5029-2"
+         style="font-size:15px;text-align:start;text-anchor:start;fill:#000080">to deduce the other</tspan></text>
+    </switch>
+    <path
+       d="m -498.12289,740.15596 0,51.08489"
+       id="path5079"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+       inkscape:connector-curvature="0" />
+    <switch allowReorder="yes">
+     <text systemLanguage="uk"
+       x="-708.53699"
+       y="673.60486"
+       id="text5549"
+       xml:space="preserve"
+       style="font-size:32px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       sodipodi:linespacing="125%"><tspan
+         x="-708.53699"
+         y="673.60486"
+         id="tspan5551"
+         style="font-size:16px;fill:#000000">Теоремою Баєса можна перетворювати ці діаграми</tspan></text>
+     <text
+       x="-708.53699"
+       y="673.60486"
+       id="text5549"
+       xml:space="preserve"
+       style="font-size:32px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       sodipodi:linespacing="125%"><tspan
+         x="-708.53699"
+         y="673.60486"
+         id="tspan5551"
+         style="font-size:16px;fill:#000000">Use Bayes' Theorem to convert between diagrams</tspan></text>
+    </switch>
+    <path
+       d="m -684.78092,923.96981 125.13941,-66.09512"
+       id="path2985-6"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:connector-curvature="0" />
+    <path
+       d="m -560.06287,857.75327 171.88354,38.59081"
+       id="path2985-8-4-40"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:connector-curvature="0" />
+    <path
+       d="M -559.86734,858.06389 -387.2767,805.33094"
+       id="path2985-8-4-4-7"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:connector-curvature="0" />
+    <text
+       x="-574.98535"
+       y="888.47107"
+       id="text3908-54"
+       xml:space="preserve"
+       style="font-size:32px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       sodipodi:linespacing="125%"><tspan
+         x="-574.98535"
+         y="888.47107"
+         id="tspan3910-0"
+         style="font-size:18px">P(B)</tspan></text>
+    <text
+       x="-373.7959"
+       y="808.55371"
+       id="text3908-2-1"
+       xml:space="preserve"
+       style="font-size:32px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       sodipodi:linespacing="125%"><tspan
+         x="-373.7959"
+         y="808.55371"
+         id="tspan3910-5-2"
+         style="font-size:18px">P(B ∩ A)</tspan></text>
+    <path
+       d="m -727.61286,383.43918 a 5.6568542,5.6568542 0 1 1 -3.3e-4,-0.0615"
+       transform="translate(173.84072,473.91918)"
+       id="path3933-8"
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       inkscape:connector-curvature="0" />
+    <path
+       d="m -727.61286,383.43918 a 5.6568542,5.6568542 0 1 1 -3.3e-4,-0.0615"
+       transform="translate(47.268582,542.50852)"
+       id="path3933-0-0"
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       inkscape:connector-curvature="0" />
+    <path
+       d="m -727.61286,383.43918 a 5.6568542,5.6568542 0 1 1 -3.3e-4,-0.0615"
+       transform="translate(343.54632,513.51714)"
+       id="path3933-0-9-6-8-1"
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       inkscape:connector-curvature="0" />
+    <path
+       d="m -727.61286,383.43918 a 5.6568542,5.6568542 0 1 1 -3.3e-4,-0.0615"
+       transform="translate(344.96052,420.17905)"
+       id="path3933-0-9-6-8-4-5"
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       inkscape:connector-curvature="0" />
+    <g
+       transform="translate(1.0440956,464.32515)"
+       id="g5558-2">
+      <rect
+         width="38.358776"
+         height="20.964645"
+         x="-637.50171"
+         y="415.12747"
+         id="rect3094-5-0-0"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+      <text
+         x="-636.0249"
+         y="431.50818"
+         id="text3908-5-7"
+         xml:space="preserve"
+         style="font-size:32px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;font-family:Sans"
+         sodipodi:linespacing="125%"><tspan
+           x="-636.0249"
+           y="431.50818"
+           id="tspan3910-52-1"
+           style="font-size:18px;fill:#ff0000;fill-opacity:1;stroke:none">P(B)</tspan></text>
+    </g>
+    <rect
+       width="56.386154"
+       height="20.963209"
+       x="-494.26709"
+       y="820.91504"
+       id="rect3094-5-8-9-0-1-1-6"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+    <text
+       x="-493.66888"
+       y="836.30377"
+       id="text3908-5-1-9-1-7-8-9-8-6-4"
+       xml:space="preserve"
+       style="font-size:32px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;font-family:Sans"
+       sodipodi:linespacing="125%"><tspan
+         x="-493.66888"
+         y="836.30377"
+         id="tspan3910-52-5-9-9-6-2-2-7-3-9"
+         style="font-size:18px;fill:#ff0000">P(A|B)</tspan></text>
+    <path
+       d="m -684.6301,926.8771 125.13941,66.09513"
+       id="path2985-0-5"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:connector-curvature="0" />
+    <path
+       d="m -559.91205,993.09365 171.88354,-38.59082"
+       id="path2985-8-4-7-3"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:connector-curvature="0" />
+    <path
+       d="m -559.71652,992.78303 172.59064,52.73287"
+       id="path2985-8-4-4-4-5"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:connector-curvature="0" />
+    <path
+       d="m -727.61286,383.43918 a 5.6568542,5.6568542 0 1 1 -3.3e-4,-0.0615"
+       transform="matrix(1,0,0,-1,173.99154,1376.9277)"
+       id="path3933-02-1"
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       inkscape:connector-curvature="0" />
+    <path
+       d="m -727.61286,383.43918 a 5.6568542,5.6568542 0 1 1 -3.3e-4,-0.0615"
+       transform="matrix(1,0,0,-1,343.69712,1337.3297)"
+       id="path3933-0-9-6-8-6-1"
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       inkscape:connector-curvature="0" />
+    <path
+       d="m -727.61286,383.43918 a 5.6568542,5.6568542 0 1 1 -3.3e-4,-0.0615"
+       transform="matrix(1,0,0,-1,345.11132,1430.6678)"
+       id="path3933-0-9-6-8-4-9-0"
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       inkscape:connector-curvature="0" />
+    <g
+       transform="translate(0.59955206,464.72679)"
+       id="g4621-0">
+      <text
+         x="-374.50284"
+         y="439.28635"
+         id="text3908-2-7-7"
+         xml:space="preserve"
+         style="font-size:32px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         sodipodi:linespacing="125%"><tspan
+           x="-374.50284"
+           y="439.28635"
+           id="tspan3910-5-4-0"
+           style="font-size:18px">P(B ∩ A)</tspan></text>
+      <path
+         d="m -318.3105,423.73535 9.20204,0"
+         id="path4529-8"
+         style="fill:none;stroke:#000000;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         inkscape:connector-curvature="0" />
+    </g>
+    <g
+       transform="translate(0.59955206,464.72679)"
+       id="g4616-1">
+      <text
+         x="-374.2446"
+         y="496.07715"
+         id="text3908-2-9-6"
+         xml:space="preserve"
+         style="font-size:32px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         sodipodi:linespacing="125%"><tspan
+           x="-374.2446"
+           y="496.07715"
+           id="tspan3910-5-0-4"
+           style="font-size:18px">P(B ∩ A)</tspan></text>
+      <path
+         d="m -354.60102,480.86218 9.20204,0"
+         id="path4529-4-1"
+         style="fill:none;stroke:#000000;stroke-width:1.22474492;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         inkscape:connector-curvature="0" />
+    </g>
+    <g
+       transform="translate(0.59955206,464.72679)"
+       id="g4610-4">
+      <text
+         x="-373.6449"
+         y="589.41534"
+         id="text3908-2-7-0-9"
+         xml:space="preserve"
+         style="font-size:32px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         sodipodi:linespacing="125%"><tspan
+           x="-373.6449"
+           y="589.41534"
+           id="tspan3910-5-4-3-8"
+           style="font-size:18px">P(B ∩ A)</tspan></text>
+      <path
+         d="m -353.85102,574.11218 9.20204,0"
+         id="path4529-4-4-62"
+         style="fill:none;stroke:#000000;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m -317.35102,574.11218 9.20204,0"
+         id="path4529-4-4-6-2"
+         style="fill:none;stroke:#000000;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         inkscape:connector-curvature="0" />
+    </g>
+    <g
+       transform="translate(0.59955206,464.72679)"
+       id="g4649-5">
+      <text
+         x="-575.43402"
+         y="563.26654"
+         id="text3908-3-2"
+         xml:space="preserve"
+         style="font-size:32px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         sodipodi:linespacing="125%"><tspan
+           x="-575.43402"
+           y="563.26654"
+           id="tspan3910-7-3"
+           style="font-size:18px">P(B)</tspan></text>
+      <path
+         d="m -556.10102,547.86218 9.20204,0"
+         id="path4529-4-4-7-27"
+         style="fill:none;stroke:#000000;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         inkscape:connector-curvature="0" />
+    </g>
+    <g
+       transform="translate(5.3458725,465.60179)"
+       id="g5613-3">
+      <rect
+         width="57.196781"
+         height="24.384092"
+         x="-497.52277"
+         y="544.0036"
+         id="rect3094-5-8-9-0-1-7-9"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+      <g
+         id="g4713-0">
+        <text
+           x="-496.94595"
+           y="562.01099"
+           id="text3908-5-1-9-1-7-8-9-8-0-1"
+           xml:space="preserve"
+           style="font-size:32px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;font-family:Sans"
+           sodipodi:linespacing="125%"><tspan
+             x="-496.94595"
+             y="562.01099"
+             id="tspan3910-52-5-9-9-6-2-2-7-6-5"
+             style="font-size:18px;fill:#ff0000">P(A|B)</tspan></text>
+        <path
+           d="m -477.65545,546.78084 9.20204,0"
+           id="path4529-4-4-7-2-0"
+           style="fill:#ff0000;stroke:#ff0000;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+           inkscape:connector-curvature="0" />
+        <path
+           d="m -459.4369,546.86052 9.20204,0"
+           id="path4529-4-4-7-2-9-6"
+           style="fill:#ff0000;stroke:#ff0000;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+           inkscape:connector-curvature="0" />
+      </g>
+    </g>
+    <g
+       transform="translate(4.2208725,467.22679)"
+       id="g5606-9">
+      <rect
+         width="57.035347"
+         height="23.722113"
+         x="-496.7424"
+         y="494.17398"
+         id="rect3094-5-8-9-0-1-1-4-7"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+      <g
+         id="g4708-9">
+        <text
+           x="-496.23883"
+           y="511.8064"
+           id="text3908-5-1-9-1-7-8-9-8-6-1-2"
+           xml:space="preserve"
+           style="font-size:32px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;font-family:Sans"
+           sodipodi:linespacing="125%"><tspan
+             x="-496.23883"
+             y="511.8064"
+             id="tspan3910-52-5-9-9-6-2-2-7-3-3-8"
+             style="font-size:18px;fill:#ff0000">P(A|B)</tspan></text>
+        <path
+           d="m -458.16838,496.74961 9.20204,0"
+           id="path4529-4-4-7-2-7-9"
+           style="fill:#ff0000;stroke:#ff0000;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+           inkscape:connector-curvature="0" />
+      </g>
+    </g>
+    <g
+       transform="translate(2.7208724,464.72679)"
+       id="g5599-9">
+      <rect
+         width="55.974773"
+         height="23.655302"
+         x="-495.81741"
+         y="403.86255"
+         id="rect3094-5-8-9-0-1-8"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+      <g
+         id="g4703-9">
+        <text
+           x="-495.68256"
+           y="421.78156"
+           id="text3908-5-1-9-1-7-8-9-8-3"
+           xml:space="preserve"
+           style="font-size:32px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;font-family:Sans"
+           sodipodi:linespacing="125%"><tspan
+             x="-495.68256"
+             y="421.78156"
+             id="tspan3910-52-5-9-9-6-2-2-7-63"
+             style="font-size:18px;fill:#ff0000">P(A|B)</tspan></text>
+        <path
+           d="m -476.59479,406.3681 9.20204,0"
+           id="path4529-4-4-7-2-5-6"
+           style="fill:#ff0000;stroke:#ff0000;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+           inkscape:connector-curvature="0" />
+      </g>
+    </g>
+    <g
+       transform="translate(0.45310867,467.47679)"
+       id="g5587-0">
+      <rect
+         width="37.108776"
+         height="20.964645"
+         x="-636.35089"
+         y="483.89621"
+         id="rect3094-5-0-5-4"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+      <g
+         id="g4756-4">
+        <text
+           x="-635.87408"
+           y="501.02692"
+           id="text3908-5-8-9"
+           xml:space="preserve"
+           style="font-size:32px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;font-family:Sans"
+           sodipodi:linespacing="125%"><tspan
+             x="-635.87408"
+             y="501.02692"
+             id="tspan3910-52-7-6"
+             style="font-size:18px;fill:#ff0000">P(B)</tspan></text>
+        <path
+           d="m -616.60194,485.6161 9.20204,0"
+           id="path4529-4-4-7-2-4-6"
+           style="fill:#ff0000;stroke:#ff0000;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+           inkscape:connector-curvature="0" />
+      </g>
+    </g>
+    <path
+       d="m -497.57046,652.80028 0,-51.08489"
+       id="path5079-1"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>

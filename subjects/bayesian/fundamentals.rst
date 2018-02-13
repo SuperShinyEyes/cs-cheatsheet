@@ -55,6 +55,14 @@ Bayesian vs. Frequentist
   * Bayesians: they need a prior, so they develop one from the best information they have.
   * Frequentists: They draw inferences from likelihood func.
 
+.. figure:: /images/bayesian/Bayes_theorem_tree_diagrams.svg
+  :align: center
+  :alt: alternate text
+  :figclass: align-center
+
+  < Using Bayes' theorem one can inverse conditional probabilities. The red items are new information. Source: `Gnathan87 CC0 <https://commons.wikimedia.org/w/index.php?curid=15833490>`_ > 
+
+
 Conjugate priors
 ################
 
@@ -79,7 +87,7 @@ Prior                                               Hypothesis                  
 
 Bayesian Inference
 ==================
-Bayesian inference is just one application of Bayes' theorem. The bayes' theorem could be interpreted in the following way.
+Bayesian inference is just one application of Bayes' theorem. We use it when we don't have as much data as you wish and want to maximize your predictive strenth. The bayes' theorem could be interpreted in the following way.
 
 .. math::
   P(H|E) = \frac{P(E|H)P(H)}{P(E)}
@@ -124,9 +132,16 @@ where the factor :math:`\frac{P(E|H)}{P(E)}` represents the impact/support of :m
 .. math:: \text{Both $P(H)$ and $\frac{P(E|H)}{P(E)}$ are factors of the posterior}
 
 
+Everyday-life example
+#####################
+I found a very intuitive example which is about inferring gender of a person with long hair [3]_. Suppose you saw a person dropped his/her wallet. You try to tell the person about it. The person is facing away from you and has long hair. You'd assume it's a woman because women generally have long hair while men don't. We can build a hypothesis/prior :math:`H`, "A long-haired person is a woman". However, if you saw the same long-haired person queing in front of a male's toilet you'd assume it's a man. Here we have new data/evidence :math:`E`, "A long-haired person is queing in front of a male's toilet". As well, we have likelihood :math:`P(E|H)`, "A long-haired person is queing in front of a male's toilet given the hypothesis, a long-haired person is a woman", and posterior :math:`P(H|E)`, "A long-haired person is a woman given the event a long-haired person is queing in front of a male's toilet"
 
+Here, the likelihood :math:`P(E|H)` would be low as :math:`P(E|H) = \frac{P(E \cap H)}{P(H)}` and it's a common sense that :math:`P(H)` (which is a denominator of the likelihood) is pretty highly true. Does it mean that the hypothesis is strong? Not in all cases. The posterior is low because if a person is queing in front of a male's toilet the best hypothesis is that it's he.
 
+----------------------------------------------------------------------------------------
 
 .. rubric:: References
 
 .. [1] https://en.wikipedia.org/wiki/Bayesian_inference
+.. [2] https://en.wikipedia.org/wiki/Bayes%27_theorem
+.. [3] https://brohrer.github.io/how_bayesian_inference_works.html
