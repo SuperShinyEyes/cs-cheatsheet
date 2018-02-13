@@ -2,6 +2,10 @@
 Papers
 ======
 
+.. contents::
+    :local:
+    :depth: 2
+    
 .. role:: red
 
 `PROGRESSIVE GROWING OF GANS FOR IMPROVED QUALITY, STABILITY, AND VARIATION <paper_1_>`_

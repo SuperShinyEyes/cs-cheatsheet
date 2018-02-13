@@ -2,7 +2,9 @@
 Regularization
 ==============
 
-
+.. contents::
+    :local:
+    :depth: 2
 
 Bagging
 =======

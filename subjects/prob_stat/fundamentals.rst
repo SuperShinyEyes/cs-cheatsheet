@@ -352,3 +352,8 @@ Exchangability & i.i.d
     \text{i.i.d(independently and identically distributed)} \nLeftarrow \text{exchangable}
 
 Coin tossing is a good example; :math:`[P(H,H,T) = P(T,H,H)] \Longrightarrow` events are independent and their order can be exchanged.
+
+
+.. rubric:: References
+
+.. [1] http://www.jbstatistics.com

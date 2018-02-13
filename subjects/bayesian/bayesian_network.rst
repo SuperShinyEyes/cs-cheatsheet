@@ -2,6 +2,11 @@
 Bayesian Network
 ================
 
+.. contents::
+    :local:
+    :depth: 2
+
+    
 .. note::
 
   Here I use :math:`\perp\!\!\!\perp` as an independence symbol.

@@ -2,6 +2,9 @@
 Fundamentals
 ============
 
+.. contents::
+    :local:
+    :depth: 2
 
 Intro
 =====

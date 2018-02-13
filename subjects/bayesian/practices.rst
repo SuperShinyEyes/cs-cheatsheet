@@ -2,6 +2,10 @@
 Practices
 =========
 
+.. contents::
+    :local:
+    :depth: 2
+    
 Q. Conditional independence from Bayesian network
 =================================================
 
