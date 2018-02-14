@@ -1,12 +1,15 @@
 ======
 Papers
 ======
+This is a collection of the papaers I've read.
 
 .. contents::
     :local:
     :depth: 2
     
 .. role:: red
+
+-------------------------------------------
 
 `PROGRESSIVE GROWING OF GANS FOR IMPROVED QUALITY, STABILITY, AND VARIATION <paper_1_>`_
 ========================================================================================
@@ -23,6 +26,13 @@ Authors: Tero Karras, Timo Aila, Samuli Laine, Jaakko Lehtinen
 * GAN is differentiable and this allows us to guide generators and discriminators to the right direction. 
 * High-resolution image generation is difficult as discriminator can more easily distinguish fakes from real images, thus :red:`amplifies gradient problem`.
 * The paper used low-resolution training sets in the beginning, and add new layers that introduce higher-resolution details as the training progresses.
+* They used minibatch discrimination in order to compute feature statistics across the minibatch which is added towards the end of the discriminator.
+* Used :math:`mathcal{N}(0,1)` for weight initialization and then scale at runtime.
 
 .. _paper_1: https://github.com/YoungxHelsinki/papers/blob/master/PROGRESSIVE%20GROWING%20OF%20GANS%20FOR%20IMPROVED%20QUALITY%2C%20STABILITY%2C%20AND%20VARIATION.pdf
 .. _celeba: http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html
+
+.. rubric:: References
+
+.. [1] He et al., 2015 
+
