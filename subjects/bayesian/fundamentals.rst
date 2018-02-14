@@ -60,7 +60,7 @@ Bayesian vs. Frequentist
   :alt: alternate text
   :figclass: align-center
 
-  < Using Bayes' theorem one can inverse conditional probabilities. The red items are new information. Source: `Gnathan87 CC0 <https://commons.wikimedia.org/w/index.php?curid=15833490>`_ > 
+  < Using Bayes' theorem one can inverse conditional probabilities. The red items are new information. Source: `Gnathan87 CC0 <https://commons.wikimedia.org/w/index.php?curid=15833490>`_ [2]_> 
 
 
 Conjugate priors
@@ -87,7 +87,7 @@ Prior                                               Hypothesis                  
 
 Bayesian Inference
 ==================
-Bayesian inference is just one application of Bayes' theorem. We use it when we don't have as much data as you wish and want to maximize your predictive strenth. The bayes' theorem could be interpreted in the following way.
+Bayesian inference is just one application of Bayes' theorem [1]_. We use it when we don't have as much data as you wish and want to maximize your predictive strenth. The bayes' theorem could be interpreted in the following way.
 
 .. math::
   P(H|E) = \frac{P(E|H)P(H)}{P(E)}
@@ -110,7 +110,7 @@ Bayesian inference is just one application of Bayes' theorem. We use it when we 
 
 * :math:`P(E|H)`: Likelihood. 
   
-  * The probability of current evidence/data/:math:`E` given hypothesis. It's just another fancy name for conditional probability i.e., :math:`P(A|B)` could be read as *"How A is likely to occur given B?"*
+  * The probability of current evidence/data/:math:`E` given hypothesis. It's just another fancy name for conditional probability i.e., :math:`P(A|B)` could be read as *"How A is likely to occur given B?"*. Note, it's NOT a distribution [4]_!
 
 * :math:`P(E)`: Marginal likelihood or model evidence. 
   
@@ -134,40 +134,20 @@ where the factor :math:`\frac{P(E|H)}{P(E)}` represents the impact/support of :m
 
 Everyday-life example
 #####################
-I found a very intuitive example which is about inferring gender of a person with long hair [3]_. Suppose you saw a person dropped his/her wallet. You try to tell the person about it. The person is facing away from you and has long hair. You'd assume it's a woman because women generally have long hair while men don't. 
+I found a very intuitive example by Brandon [3]_. In the article both frequentists and bayesians use Bayes' theorem. The difference is frequentists use uniform prior and bayesians use whatever they can. The prior could be empirical distribution such as age is between 0 and 130, temperature higher than -276 Celcius.
 
-We can build 
+.. figure:: /images/bayesian/Bayesian_nonuniform_prior.png
+  :align: center
+  :alt: alternate text
+  :figclass: align-center
 
-* hypothesis/prior :math:`P(H)`, *"is a woman"*
-* data/evidence :math:`P(E)`, *"has long hair"*
+  < Bayesian vs. Frequentists. Source: `Brandon Brohrer <https://brohrer.github.io/how_bayesian_inference_works.html>`_ >
 
-Let's make a naive assumption. There are 100 people in a shopping mall building. 50% of them are women and every woman has long hair. 10 men have long hair. Then we get
+The peak/mean of frequentists' distribution is the Maximam Likelihood Estimate(MLE). The peak/mean of bayesian distribution is the Maximum A Posteriori estimate(MAP). 
 
-* likelihood :math:`P(E|H) = \frac{50}{50} = 1.0`
-* posterior :math:`P(H|E) = \frac{50}{60} = 0.83`
+As Brandon mentions one should be aware of Bayesian traps. In Bayesian inference, we build prior ourselves and if the observed value doesn't exist in our prior then the posterior would be zero. Common trick is to use the normal distribution in order to keep the very low edges but which never becomes zero.
 
-In the shopping mall, the hypothesis is strong given the evidence.
 
-With Bayes' theorem, you can update the degree of belief by updating prior knowledge/hypothesis. Let's update our naive assumption. Now we are in a rock festival with full of Finnish heavy metal bands. Virtually **everyone** has long hair. There are 100 people in the room, 90 men and 10 women. We now get
-
-* hypothesis/prior :math:`P(H) = 0.1`, 
-* data/evidence :math:`P(E) = 1.0`
-* likelihood :math:`P(E|H) = \frac{10}{10} = 1`
-* posterior :math:`P(H|E) = \frac{10}{100} = 0.1`
-
-In the rock festival, the hypothesis is weak given the evidence.
-
-If you're still confused with basic probability theory, we can talk about other concepts using the same example as well.
-
-.. rubric:: Joint probability
-
-Joint probability literally means *"joint"* probability such as *“What is the probability that someone is a woman with short hair?”*, :math:`P(woman)\cdot{P(short-haired|woman)}`.
-
-.. rubric:: Marginal probability
-
-Marginal probability is just a sum of probabilities. Let's say we want to get marginal probability, *"What is the probability that a person has short hair?"*. It is expressed as
-
-.. math:: P(\text{person has short hair}) = P(\text{is female $\cap$ has short hair}) + P(\text{is male $\cap$ has short hair}) 
 ----------------------------------------------------------------------------------------
 
 .. rubric:: References
@@ -175,3 +155,4 @@ Marginal probability is just a sum of probabilities. Let's say we want to get ma
 .. [1] https://en.wikipedia.org/wiki/Bayesian_inference
 .. [2] https://en.wikipedia.org/wiki/Bayes%27_theorem
 .. [3] https://brohrer.github.io/how_bayesian_inference_works.html
+.. [4] https://github.com/YoungxHelsinki/papers/blob/961603b8eccf5352580871dd43052164ae540962/tutorials/primer.pdf
