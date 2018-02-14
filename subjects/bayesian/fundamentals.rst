@@ -30,7 +30,8 @@ Bayes' theorem describes probabilities of an event, based on prior knowledge –
 .. math::
   \begin{align}
   P(A|B) &= \frac{P(B|A)}{P(B)}  \times P(A) \\
-  \text{posterior} &= \frac{\text{Likelihood}}{\text{Marginal likelihood/Evidence}} \times \text{prior}
+  \text{posterior} &= \frac{\text{Likelihood}}{\text{Marginal likelihood/Evidence}} \times \text{prior} \\
+  \text{Evidence} &= P(B) = \int P(B, A) \, \mathrm{d}A
   \end{align}
 
 .. figure:: /images/bayesian/bayesian_outline.png
@@ -82,6 +83,15 @@ Prior                                               Hypothesis                  
 :math:`beta(a,b)`                                   :math:`\theta \in [0,1]`              x     :math:`geometric(\theta)`             :math:`beta(a+x, b+1)`
 :math:`\mathcal{N}(\mu_{prior}, \sigma_{prior}^2)`  :math:`\theta \in (-\infty,\infty)`   x     :math:`\mathcal{N}(\theta,\sigma^2)`  :math:`\mathcal{N}(\theta_{post},\sigma_{post}^2)`
 ==================================================  ====================================  ====  ====================================  ==================================================
+
+
+Weakly informative prior
+########################
+It a prior distribution which doesn't contain much information, but contains some enough information ‘regularize’ the posterior distribution, and to keep it roughly within reasonable bounds. It is often used in situations where we don't have much information but we want to ensure that the posterior distribution makes sense.
+
+Improper prior
+##############
+An improper prior is essentially a prior probability distribution that's infinitesimal over an infinite range, in order to add to one. For example, the uniform prior over all real numbers is an improper prior, as there would be an infinitesimal probability of getting a result in any finite range. It's common to use improper priors for when you have no prior information. [5]_
 
 ------------------------
 
@@ -156,3 +166,4 @@ As Brandon mentions one should be aware of Bayesian traps. In Bayesian inference
 .. [2] https://en.wikipedia.org/wiki/Bayes%27_theorem
 .. [3] https://brohrer.github.io/how_bayesian_inference_works.html
 .. [4] https://github.com/YoungxHelsinki/papers/blob/961603b8eccf5352580871dd43052164ae540962/tutorials/primer.pdf
+.. [5] http://lesswrong.com/lw/6uk/against_improper_priors/
