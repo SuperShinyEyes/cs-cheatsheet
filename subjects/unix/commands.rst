@@ -12,6 +12,7 @@ grep
   grep -rnw --exclude=\*.{html,js}  "Welcome"
 
 
+
 Processes
 #########
 
@@ -93,4 +94,14 @@ zfs
   # Set properties of the fs
   zfs set quota=500G timemachine_backup_zpool/fs
   zfs set compression=on timemachine_backup_zpool/fs
+
+
+Network
+#######
+
+.. code-block:: bash
+  
+  # Show open ports
+  netstat -tulpn | grep LISTEN    # sudo for process id
+  
 
