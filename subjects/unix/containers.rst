@@ -31,6 +31,15 @@ Docker solves the problem of having identical environments across various stages
   docker logs --tail 50 --follow --timestamps instance-name
   docker inspect
 
+
+  # Launch shell
+  docker exec -ti my-nginx /bin/sh
+
+
+  docker rm
+
+  
+
 Singularity
 ===========
 

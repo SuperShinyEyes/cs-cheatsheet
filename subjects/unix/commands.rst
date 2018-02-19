@@ -105,3 +105,6 @@ Network
   netstat -tulpn | grep LISTEN    # sudo for process id
   
 
+zfs create \
+    -o encryption=on \
+    -o keysource=passphrase,prompt \
