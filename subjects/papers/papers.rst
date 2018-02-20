@@ -35,6 +35,7 @@ Authors: Tero Karras, Timo Aila, Samuli Laine, Jaakko Lehtinen
   * :math:`a_{x,y}, b_{x,y}` original and normalized feature vector in pixel (x, y)
 
 * Used sliced Wasserstein distance(SWD) and multi-scale structural similarity(MS- SSIM) (`Odena_et_al_2017 <Odena_et_al_2017_>`_) to evaluate the importance our individual contributions, and also percep- tually validate the metrics themselves
+* Progressive variant offers two main benefits: it converges to a considerably better optimum and also reduces the total training time by about a factor of two.
 
 .. _paper_1: https://github.com/YoungxHelsinki/papers/blob/961603b8eccf5352580871dd43052164ae540962/papers/PROGRESSIVE%20GROWING%20OF%20GANS%20FOR%20IMPROVED%20QUALITY%2C%20STABILITY%2C%20AND%20VARIATION.pdf
 .. _celeba: http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html
