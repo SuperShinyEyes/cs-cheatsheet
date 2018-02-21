@@ -13,7 +13,7 @@ This is a collection of the papaers I've read.
 
 `PROGRESSIVE GROWING OF GANS FOR IMPROVED QUALITY, STABILITY, AND VARIATION <paper_1_>`_
 ========================================================================================
-Authors: Tero Karras, Timo Aila, Samuli Laine, Jaakko Lehtinen
+Authors: Tero Karras, Timo Aila, Samuli Laine, Jaakko Lehtinen, 2018
 
 .. figure:: /images/papers/progressive_gan.png
    :align: center
@@ -42,3 +42,15 @@ Authors: Tero Karras, Timo Aila, Samuli Laine, Jaakko Lehtinen
 .. _Krizhevsky_et_al_2012: https://github.com/YoungxHelsinki/papers/blob/10de999c78d6915ee05af6e3a5c72937782d0df1/papers/imagenet-classification-with-deep-convolutional-neural-networks.pdf
 .. _Odena_et_al_2017: https://github.com/YoungxHelsinki/papers/blob/bff51d631a512b10507458d5d1e9f28db5a6192f/papers/Conditional_Image_Synthesis_with_Auxiliary_Classifier_GANs.pdf
 .. _Deep_Residual_Learning_for_Image_Recognition: https://github.com/YoungxHelsinki/papers/blob/df81a25a4e33d9b96b33e46fa6523ddc30a96f69/papers/Deep_Residual_Learning_for_Image_Recognition.pdf
+
+------------------------------------------------------
+
+`UNSUPERVISED REPRESENTATION LEARNING WITH DEEP CONVOLUTIONAL GENERATIVE ADVERSARIAL NETWORKS <papar_2>`_
+=========================================================================================================
+Authors: Alec Radford & Luke Metz, Soumith Chintala, 2016
+
+CNN, DNN, DCGANS, maximum likelihood
+
+.. _paper_2: https://github.com/YoungxHelsinki/papers/blob/b3ce367a97973b679d35b09baabb1320fd668a76/papers/UNSUPERVISED%20REPRESENTATION%20LEARNING%20WITH%20DEEP%20CONVOLUTIONAL%20GENERATIVE%20ADVERSARIAL%20NETWORKS.pdf
+
+.. _ Goodfellow_et_al_2014: https://github.com/YoungxHelsinki/papers/blob/b3ce367a97973b679d35b09baabb1320fd668a76/papers/%20Generative%20Adversarial%20Nets.pdf
