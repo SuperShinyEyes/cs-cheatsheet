@@ -106,14 +106,14 @@ Probability of severe headaches P(E = 1) depends only on the fact whether a pers
 
 -----------------------------------------------------------------------------------------
 
-Q. Derivation of the posterior distribution
-===========================================
-http://halweb.uc3m.es/esp/Personal/personas/mwiper/docencia/English/PhD_Bayesian_Statistics/ch3_2009.pdf
-https://www.youtube.com/watch\?v\=0XD6C_MQXXE
+Q. `Derivation of the posterior distribution <MLAPM_exercise_03_>`_
+===================================================================
+* http://halweb.uc3m.es/esp/Personal/personas/mwiper/docencia/English/PhD_Bayesian_Statistics/ch3_2009.pdf
+* https://www.youtube.com/watch\?v\=0XD6C_MQXXE
 
 
-Q. Multivariate Gaussian
-========================
+Q. `Multivariate Gaussian <MLAPM_exercise_03_>`_
+================================================
 Reference: https://learnbayes.org/index.php?option=com_content&view=article&id=77%3Acompletesquare&catid=83&Itemid=479&showall=1&limitstart=
 
 
@@ -216,8 +216,8 @@ The Bayesian estimate is half of MLE hence, it is closer to the tru value.
 -----------------------------------------------
 
 
-Q3. Wishart distribution
-========================
+`Q3. Wishart distribution <MLAPM_exercise_03_>`_
+================================================
 
 part a
 ######
@@ -296,5 +296,8 @@ CODE
 
   plt.show()
 
+.. _MLAPM_exercise_03: https://github.com/YoungxHelsinki/papers/blob/feda0b60807566d07be4f4432608f874a05bf358/exercises/MLAPM_exercise-03.pdf
 -------------------
+
+.. rubric:: References
 
