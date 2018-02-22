@@ -12,6 +12,17 @@ grep
   grep -rnw --exclude=\*.{html,js}  "Welcome"
 
 
+File system
+###########
+
+.. code-block:: bash
+
+  # Check file systems
+  df -T
+
+  # Delete all partition table on a disk
+  # Unmount all partitions!
+  dd if=/dev/zero of=/dev/sda bs=512 count=1 conv=notrunc
 
 Processes
 #########
@@ -95,6 +106,23 @@ zfs
   zfs set quota=500G timemachine_backup_zpool/fs
   zfs set compression=on timemachine_backup_zpool/fs
 
+  # zfs version
+  dmesg | grep ZFS
+  modinfo zfs
+  cat /sys/module/zfs/version
+
+  # Add a disk
+  # https://www.howtogeek.com/175159/an-introduction-to-the-z-file-system-zfs-for-linux/
+  sudo zpool add -f pool /dev/sde /dev/sdf /dev/sdg
+
+  # Setting mount point
+  zfs get mountpoint timemachine_backup_zpool/fs
+  zfs unmount -f timemachine_backup_zpool/fs  
+  zfs set mountpoint=/home/leon/timemachine_backup_zpool/fs timemachine_backup_zpool/fs
+  zfs get mountpoint timemachine_backup_zpool/fs
+  zfs mount 
+  zfs get mounted pool/filesystem
+  
 
 Network
 #######
