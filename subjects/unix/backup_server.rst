@@ -226,4 +226,7 @@ Linux
 .. [3] https://samuelhewitt.com/blog/2015-09-12-debian-linux-server-mac-os-time-machine-backups-how-to
 .. [4] https://kremalicious.com/ubuntu-as-mac-file-server-and-time-machine-volume/
 .. [5] https://wiki.archlinux.org/index.php/avahi#File_sharing
-
+.. [Time Machine Server Requirements] https://developer.apple.com/library/content/documentation/NetworkingInternetWeb/Conceptual/TimeMachineNetworkInterfaceSpecification/TimeMachineRequirements/TimeMachineRequirements.html
+.. [AFP and SMB File Sharing on CentOS 7] https://zitseng.com/archives/6182
+.. [Time Machine Setup On CentOS 7] https://zitseng.com/archives/10208
+.. [Don't use FreeNAS] https://community.spiceworks.com/topic/1688975-why-would-you-pick-freenas?page=2

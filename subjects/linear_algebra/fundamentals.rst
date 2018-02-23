@@ -27,16 +27,16 @@ Intuitively, eigenvectors and eigenvalues are related to transformation. When a 
 :math:`A` will squash everything into *null* and there will be only one eigenvector :math:`\begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}`
 
 Eigenvector in 3D rotations
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+###########################
 An eigenvectors in a 3D rotation means the **axis of a rotation**. And because a rotation doesn't change the scale, the **eigenvalue should be 1**. 
 
 
 Eigenvector in 2D rotations
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+###########################
 There is no eigenvector in 2D rotations. No eigenvector implies no real-valued eigenvalue but imaginary-valued.
 
 Single eigenvalue with multiple eigenvectors
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+############################################
 There could be multiple eigenvectors but only one single eigenvalue. Consider a transformation :math:`A`:
 
 .. math::
@@ -51,7 +51,7 @@ There could be multiple eigenvectors but only one single eigenvalue. Consider a 
 :math:`A` scales every eigenvector by 2 and only 2.
 
 Calculation
-^^^^^^^^^^^
+###########
 .. math::
 	\overbrace{
 	  A \vec{v}
@@ -89,7 +89,7 @@ Remember the squashification? :math:`(A - \lambda I)` is squashing :math:`\vec{v
 
 
 Eigenbasis
-^^^^^^^^^^
+##########
 Consider a 2D vectorspace. If both basis vectors are eigenvectors then its transformation matrix would be diagonal. Here's step-by-step:
 
 A typical set of eigen vectors in 2D:
@@ -127,7 +127,7 @@ The columns of the transformation matrix happnes to be the eigenvectors and, **t
    
 
 Eigenbasis for easier power
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+###########################
 Consider a transformation :math:`A`,
 
 .. math::
@@ -185,3 +185,30 @@ Now let's change its basis,
        3       & 0 \\
        0       & 2
    \end{bmatrix}	  
+
+
+Hessian matrix
+==============
+The Hessian Matrix is a square matrix of second ordered partial derivatives of a scalar function. It is of immense use in linear algebra as well as for determining points of local maxima or minima. [1]_
+
+.. figure:: /images/linear_algebra/hessian.png
+  :align: center
+  :alt: alternate text
+  :figclass: align-center
+
+
+Conditions for Minima,Maxima,Saddle point
+#########################################
+
+The Hessian of a function is denoted by :math:`\Delta^2f(x,y)` where :math:`f` is a twice differentiable function & if :math:`(x_0,y_0)` is one of it's stationary points then :
+
+* If :math:`\Delta^2f(x_0,y_0)>0` i.e positive definite , :math:`(x_0,y_0)` is a point of local minimum.
+* If :math:`\Delta^2f(x_0,y_0)<0` , i.e. negative definite , :math:`(x_0,y_0)` is a point of local maximum.
+* If :math:`\Delta^2f(x_0,y_0)` is neither positive nor negative i.e. Indefinite , :math:`(x_0,y_0)` is a saddle point
+
+
+
+
+.. rubric:: Reference
+
+.. [1] https://brilliant.org/wiki/hessian-matrix/
