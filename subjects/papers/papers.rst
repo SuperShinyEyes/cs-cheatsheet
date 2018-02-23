@@ -49,6 +49,40 @@ Authors: Tero Karras, Timo Aila, Samuli Laine, Jaakko Lehtinen, 2018
 =========================================================================================================
 Authors: Alec Radford & Luke Metz, Soumith Chintala, 2016
 
+Related work on unsupervised representation learning
+####################################################
+
+* :red:`Hierarchical clustring` of image patches(Coates & Ng 2012)
+* :red:`auto-encoder training` (Vincent et al. 2010), (Zhao et al., 2015), (Rasmus et al., 2015)
+* :red:`Deep belief networks` (Lee et al., 2009)
+
+Generating natural images
+#########################
+* parametric
+
+  * samples often suffer from being blurry
+  * iterative forward diffusion process (Sohl-Dickstein et al., 2015)
+  * GAN (`Goodfellow et al., 2014 <Goodfellow_et_al_2014>`_) suffers from being noisy and incomprehensible.
+    
+    * A :red:`laplacian pyramid` extension to this approach (Denton et al., 2015) showed higher quality images, but they still suffered from the objects looking wobbly because of noise introduced in chaining multiple models. 
+    * A recurrent network approach (Gregor et al., 2015) and a deconvolution network approach (Dosovitskiy et al., 2014) have also recently had some success with generating natural images. However, they have not leveraged the generators for supervised tasks.
+
+* non-parametric
+
+  * do matching from a database of existing images
+
+Approach & Architecture
+#######################
+Until LAPGAN (Denton et al., 2015) appeared GANs using CNNs to model images was not scalable. LAPGAN is an alternative approach to iteratively upscale low resolution generated images which can be modeled more reliably.
+
+* Used convolutional net (Springenberg et al., 2014) which replaces :red:`deterministic spatial pooling` functions (such as maxpooling) with strided convolutions, allowing the network to learn its own spatial downsampling/upsampling. Used in generators and discriminators.
+
+* Eliminated fully connected layers on top of convolutional features. (Mordvintsev et al.) used this approach in their art image classifiers with global average pooling.
+
+* :red:`Batch Normalization` (Ioffe & Szegedy, 2015) which stabilizes learning by normalizing the input to each unit to have zero mean and unit variance. This helps deal with training problems that arise due to poor initialization and helps gradient flow in deeper models. Applying batchnorm to all layers however, resulted in sample oscillation and model instability. This was avoided by not applying batchnorm to the generator output layer and the discriminator input layer.
+
+
+
 CNN, DNN, DCGANS, maximum likelihood
 
 .. _paper_2: https://github.com/YoungxHelsinki/papers/blob/b3ce367a97973b679d35b09baabb1320fd668a76/papers/UNSUPERVISED%20REPRESENTATION%20LEARNING%20WITH%20DEEP%20CONVOLUTIONAL%20GENERATIVE%20ADVERSARIAL%20NETWORKS.pdf
