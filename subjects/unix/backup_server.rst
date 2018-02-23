@@ -17,6 +17,7 @@ Dependencies
 
 Steps
 ^^^^^
+We should remember that some zfs file system options cannot be changed once created.
 
 .. code-block:: bash
 
@@ -28,6 +29,9 @@ Steps
   # Create a fs
   zfs create timemachine_backup_zpool/fs
   zfs list
+
+  # https://linux.die.net/man/8/zfs
+  zfs create -o normalization=formD -o nbmand=off -o utf8only=on -o aclinherit=passthrough
 
   # Properties of the fs
   zfs get all timemachine_backup_zpool/fs
@@ -48,6 +52,34 @@ Steps
 
   sudo service netatalk restart
 
+
+ZFS setup
+^^^^^^^^^
+
+From `ZFS Linux mail list <zfs_linux_mail_list_>`_:
+
+  On ext4 (or ZFS with normalization=none), you get two files that appear to have the same name, because one is NFC (uses LATIN SMALL LETTER E WITH ACUTE) and the other is NFD (LATIN SMALL LETTER E, COMBINING ACUTE ACCENT). If you use any of the other normalization options on ZFS, they will be treated as the same file. This seems like a desirable behavior to me, and should help avoid interoperability problems across systems which generally use different normal forms (e.g. Linux vs. OS X).
+
+.. code-block:: bash
+  zfs create -o normalization=formD
+
+In macOS, options `-O casesensitivity=insensitive -O normalization=formD` are `essential <zfs_option_on_macOS_>`_.
+
+.. _zfs_option_on_macOS: https://apple.stackexchange.com/a/111186/266739
+
+.. code-block:: bash
+  sudo zpool create -f -o ashift=12 \
+  -O compression=lz4 \
+  -O casesensitivity=insensitive \
+  -O atime=off \
+  -O normalization=formD \
+  -poolname- mirror /dev/disk /dev/disk  
+
+* compression=lz4, which not only saves space, but is faster as well. Loading a file from even an SSD is slow, decompressing it the CPU faster. So, the reduced file size helps loading it faster, while the time needed for decompression is still smaller, resulting in overall lesser time used. Follow this link for experimental results.
+* atime=off switches of the access time file attribute. Otherwise every time a file is read the access time would be set to the current date, issuing an unnecessary write (wearing down the hard drive and endangering the file).
+* ashift=12 adapts the block size to suit modern hard drives (Advanced Format Disks). Read on for a better explanation.
+
+.. _zfs_linux_mail_list: http://list.zfsonlinux.org/pipermail/zfs-discuss/2013-July/010059.html
 
 Client(Macs)
 ############
@@ -230,3 +262,11 @@ Linux
 .. [AFP and SMB File Sharing on CentOS 7] https://zitseng.com/archives/6182
 .. [Time Machine Setup On CentOS 7] https://zitseng.com/archives/10208
 .. [Don't use FreeNAS] https://community.spiceworks.com/topic/1688975-why-would-you-pick-freenas?page=2
+.. [Restoring from a snapshot with APFS] https://datarecovery.wondershare.com/apfs/how-to-convert-hfs-to-apfs-without-losing-data.html
+.. [the safest file storage setup (using zfs)] http://patrick.mukherjee.de/?p=304
+.. [Install ZFS on Debian GNU/Linux] https://pthree.org/2012/04/17/install-zfs-on-debian-gnulinux/
+.. [Rsync OS X] https://rsyncosx.github.io/Documentation/docs/DIYNAS.html
+.. [APFS in Detail: Encryption, Snapshots, and Backup] http://dtrace.org/blogs/ahl/2016/06/19/apfs-part2/
+.. [Apple APFS Guide] https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/APFS_Guide/Introduction/Introduction.html
+.. [ZFS cheatsheet] https://www.thegeekdiary.com/solaris-zfs-command-line-reference-cheat-sheet/
+.. [Time Machine Server Requirements] https://developer.apple.com/library/content/documentation/NetworkingInternetWeb/Conceptual/TimeMachineNetworkInterfaceSpecification/TimeMachineRequirements/TimeMachineRequirements.html
