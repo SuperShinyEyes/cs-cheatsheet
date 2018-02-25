@@ -81,9 +81,20 @@ Until LAPGAN (Denton et al., 2015) appeared GANs using CNNs to model images was 
 
 * :red:`Batch Normalization` (Ioffe & Szegedy, 2015) which stabilizes learning by normalizing the input to each unit to have zero mean and unit variance. This helps deal with training problems that arise due to poor initialization and helps gradient flow in deeper models. Applying batchnorm to all layers however, resulted in sample oscillation and model instability. This was avoided by not applying batchnorm to the generator output layer and the discriminator input layer.
 
+* Architecture guidelines for stable Deep Convolutional GANs
 
+  • Replace any pooling layers with strided convolutions (discriminator) and fractional-strided convolutions (generator).
+  • Use batchnorm in both the generator and the discriminator.
+  • Remove fully connected hidden layers for deeper architectures.
+  • Use ReLU activation in generator for all layers except for the output, which uses Tanh.
+  • Use LeakyReLU activation in the discriminator for all layers.
 
-CNN, DNN, DCGANS, maximum likelihood
+Vector arithmetic for visual concepts
+#####################################
+.. figure:: /images/deep_learning/Vector_arithmetic_for_visual_concepts.png
+   :align: center
+   :alt: alternate text
+   :figclass: align-center
 
 .. _paper_2: https://github.com/YoungxHelsinki/papers/blob/b3ce367a97973b679d35b09baabb1320fd668a76/papers/UNSUPERVISED%20REPRESENTATION%20LEARNING%20WITH%20DEEP%20CONVOLUTIONAL%20GENERATIVE%20ADVERSARIAL%20NETWORKS.pdf
 
