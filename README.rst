@@ -192,7 +192,7 @@ Reference them this way::
 
 ----
 
-Notes, warnings, etc.
+Admonitions: attention, caution, danger, error, hint, important, note, tip, warning, etc.
 
 .. note::
 
@@ -201,6 +201,10 @@ Notes, warnings, etc.
 .. warning::
 
    This is a warning
+
+.. seealso:: 
+
+  This is a simple **seealso** note.
 
 ::
 
@@ -211,3 +215,23 @@ Notes, warnings, etc.
   .. warning::
 
     This is a warning
+
+  .. seealso:: 
+
+    This is a simple **seealso** note.
+
+
+---
+
+.. topic:: Topic Title
+
+    Subsequent indented lines comprise
+    the body of the topic, and are
+    interpreted as body elements.
+
+.. sidebar:: Sidebar Title
+   :subtitle: Optional Sidebar Subtitle
+
+   Subsequent indented lines comprise
+   the body of the sidebar, and are
+   interpreted as body elements.

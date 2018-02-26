@@ -91,11 +91,37 @@ Until LAPGAN (Denton et al., 2015) appeared GANs using CNNs to model images was 
 
 Vector arithmetic for visual concepts
 #####################################
-.. figure:: /images/deep_learning/Vector_arithmetic_for_visual_concepts.png
+.. figure:: /images/papers/Vector_arithmetic_for_visual_concepts.png
    :align: center
    :alt: alternate text
    :figclass: align-center
 
+
 .. _paper_2: https://github.com/YoungxHelsinki/papers/blob/b3ce367a97973b679d35b09baabb1320fd668a76/papers/UNSUPERVISED%20REPRESENTATION%20LEARNING%20WITH%20DEEP%20CONVOLUTIONAL%20GENERATIVE%20ADVERSARIAL%20NETWORKS.pdf
 
 .. _ Goodfellow_et_al_2014: https://github.com/YoungxHelsinki/papers/blob/b3ce367a97973b679d35b09baabb1320fd668a76/papers/%20Generative%20Adversarial%20Nets.pdf
+
+---------------------------------------
+
+`Visualizing and Understanding Convolutional Networks`_
+=======================================================
+
+.. figure:: /images/papers/deconvnet_figure.png
+  :align: center
+  :alt: alternate text
+  :figclass: align-center
+
+  < Top: A `deconvnet <Adaptive Deconvolutional Networks for Mid and High Level Feature Learning_>`_ layer (left) attached to a con- vnet layer (right). The deconvnet will reconstruct an approximate version of the convnet features from the layer beneath. Bottom: An illustration of the unpooling operation in the deconvnet, using switches which record the location of the local max in each pooling region (colored zones) during pooling in the convnet. >
+
+:red:`Why do they run rectifier in deconvnet???`
+
+.. Topic:: References
+
+  * `Visualizing and Understanding Convolutional Networks`_
+  * `Youtube_Visualizing and Understanding Deep Neural Networks by Matt Zeiler`_
+  * `How does a deconvolutional neural network work`_
+
+.. _Visualizing and Understanding Convolutional Networks: https://github.com/YoungxHelsinki/papers/blob/4bc6eee3a68cb7da5277ff66ccefd8815a7f778d/papers/Visualizing%20and%20Understanding%20Convolutional%20Networks.pdf
+.. _Youtube_Visualizing and Understanding Deep Neural Networks by Matt Zeiler: https://www.youtube.com/watch?time_continue=1&v=ghEmQSxT6tw
+.. _How does a deconvolutional neural network work: https://www.quora.com/How-does-a-deconvolutional-neural-network-work
+.. _Adaptive Deconvolutional Networks for Mid and High Level Feature Learning: http://www.matthewzeiler.com/wp-content/uploads/2017/07/iccv2011.pdf

@@ -47,6 +47,10 @@ Common techniques [1]_
 * Perspective transform
 
 
+Deconvolutional Network
+=======================
+*"A deconvnet can be thought of as a convnet model that uses the same components (filtering, pooling) but in reverse, so instead of mapping pixels to features does the oppo- site. In (Zeiler et al., 2011), deconvnets were proposed as a way of performing unsupervised learning. Here, they are not used in any learning capacity, just as a probe of an already trained convnet."* [2]_
+
 
 ---------------------------------------------
 
@@ -54,3 +58,4 @@ Common techniques [1]_
 
 .. [Deep_Learning_Andrew_Ng] https://www.coursera.org/learn/convolutional-neural-networks/lecture/AYzbX/data-augmentation?authMode=login
 .. [1] https://medium.com/ymedialabs-innovation/data-augmentation-techniques-in-cnn-using-tensorflow-371ae43d5be9
+.. [2] https://github.com/YoungxHelsinki/papers/blob/4bc6eee3a68cb7da5277ff66ccefd8815a7f778d/papers/Visualizing%20and%20Understanding%20Convolutional%20Networks.pdf

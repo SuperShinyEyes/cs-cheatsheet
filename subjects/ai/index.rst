@@ -7,4 +7,5 @@ AI
 
    fundamentals.rst 
    search.rst
+   logic.rst
    reference.rst
