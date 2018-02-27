@@ -297,7 +297,179 @@ CODE
   plt.show()
 
 .. _MLAPM_exercise_03: https://github.com/YoungxHelsinki/papers/blob/feda0b60807566d07be4f4432608f874a05bf358/exercises/MLAPM_exercise-03.pdf
+
+
 -------------------
 
+Q. Posterior of regression weights
+==================================
+
+We have 
+
+* prior :math:`p(w|\alpha)`
+* likelihood :math:`p(y|\mathbf{X},w,\beta)`
+* posterior :math:`p(w|y,\mathbf{X},\alpha,\beta)`
+
+By Bayesian we can get posterior by multiplying the prior and liklihood. Here we want to just derive the posterior thus we ignore constants. Also for multivariate gaussian distribution, it is easier to work with logarithms. Thus,
+
+.. math::
+  \log p(w|y,\mathbf{X},\alpha,\beta) = \log p(w|\alpha) + \log p(y|\mathbf{X},w,\beta)
+
+.. math::
+  \propto \frac{-1}{2} w^T (\alpha^{-1} I)^{-1} w - \frac{1}{2} (y - \mathbf{X}w)^T(\beta^{-1} I)^{-1} (y - \mathbf{X}w)
+
+.. math::
+  \propto \frac{-\alpha}{2} w^T w - \frac{\beta}{2} \big[ y^T y - 2w^T \mathbf{X}^T y + w^T \mathbf{X}^T \mathbf{X} w \big] 
+
+.. math::
+  \propto \frac{-1}{2} w^T \big[ \alpha + \beta \mathbf{X}^T \mathbf{X} \big] w + \beta w^T  \mathbf{X}^T y 
+
+
+In *WEEK3 problem 2* we derived the logarithm of the multivariate normal distribution :math:`x|\mu \sim \mathcal{N} (\mu, \Sigma)`
+
+.. math::
+  \propto \frac{-1}{2} x^T \Sigma^{-1} x + x^T \Sigma^{-1} \mu
+
+If we compare this to what we have derived above we see the same pattern i.e., we have derived the posterior.
+
+.. math::
+  \begin{align}
+  \mathbf{S} &= (\alpha + \beta \mathbf{X}^T \mathbf{X})^{-1} \\
+  \mathbf{m} &=  \mathbf{S} (\mathbf{S}^{-1} m) \\
+  &= \beta \mathbf{S} \mathbf{X}^T y
+  \end{align}
+
+
+Q. Poisson regression with Laplace approximation
+================================================
+
+(a)
+###
+Poisson maximum likelihood is as follows
+
+.. math::
+  p(y_i | \theta) = \prod_{i=1}^N \frac{exp(y_i \theta^T x_i) exp(-e^{\theta^T x_i})}{y_i!}
+
+Then,
+
+.. math::
+  \begin{align}
+  \log p(\theta | y) &= \log p(y | \theta) + \log p(\theta) \\
+  &= \sum_{i=1}^N \big[ y_i \theta^T x_i - e^{\theta^T x_i}) \big] - \frac{\alpha}{2}\theta^T\theta + \text{constant}
+  \end{align}
+
+Now get the gradient 
+
+.. math::
+  \nabla \log p(\theta | y) = \sum_{i=1}^N \big[ y_i x_i - e^{\theta^T x_i} x_i \big] - \alpha \theta
+
+Now get the Hessian
+
+.. math::
+  \nabla \big(\nabla \log p(\theta | y) \big)^T = \sum_{i=1}^N \big[ - e^{\theta^T x_i} x_i x_i^T \big] - \alpha I 
+
+(b)
+###
+In general, 
+
+.. math::
+  p(w|\alpha, \mathcal{D}) \propto exp(-E(w)), \quad E(w) = - \log p(w|\alpha, \mathcal{D}) 
+
+Let :math:`E(\theta) = -\log p(\theta|y)`.
+
+Apply Laplace approximation
+
+.. math::
+  \widetilde{E}(\theta) \approx E(\bar{\theta}) + \frac{1}{2}(\theta - \bar{\theta})^T H_{\bar{\theta}} (\theta - \bar{\theta})
+
+:math:`\bar{\theta}` is the minimum of :math:`E(\theta)`.
+
+The mean is :math:`\bar{\theta}` and the covariance :math:`H_{\bar{\theta}}`.
+
+
+
+(c)
+###
+
+.. figure:: /images/bayesian/laplace_approx_posterior.png
+  :align: center
+  :alt: alternate text
+  :figclass: align-center
+
+  < Laplace approximation vs. true posterior >
+
+
+.. code-block:: python
+
+  # ML: Advanced Probabilistic Methods
+  # Round 4, problem 4.
+
+  import numpy as np
+  import matplotlib.pyplot as plt
+  from scipy.stats import norm
+
+  # get some data
+  data = np.loadtxt('ex4_4_data.txt')
+  x = data[:,0]
+  y = data[:,1]
+
+  theta_true = np.pi / 4 # true parameter used to generate the data
+  alpha = 1e-2 # prior's parameter
+
+  # compute Laplace approximation
+  theta_lapl = 0.5 # initial
+
+  # compute Laplace approximation
+  theta_lapl = 0.5 # initial
+
+  # iterate to optimum with newton's method to find the MAP estimate for theta
+  for iter in range(100):
+      # compute gradient
+      grad = -np.dot(np.exp(theta_lapl * x), x) + np.dot(x, y) - alpha * theta_lapl
+      # compute Hessian
+      H = - alpha - np.dot(np.exp(theta_lapl * x).T, x**2) 
+      theta_lapl = theta_lapl - grad / H # do newton step
+
+  # compute Hessian at optimum
+  H = -np.dot(np.exp(theta_lapl * x), x**2) - alpha
+
+  difference = theta_lapl - theta_true
+
+  # plot posterior densities
+  theta = np.linspace(0.55, 0.95, 1000)
+  post_true = np.zeros(1000)
+  for i in range(len(theta)):
+      # log posterior:
+      from scipy.misc import factorial
+      post_true[i] = (np.dot(y, x * theta[i]) - np.sum(np.exp(x * theta[i]) -
+                      np.log(factorial(y))) - 0.5*alpha*np.dot(theta[i], theta[i]))
+
+  M = np.amax(post_true)
+  post_true = np.exp(post_true-M) / np.sum(np.exp(post_true-M)) / (theta[1]-theta[0]) # normalize
+
+  post_laplace = norm.pdf(theta, theta_lapl, np.sqrt(-1/H)) 
+                 # compute approximative density at the points 'theta'
+                 # Hint: you can use norm.pdf from scipy.stats
+
+  plt.figure(1)
+  plt.plot(theta, post_true, '-k', label="True posterior")
+  plt.plot(theta, post_laplace, '-.r', label="Laplace approximation")
+  plt.plot(theta_true, 0, 'o', label="True value")
+  plt.xlim(0.55, 0.95)
+  plt.xlabel('$\\theta$')
+  plt.title('Posterior $p(\\theta|y)$')
+  plt.legend()
+
+  plt.figure(2)
+  plt.plot(x, y, 'o', x, np.exp(theta_lapl*x), '-r')
+  plt.xlabel('x')
+  plt.ylabel('y')
+  plt.title('Data')
+  plt.show()
+
+
+
+
+-------------------------
 .. rubric:: References
 
