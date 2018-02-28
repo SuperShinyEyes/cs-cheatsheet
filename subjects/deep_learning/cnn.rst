@@ -49,8 +49,11 @@ Common techniques [1]_
 
 Deconvolutional Network
 =======================
-*"A deconvnet can be thought of as a convnet model that uses the same components (filtering, pooling) but in reverse, so instead of mapping pixels to features does the oppo- site. In (Zeiler et al., 2011), deconvnets were proposed as a way of performing unsupervised learning. Here, they are not used in any learning capacity, just as a probe of an already trained convnet."* [2]_
+*"A deconvnet can be thought of as a convnet model that uses the same components (filtering, pooling) but in reverse, so instead of mapping pixels to features does the opposite. In (Zeiler et al., 2011), deconvnets were proposed as a way of performing unsupervised learning. Here, they are not used in any learning capacity, just as a probe of an already trained convnet."* [2]_
 
+In short, deconvolution layer is just a `transposed convolutional layer <https://datascience.stackexchange.com/a/12110>`_.
+
+https://www.youtube.com/watch?v=ByjaPdWXKJ4&feature=youtu.be&t=16m59s
 
 ---------------------------------------------
 

@@ -113,7 +113,9 @@ Vector arithmetic for visual concepts
 
   < Top: A `deconvnet <Adaptive Deconvolutional Networks for Mid and High Level Feature Learning_>`_ layer (left) attached to a con- vnet layer (right). The deconvnet will reconstruct an approximate version of the convnet features from the layer beneath. Bottom: An illustration of the unpooling operation in the deconvnet, using switches which record the location of the local max in each pooling region (colored zones) during pooling in the convnet. >
 
-:red:`Why do they run rectifier in deconvnet???`
+:red:`Why do they run rectifier in deconvnet???` -> The author says it's because the rectifier is used in forward passing so should be used in the backward passing as well. I don't think they have a really good reason. Read this `Quora answer <How does a deconvolutional neural network work_>`_.
+
+deconv_filters
 
 .. Topic:: References
 
