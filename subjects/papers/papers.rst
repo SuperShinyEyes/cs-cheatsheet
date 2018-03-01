@@ -106,6 +106,7 @@ Vector arithmetic for visual concepts
 `Visualizing and Understanding Convolutional Networks`_
 =======================================================
 
+
 .. figure:: /images/papers/deconvnet_figure.png
   :align: center
   :alt: alternate text
@@ -115,15 +116,28 @@ Vector arithmetic for visual concepts
 
 :red:`Why do they run rectifier in deconvnet???` -> The author says it's because the rectifier is used in forward passing so should be used in the backward passing as well. I don't think they have a really good reason. Read this `Quora answer <How does a deconvolutional neural network work_>`_.
 
-deconv_filters
+In computer vision it is important to have image patterns(*filters*) that cause high activations. The purpose of deconvolution is to visualize those....
+
+.. figure:: /images/papers/deconv_filters.png
+  :align: center
+  :alt: alternate text
+  :figclass: align-center
+
+  < Visualization of features in a fully trained model. For layers 2-5 we show the top 9 activations in a random subset of feature maps across the validation data, projected down to pixel space using our deconvolutional network approach. Our reconstructions are not samples from the model: they are reconstructed patterns from the validation set that cause high activations in a given feature map. For each feature map we also show the corresponding image patches. Note: (i) the the strong grouping within each feature map, (ii) greater invariance at higher layers and (iii) exaggeration of discriminative parts of the image, e.g. eyes and noses of dogs (layer 4, row 1, cols 1). >
 
 .. Topic:: References
 
   * `Visualizing and Understanding Convolutional Networks`_
   * `Youtube_Visualizing and Understanding Deep Neural Networks by Matt Zeiler`_
   * `How does a deconvolutional neural network work`_
+  * `Deconvolutional Networks Slides`_
+  * `Deconvolutional Networks Paper`_
+  * `Visualizing what ConvNets learn`_
 
 .. _Visualizing and Understanding Convolutional Networks: https://github.com/YoungxHelsinki/papers/blob/4bc6eee3a68cb7da5277ff66ccefd8815a7f778d/papers/Visualizing%20and%20Understanding%20Convolutional%20Networks.pdf
 .. _Youtube_Visualizing and Understanding Deep Neural Networks by Matt Zeiler: https://www.youtube.com/watch?time_continue=1&v=ghEmQSxT6tw
 .. _How does a deconvolutional neural network work: https://www.quora.com/How-does-a-deconvolutional-neural-network-work
 .. _Adaptive Deconvolutional Networks for Mid and High Level Feature Learning: http://www.matthewzeiler.com/wp-content/uploads/2017/07/iccv2011.pdf
+.. _Deconvolutional Networks Slides: https://cs.nyu.edu/~fergus/drafts/utexas2.pdf
+.. _Deconvolutional Networks Paper: http://www.matthewzeiler.com/wp-content/uploads/2017/07/cvpr2010.pdf
+.. _Visualizing what ConvNets learn: https://cs231n.github.io/understanding-cnn/

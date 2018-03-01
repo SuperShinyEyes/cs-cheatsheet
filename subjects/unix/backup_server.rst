@@ -68,18 +68,66 @@ In macOS, options `-O casesensitivity=insensitive -O normalization=formD` are `e
 .. _zfs_option_on_macOS: https://apple.stackexchange.com/a/111186/266739
 
 .. code-block:: bash
-  sudo zpool create -f -o ashift=12 \
-  -O compression=lz4 \
-  -O casesensitivity=insensitive \
-  -O atime=off \
-  -O normalization=formD \
-  -poolname- mirror /dev/disk /dev/disk  
+
+  sudo zpool create timemachine_pool -f \
+  -o ashift=12 \
+   /dev/sda /dev/sdb /dev/sdc
+
+  sudo zfs create timemachine_pool/mtkivela \
+  -o nbmand=off \
+  -o utf8only=on \
+  -o aclinherit=passthrough \
+  -o compression=lz4 \
+  -o casesensitivity=insensitive \
+  -o atime=off \
+  -o normalization=formD \
+  -o quota=500G
+
+
+  zfs create -o normalization=formD -o nbmand=off -o utf8only=on -o aclinherit=passthrough
+
+  -o ashift=12 # For advanced. http://louwrentius.com/zfs-performance-and-capacity-impact-of-ashift9-on-4k-sector-drives.html
 
 * compression=lz4, which not only saves space, but is faster as well. Loading a file from even an SSD is slow, decompressing it the CPU faster. So, the reduced file size helps loading it faster, while the time needed for decompression is still smaller, resulting in overall lesser time used. Follow this link for experimental results.
 * atime=off switches of the access time file attribute. Otherwise every time a file is read the access time would be set to the current date, issuing an unnecessary write (wearing down the hard drive and endangering the file).
-* ashift=12 adapts the block size to suit modern hard drives (Advanced Format Disks). Read on for a better explanation.
+* `ashift=12` This specifies that your disk is Advanced Format, which is the same as saying it has 4096 byte sectors instead of the old 512 byte sectors. Most disks made after 2011 are advanced format so you'll need this option most of the time. If you forget, ZFS assumes the sector size is 512. If that's the wrong answer, you'll take a big performance hit.
+
+Here's a script that automates the filesystem creation and acl update. Use with `./setup.sh username`.
+
+.. code-block:: bash
+  
+  #!/bin/bash
+  # setup.sh
+
+  username=$1
+
+  zfs create timemachine_pool/$username \
+    -o nbmand=off \
+    -o utf8only=on \
+    -o aclinherit=passthrough \
+    -o compression=lz4 \
+    -o casesensitivity=insensitive \
+    -o atime=off \
+    -o normalization=formD \
+    -o quota=500G
+
+  chown -R $username /timemachine_pool/$username
 
 .. _zfs_linux_mail_list: http://list.zfsonlinux.org/pipermail/zfs-discuss/2013-July/010059.html
+
+
+Netatalk setup
+^^^^^^^^^^^^^^
+Set logging
+
+.. code-block:: bash
+  
+  # Put this at the end of /etc/netatalk/afpd.conf
+  -setuplog "default log_info /var/log/afpd.log"
+
+  service netatalk restart
+
+  tail -f /var/log/afpd.log
 
 Client(Macs)
 ############
