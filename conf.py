@@ -115,7 +115,7 @@ todo_include_todos = True
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'alabaster'
+# html_theme = 'alabaster'
 
 import sphinx_rtd_theme
 html_theme = "sphinx_rtd_theme"
@@ -131,8 +131,8 @@ html_theme_options = {
     #'canonical_url': 'http://scicomp.aalto.fi/'
     }
 html_context = {'display_github': True,
-                'github_user': 'AaltoScienceIT',
-                'github_repo': 'triton-docs',
+                'github_user': 'youngxhelsinki',
+                'github_repo': 'cs-cheatsheet',
                 'github_version': 'master/',
                }
 

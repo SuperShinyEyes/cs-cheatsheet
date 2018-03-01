@@ -14,15 +14,16 @@ These docs are mainly maintained by `Seyoung Park <http://www.seyoung.xyz>`_.
 .. toctree::
    :maxdepth: 3
 
-   subjects/linear_algebra/index
-   subjects/prob_stat/index
-   subjects/bayesian/index
-   subjects/machine_learning/index
-   subjects/deep_learning/index
-   subjects/computer_graphics/index
    subjects/ai/index
-   subjects/unix/index
+   subjects/bayesian/index
+   subjects/calculus/index
+   subjects/computer_graphics/index
+   subjects/deep_learning/index
+   subjects/linear_algebra/index
+   subjects/machine_learning/index
    subjects/papers/papers
+   subjects/prob_stat/index
+   subjects/unix/index
 
 
 Metadocs
