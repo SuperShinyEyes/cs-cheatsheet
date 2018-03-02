@@ -1,7 +1,11 @@
-=============
-Mixture Model
-=============
+=====================
+Variational Inference
+=====================
 
+*Variational* means you vary parameters in each step. In that sense EM algorithm is k-mean.
+
+Gaussian mixture models
+=======================
 Gaussian mixture models are a probabilistic model for representing normally distributed subpopulations within an overall population. Mixture models in general don't require knowing which subpopulation a data point belongs to, allowing the model to learn the subpopulations automatically. Since subpopulation assignment is not known, this constitutes a form of unsupervised learning. [1]_
 
 
