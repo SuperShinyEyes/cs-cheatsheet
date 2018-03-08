@@ -7,8 +7,8 @@ This docs is about building a desktop backup server. Under progress atm.
 macOS
 =====
 
-Host(Ubuntu zfs)
-################
+Host(Ubuntu zfs) with Netatalk 2
+################################
 
 Dependencies
 ^^^^^^^^^^^^
@@ -61,6 +61,7 @@ From `ZFS Linux mail list <zfs_linux_mail_list_>`_:
   On ext4 (or ZFS with normalization=none), you get two files that appear to have the same name, because one is NFC (uses LATIN SMALL LETTER E WITH ACUTE) and the other is NFD (LATIN SMALL LETTER E, COMBINING ACUTE ACCENT). If you use any of the other normalization options on ZFS, they will be treated as the same file. This seems like a desirable behavior to me, and should help avoid interoperability problems across systems which generally use different normal forms (e.g. Linux vs. OS X).
 
 .. code-block:: bash
+
   zfs create -o normalization=formD
 
 In macOS, options `-O casesensitivity=insensitive -O normalization=formD` are `essential <zfs_option_on_macOS_>`_.
@@ -73,7 +74,7 @@ In macOS, options `-O casesensitivity=insensitive -O normalization=formD` are `e
   -o ashift=12 \
    /dev/sda /dev/sdb /dev/sdc
 
-  sudo zfs create timemachine_pool/mtkivela \
+  sudo zfs create timemachine_pool/user \
   -o nbmand=off \
   -o utf8only=on \
   -o aclinherit=passthrough \
@@ -81,7 +82,7 @@ In macOS, options `-O casesensitivity=insensitive -O normalization=formD` are `e
   -o casesensitivity=insensitive \
   -o atime=off \
   -o normalization=formD \
-  -o quota=500G
+  -o quota=300G
 
 
   zfs create -o normalization=formD -o nbmand=off -o utf8only=on -o aclinherit=passthrough
@@ -129,6 +130,87 @@ Set logging
 
   tail -f /var/log/afpd.log
 
+
+To set number of clients, edit `/etc/default/netatalk` and restart Netatalk.
+
+.. code-block:: bash
+  
+  # /etc/default/netatalk  
+  # Netatalk 2.x configuration
+
+  #########################################################################
+  # Global configuration
+  #########################################################################
+
+  #### machine's AFPserver/AppleTalk name.
+  #ATALK_NAME=machinename
+
+  #### server (unix) and legacy client (<= Mac OS 9) charsets
+  ATALK_UNIX_CHARSET='LOCALE'
+  ATALK_MAC_CHARSET='MAC_ROMAN'
+
+  #### Don't Edit. export the charsets, read form ENV by apps
+  export ATALK_UNIX_CHARSET
+  export ATALK_MAC_CHARSET
+
+  #########################################################################
+  # AFP specific configuration
+  #########################################################################
+
+  #### Set which daemons to run.
+  #### If you use AFP file server, run both cnid_metad and afpd.
+  CNID_METAD_RUN=yes
+  AFPD_RUN=yes
+
+  #### maximum number of clients that can connect:
+  AFPD_MAX_CLIENTS=50
+
+  #### UAMs (User Authentication Modules)
+  #### available options: uams_dhx.so, uams_dhx2.so, uams_guest.so,
+  ####                    uams_clrtxt.so(legacy), uams_randnum.so(legacy)
+  #AFPD_UAMLIST="-U uams_dhx2.so,uams_clrtxt.so"
+
+  #### Set the id of the guest user when using uams_guest.so
+  #AFPD_GUEST=nobody
+
+  #### config for cnid_metad. Default log config:
+  #CNID_CONFIG="-l log_note"
+
+  #########################################################################
+  # AppleTalk specific configuration (legacy)
+  #########################################################################
+
+  #### Set which legacy daemons to run.
+  #### If you need AppleTalk, run atalkd.
+  #### papd, timelord and a2boot are dependent upon atalkd.
+  #ATALKD_RUN=no
+  #PAPD_RUN=no
+  #TIMELORD_RUN=no
+  #A2BOOT_RUN=no
+
+  #### Control whether the daemons are started in the background.
+  #### If it is dissatisfied that legacy atalkd starts slowly, set "yes".
+  #### In case using systemd/systemctl, this is not so significant.
+  #ATALK_BGROUND=no
+
+  #### Set the AppleTalk Zone name.
+  #### NOTE: if your zone has spaces in it, you're better off specifying
+  ####       it in atalkd.conf
+  #ATALK_ZONE=@zone
+
+After the edit, you run `service netatalk status` and you see `-c 50` which sets the max num. of clients as 50.
+
+.. code-block:: bash
+
+  ● netatalk.service
+     Loaded: loaded (/etc/init.d/netatalk; bad; vendor preset: enabled)
+     Active: active (running) since Thu 2018-03-08 12:45:10 EET; 46s ago
+       Docs: man:systemd-sysv-generator(8)
+    Process: 953 ExecStart=/etc/init.d/netatalk start (code=exited, status=0/SUCCESS)
+     CGroup: /system.slice/netatalk.service
+             ├─974 /usr/sbin/cnid_metad -l log_note
+             └─986 /usr/sbin/afpd -U uams_dhx2.so,uams_clrtxt.so -g nobody -c 50 -n TimeMachine
+
 Client(Macs)
 ############
 
@@ -153,6 +235,7 @@ Enter the Backup from Time Machine in Recovery Mode.
 Set source as `afp://username@gorilla.org.gakkou.fi/tm`. The final directory which you defined to share in `/etc/netatalk/AppleVolumes.default` should be given after the ip address. If you cannot check the server you could try when mounted, 
 
 .. code-block:: bash
+
   # Show all mounted disks
   mount
 

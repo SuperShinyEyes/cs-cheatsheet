@@ -10,5 +10,6 @@ Bayesian
   bayesian_models.rst
   mixture_models.rst
   mcmc.rst
+  probabilistic_modeling.rst
   practices.rst
   references.rst

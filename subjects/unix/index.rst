@@ -8,4 +8,5 @@ UNIX
   commands.rst
   containers.rst
   backup_server.rst
+  netatalk3
   references.rst

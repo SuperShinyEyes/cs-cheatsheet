@@ -12,10 +12,18 @@ grep
   grep -rnw --exclude=\*.{html,js}  "Welcome"
 
 
+.. code-block:: bash
+
+  find . -name "*netatalk*"
+
+
 File system
 ###########
 
 .. code-block:: bash
+  
+  # Understand Linux Files ystem
+  man 7 hier
 
   # Check file systems
   df -T
@@ -23,6 +31,31 @@ File system
   # Delete all partition table on a disk
   # Unmount all partitions!
   dd if=/dev/zero of=/dev/sda bs=512 count=1 conv=notrunc
+
+Disk usage
+##########
+
+.. code-block:: bash
+
+  // For any file or dir
+  du -sh *
+
+  // The filesystem.
+  df -h
+
+GPU info
+########
+
+.. code-block:: bash
+
+  # 1. NVIDIA gpus
+  nvidia-smi
+
+  # 2. Display info
+  (sudo) lshw -C display
+
+  # 3. Device info
+  lspci  -v -s  $(lspci | grep ' VGA ' | cut -d" " -f 1)
 
 Processes
 #########
@@ -90,6 +123,12 @@ zfs
 
 .. code-block:: bash
 
+  # Install zfs on Ubuntu
+  apt-get install zfsutils-linux
+
+  # Check zfs version
+  modprobe zfs
+
   # Create a pool
   zpool create -f timemachine_backup_zpool /dev/sda ...
   zpool status
@@ -133,6 +172,41 @@ Network
   netstat -tulpn | grep LISTEN    # sudo for process id
   
 
-zfs create \
-    -o encryption=on \
-    -o keysource=passphrase,prompt \
+Package management
+##################
+
+.. code-block:: bash
+
+  # https://unix.stackexchange.com/a/6286
+  # Dry run. -s for simulation
+  apt-get -s install <package>
+
+  # See all possible upgrades
+  apt-get -V -s upgrade
+
+  # Search installed/remote packages
+  apt-cache policy <package>
+
+  # Search remote packages
+  apt-cache search <package>
+
+  # Show version if installed
+  apt-show-versions <package>
+
+  # Show every file related to the package
+  dpkg-query -L <package>
+
+  # Get package version
+  dpkg -l | grep netatalk
+
+  # Get package files
+  dpkg -L netatalk
+
+
+.. code-block:: bash
+
+  ./configure
+  make
+  checkinstall
+
+  dpkg -r <package>
