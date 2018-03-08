@@ -46,6 +46,81 @@ So we see that as :math:`\delta t` becomes finitely small, :math:`\frac{\delta}{
 So we got the same results by using :math:`e` and it is more universal as we can easily plug any constants and get the derivative using logarithm! 
 
 
+Matrix Differentiation
+======================
+Let's demonstrate matrix differentiation with the following example.
+
+.. math::
+	f ( w ) = ( 1/ | X | ) \| \mathbf { y } - \mathbf { X } \mathbf { w } \| _ { 2} ^ { 2} + \lambda \| \mathbf { w } \| _ { 2} ^ { 2}
+
+I will divide the two terms into separate expressions :math:`f_1` and :math:`f_2`.
+
+.. math::
+	\begin{align}
+	f_1 ( w ) &= ( 1/ | X | ) \| \mathbf { y } - \mathbf { X } \mathbf{ w } \| _ { 2} ^ { 2} \\
+	f_2 ( w ) &= \lambda \| \mathbf { w } \| _ { 2} ^ { 2}
+	\end{align}
+
+To get :math:`\nabla f_1(w)` I will use the chain rule. 
+
+.. math::
+	\begin{align}
+	h(w) &= \mathbf { y } - \mathbf { X } \mathbf { w } \\
+	f_1 ( w ) &= ( 1/ | X | ) \| h \| _ { 2} ^ { 2} \\
+	\end{align}
+
+Now let's get the derivative! Remember that the norm sign with double 2 on the right means the square of euclidean distance.
+
+.. math::
+	\begin{align}
+	\delta f_1 ( w ) &= ( 1/ | X | ) 2 h  \delta h \\
+	\delta h &= -X \delta w \\
+	\delta f_1 ( w ) &= ( -2/ | X | ) \mathbf { X }^T ( \mathbf { y } - \mathbf { X } \mathbf{ w } )  \delta w \\
+	\end{align}
+
+The transpose for :math:`\mathbf { X }^T` is for matrix calculation. Solve :math:`\nabla f_2(w)`
+
+.. math::
+	\begin{align}
+	\delta f_2 ( w ) &= 2 \lambda \mathbf { w } \delta  \mathbf { w } 
+	\end{align}
+
+Finally add them together
+
+
+.. math::
+	\begin{align}
+	\frac{\delta f( w )}{\delta w}  &= \frac{\delta f_1( w )}{\delta w} + \frac{\delta f_2( w )}{\delta w} \\
+	&= \frac{\delta f_1}{\delta h} \frac{\delta h}{\delta w} + \frac{\delta f_2( w )}{\delta w} \\
+	&= ( \frac{-2}{| X |} ) \mathbf { X }^T ( \mathbf { y } - \mathbf { X } \mathbf{ w } ) + 2 \lambda \mathbf { w } 
+	\end{align}
+
+
+---------------------------------
+
+Matrix expression example 1
+===========================
+We have a function
+
+.. math::
+	f(w) = w^{T} \mathbf{A} w + \mathbf{b}^{T} w + c
+
+Given :math:`\mathbf{A} = (1/N)  \mathbf{X}^{T} \mathbf{X} + \lambda \mathbf{I}` , :math:`\mathbf{b} =- (2/N) \mathbf{X}^{T} \mathbf{y}` and :math:`c = (1/N) y^{T} y`, complete the function.
+
+.. math::
+	\begin{align}
+	f(w) &= w^{T} \big( (1/N)  \mathbf{X}^{T} \mathbf{X} + \lambda \mathbf{I} \big) w 
+	+ \big(- (2/N) \mathbf{X}^{T} \mathbf{y} \big)^{T} w 
+	+ (1/N) y^{T} y \\
+	&= \frac{1}{N} w^{T}\mathbf{X}^{T} \mathbf{X} w+  w^{T}\lambda w + \frac{-2}{N} \mathbf{y}^{T}  \mathbf{X} w + \frac{1}{N} y^{T} y 
+	\end{align}
+
+Then we realize it is the expanded form of
+
+.. math::
+	f ( w ) = ( 1/ | X | ) \| \mathbf { y } - \mathbf { X } \mathbf { w } \| _ { 2} ^ { 2} + \lambda \| \mathbf { w } \| _ { 2} ^ { 2}
+
+
 -----------------------------------
 
 .. rubric:: Reference
