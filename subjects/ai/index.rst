@@ -6,6 +6,7 @@ AI
    :maxdepth: 2
 
    fundamentals.rst 
-   search.rst
    logic.rst
+   mdp
+   search.rst
    reference.rst
