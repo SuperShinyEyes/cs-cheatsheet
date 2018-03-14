@@ -121,8 +121,21 @@ Then we realize it is the expanded form of
 	f ( w ) = ( 1/ | X | ) \| \mathbf { y } - \mathbf { X } \mathbf { w } \| _ { 2} ^ { 2} + \lambda \| \mathbf { w } \| _ { 2} ^ { 2}
 
 
+KL-divergence
+=============
+A measure of how one probability distribution diverges from a second, expected probability distribution. [2]_
+
+.. figure:: /images/calculus/KL-Gauss-Example.png
+  :align: center
+  :alt: alternate text
+  :figclass: align-center
+
+  < The Kullback-Leibler divergence for a normal Gaussian probability distribution. On the top left is an example of two Gaussian PDF’s and to the right of that is the area which when integrated gives the KL metric. >
+
+
 -----------------------------------
 
 .. rubric:: Reference
 
 .. [1]  https://youtu.be/m2MIpDrF7Es
+.. [2] https://en.wikipedia.org/wiki/Kullback–Leibler_divergence#/media/File:KL-Gauss-Example.png

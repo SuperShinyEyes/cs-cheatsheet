@@ -22,7 +22,7 @@ An MDP is defined by:
 
 Markov Property
 ===============
-The future is independent of the past given the present. [RL_course_mdp]_
+The future is independent of the past given the present. [RL_course_mdp_DeepMind]_
 
 A state :math:`S_t` is *Markov* if and only if
 
@@ -224,7 +224,7 @@ Should an agent exploit the known working strategy or explore possibly better un
 
 .. rubric:: Reference
 
-.. [RL_course_mdp] https://www.youtube.com/watch?v=lfHX2hHRMVQ
+.. [RL_course_mdp_DeepMind] https://www.youtube.com/watch?v=lfHX2hHRMVQ
 
 
 osascript -e 'set volume without output muted output volume 17 --100%'
