@@ -469,7 +469,86 @@ The mean is :math:`\bar{\theta}` and the covariance :math:`H_{\bar{\theta}}`.
 
 
 
+Q. Variational approximation for a simple distribution
+======================================================
+
+.. figure:: /images/bayesian/assignment_variational_approximation.png
+  :align: center
+  :alt: alternate text
+  :figclass: align-center
+
+
+1. Get the joint distribution :math:`p \left( x _ { 1} ,x _ { 2} \right)`
+#########################################################################
+  
+Use the rule: :math:`p \left( x _ { 1} ,x _ { 2} \right) = p \left( x _ { 2} | x _ { 1} \right) p \left( x _ { 1} \right)`
+
+.. figure:: /images/bayesian/assignment_variational_approximation_plot1.png
+  :align: center
+  :alt: alternate text
+  :figclass: align-center
+
+
+2. Make the similar probability distribution table for the approximation :math:`q \left( x _ { 1} ,x _ { 2} \right)`
+####################################################################################################################
+
+Suppose :math:`q \left( x _ { 1} = 1\right) = a` and :math:`q \left( x _ { 2} = 1\right) = b`. Then we get
+
+.. figure:: /images/bayesian/assignment_variational_approximation_plot2.png
+  :align: center
+  :alt: alternate text
+  :figclass: align-center
+
+3. Get KL-divergence :math:`K L ( p \| q )`.
+############################################
+
+.. math::
+  \begin{align}
+  \text{KL} ( p \| | q ) &= \sum _ { x } p ( x ) \log \frac { p ( x ) } { q ( x ) } \\
+  &= - \sum _ { x } p ( x ) \log \frac { q ( x ) } { p ( x ) } \\
+  &= - 0.2\log \frac { ( 1- a ) ( 1- b ) } { 0.2} - 0.2\log \frac { ( 1- a ) b } { 0.2} - 0.54\log \frac { a ( 1- b ) } { 0.54} - 0.06\log \frac { a b } { 0.06} \\
+  &= - 0.4\log ( 1- a ) - 0.74\log ( 1- b ) - 0.26\log b - 0.6\log a + \text{constant} \\
+  \end{align}
+
+4. Minimize :math:`K L ( p \| q )` by partial derivatives being equal to 0.
+###########################################################################
+
+  The Hessian matrix of a convex function is positive semi-definite. Refining this property allows us to test if a critical point x is a local maximum, local minimum, or a saddle point.
+
+Here is the expression of the determinant,
+
+.. math::
+  D ( x ,y ) = \operatorname{det} ( H ( x ,y ) ) = f _ { x x } ( x ,y ) f _ { y y } ( x ,y ) - \left( f _ { x y } ( x ,y ) \right) ^ { 2}
+
+And we know that if :math:`D ( a ,b ) > 0\text{ and } f _ { x x } ( a ,b ) > 0\text{ then } ( a ,b )` is a local minimum of :math:`f`.
+
+Here is a plot of the derivatives 
+
+.. figure:: /images/bayesian/assignment_variational_approximation_plot3.png
+  :scale: 100%
+  :align: center
+  :alt: alternate text
+  :figclass: align-center
+
+  < plots for :math:`f _ { x x } ( x ,y )` and :math:`f _ { yy } ( x ,y )` look pretty much identical and they are positve values. >
+
+And we can see that :math:`f _ { xy } ( x ,y ) = 0`. There for the determinant is :math:`D ( x ,y )` is positive and :math:`f _ { x x } ( a ,b ) > 0`. Hence, the critical point is a local minimum.
+
+.. math::
+  \begin{align}
+  \frac { \partial K L ( p | | q ) } { \partial a } &= 0\Rightarrow - \frac { 0.6} { a } + \frac { 0.4} { 1- a } = 0\Rightarrow a = 0.6 \\
+  \frac { \partial K L ( p | | q ) } { \partial b } &= 0\Rightarrow - \frac { 0.26} { b } + \frac { 0.74} { 1- b } = 0\Rightarrow b = 0.26
+  \end{align}
+
+Done.
+
+
+
+
+
 
 -------------------------
+
 .. rubric:: References
+.. [1] https://en.wikipedia.org/wiki/Hessian_matrix#Second_derivative_test
 
