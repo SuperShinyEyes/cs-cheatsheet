@@ -79,162 +79,125 @@ The value function :math:`v(s)` gives the long-term value of state :math:`s`.  I
 .. math::
   v ( s ) = E \left[ G _ { t } | S _ { t } = s \right]
 
-:math:``
 .. math::
+
+Bellman Equation in Matrix Form
+###############################
+The Bellman equation can be expressed concisely using matrices.
+
+.. math::
+  v = \mathcal { R } + \gamma \mathcal { P } \mathbf { v }
+
+.. math::
+  \left[ \begin{array} { l } { v ( 1) } \\ { \vdots } \\ { v ( n ) } \end{array} \right] = \left[ \begin{array} { l } { \mathcal { R } _ { 1} } \\ { \vdots } \\ { \mathcal { R } _ { n } } \end{array} \right] + \gamma \left[ \begin{array} { c c c } { \mathcal { P } _ { 11} } & { \dots } & { P _ { 1n } } \\ { P _ { 11} } & { \dots } & { P _ { n n } } \end{array} \right] \left[ \begin{array} { l } { v ( 1) } \\ { \vdots } \\ { v ( n ) } \end{array} \right]
+
+You can solve the Bellman equation as a simple linear equation. The complexity is :math:`O \left( n ^ { 3} \right)` for n states. 
+
+.. math::
+  \begin{align}
+  v &= \mathcal { R } + \gamma P _ { \nu } \\
+  ( 1- \gamma P ) v &= \mathcal { R } \\
+  v &= ( 1- \gamma P ) ^ { - 1} R
+  \end{align}
+
+As we are using inversion, the direct solution is possible only for small MRPs. Other iterative solutions are
+
+* Dynamic programming
+* Monte-Carlo evalution
+* Temporal-Difference Learning
+
+Markov Decision Process
+=======================
+MDP is a MRP with decisions. It is an environment in which all states are Markov.
 
 
 Policies
-========
-
-In deterministic search problems, you want an optimal **plan**. In MDP, you want an optimal **policy(choice of action fo each state)** 
-
-.. math::
-  \pi*: S \Rightarrow A, a = \pi(s)
-
-A policy :math:`\pi` gives an action for each state and hopefully maximizes expected utility(sum of discounted rewards). An explicit policy defines a reflex agent.
-
-.. figure:: /images/ai/optimal_policies.png
-  :scale: 20%
-  :align: center
-  :alt: alternate text
-  :figclass: align-center
-
-  < Optimal policies. The optimal policy is R(s) = -0.4. When the cost is very bad the agent will behave in a depressing manner. `Berkeley AI <https://youtu.be/wKx4MuLfe0M>`_ >
-
-We can compute optimal policies by solving the mathematical optimization problem
+########
+A policy :math:`\pi` is a distribution over actions given states. It's a stochastic transition matrix.
 
 .. math::
-  \max_{\pi}G_t \text{ such that } s_{t+1} = \mathcal{T}(s_t,\pi(s_t))
+  \pi ( a | s ) = \mathbb { P } \left[ A _ { t } = a | S _ { t } = s \right]
+
+
+* A policy defines the behaviour of an agent.
+* It depends on the current state.
+* Policy is stationary(time-independnet)
 
 Value Functions
-===============
-A value-function
+###############
+The state-value function :math:`V _ { \pi } ( s )` of and MDP is the expected return starting from state s, and then following policy :math:`\pi`.
+
+.. math::
+  v _ { \pi } ( s ) = \mathbb { E } _ { \pi } \left[ G _ { t } | S _ { t } = s \right]
+
+The action-value function :math:`q _ { \pi } ( s,a )` is the expected return starting from state s, taking action a, and then following policy :math:`\pi`.
+
+.. math::
+  q _ { \pi } ( s,a ) = \mathbb { E } _ { \pi } \left[ G _ { t } | S _ { t } = s ,A _ { t } = a \right]
+
+
+Bellman expectation equation
+############################
+The state-value function can again be decomposed into immediate reward plus discounted value of successor state.
 
 .. math::
   \begin{align}
-  v_{\pi}: \mathcal{S} \Rightarrow \mathbb{R}, &&(s \in \mathcal{S} \text{ with a single number } v_{\pi}(s) \in \mathbb{R})
+  v _ { \pi } ( s ) &= \mathbb { E } _ { \pi } \left[ R _ { t + 1} + \gamma v _ { \pi } \left( S _ { t + 1} \right) | S _ { t } = s \right] \\
+  &= \sum _ { a \in A } \pi ( a | s )   \big( \mathcal{ R }_{ s } ^ { a } +   \gamma \sum _ { s^{ \prime } \in S } \mathcal { P } _ { \text{ ss' } } ^ { 2} v _ { \pi } ( s' ) \big)
   \end{align}
 
-is a foundation of many efficient methods for computing optimal policies. 
-
-We define the value :math:`v_{\pi}(s_t)` of the state :math:`s_t`as the resulting return by following the policy :math:`\pi` starting at time :math:`t` from state :math:`s_t`,
-
-.. math::
-  v_{\pi}(s_t) = G_t = \sum_{j=0}^{\infty} \gamma^j R(s_{t+j}, \pi(s_{t+j})) \text{ with } s_{t+1} = \mathcal{T}(s_t, \pi(s_t))
-
-Once we fix the starting state :math:`s_t = s`, the sequence of actions  :math:`a_t` and states :math:`s_t` in the above equation is completely determined by the policy :math:`\pi` and transition model :math:`\mathcal{T}` since 
-
-.. math::
- s_{t+1} = \mathcal{T}(s_t, a_t), \text{ and } a_t = \pi(s_t)
-
-A value function obeys the recursive relation:
+The action-value function can similarly be decomposed.
 
 .. math::
   \begin{align}
-  v_{\pi}(s) = R(s, \pi(s)) + \gamma v_{\pi}(\mathcal{T}(s, \pi(s))), && \text{aka Bellman equation}
+  q _ { \pi } ( s,a ) &= \mathbb { E } _ { \pi } \left[ R _ { t + 1} + \gamma q _ { \pi } \left( S _ { t + 1} ,A _ { t + 1} \right) | S _ { t } = s ,A _ { t } = a \right] \\
+  &= \gamma \sum _ { s ^ { \prime } \in S } \mathcal { P } _ { S S ^ { \prime } } ^ { a } \sum _ { d ^ { \prime } \in A } \pi \left( a ^ { \prime } | s ^ { \prime } \right) q _ { \pi } \left( 5^ { \prime } ,a ^ { \prime } \right)
   \end{align}
-  :label: bellman
 
-This recursive property could be exploited in order to accurately estimate the value function from previous experience. 
-
-Given a policy :math:`\pi`, we define its **action-value function** :math:`q_{\pi}(s,a)` as the return obtained if the agent starts from state :math:`s_t =s`, takes action :math:`a` and then acts according to the policy :math:`\pi`, i.e.,
-
+Optimal Value Function
+######################
+The optimal state-value function :math:`V _ { * } ( s )` is the maximum state-value function over all policies
 
 .. math::
- q_{\pi}(s,a) = \underbrace{R(s_t,a_t)}_\text{take action $a_t$} + \underbrace{\sum_{j=1}^{\infty} \gamma^j R(s_{t+j}, a_{t+j})}_\text{then follows $\pi$} \text{ with } s_{t+1} = \mathcal{T}(s_t, a_t), \text{ and } a_t = \pi(s_t)
+  V _ { * } ( s ) = \max _ { \pi } v _ { \pi } ( s )
 
-Using value functions we can compare the quality of different policies. In particular, we say that policy :math:`\pi'` is at least as good as, or **dominates**, policy :math:`\pi` if
-
-.. math::
-  v_{\pi'}(s) \geq v_{\pi}(s) \text{ for all states } s \in \mathcal{S}
-
-Note, for a given MDP there may be **more than one optimal policy**. However,  all optimal policies for a particular MDP share the same optimal value function :math:`v_∗(s)`. Thus, if :math:`\pi_*' is an optimal policy, its value function is given as
+The optimal action-value function :math:`q_* ( s,a )` is the maximum action-value function over all policies
 
 .. math::
-  v_{\pi_*}(s) = v_{*}(s) := \max_{\pi} v_{\pi}(s),
-  :label: value-function
+  q_* ( s,a ) = \max _ { \pi } q _ { \pi } ( s,a )
 
-where the maximization is over all possible policies :math:`\pi : \mathcal{S} \Rightarrow \mathcal{A}`. Similarily, all optimal policies share the same optimal action-value function
+An MDP is "solved" when we know the optimal value fn.
 
-.. math::
-  q_{\pi_*}(s,a) = q_{*}(s,a) := \max_{\pi} q_{\pi}(s,a).
-
-If we insert the recursive relation :eq:`bellman` satisfied by any value function into :eq:`value-function`, we obtain an analogous recursive relation for the optimal value function, i.e.,
+Define a partial ordering over policies
 
 .. math::
-  v_{*}(s) = \max_{a \in \mathcal{A}} \Big[R(s, a) + \gamma v_{*}(\mathcal{T}(s, a)) \Big]
+  \pi \geq \pi ^ { \prime } \text{ if } v _ { \pi } ( s ) \geq v _ { \pi ^ { \prime } } ( s ) ,\forall _ { 5}
 
-This relation is also known as the **Bellman optimality equation**.
-
-
-Stochastic Policies
-===================
-A stochastic policy is specified by the conditional probability 
+An optimal policy can be found by maximizing over :math:`q_* ( s,a )`,
 
 .. math::
-  P(a_t = a | s_t = s)
+  \pi _ { * } ( a | s ) = \left\{ \begin{array} { l l } { 1} & { \text{ if } a = \operatorname{arg} \max q _ { x } ( 5,a ) } \\ { 0} & { \text{ otherwise } } \end{array} \right.
 
-Similarly, a stochastic model for state transition
-and rewards is obtained by specifying the conditional probability
+* There is always a deterministic optimal policy for any MDP.
+* If we know :math:`q_* ( s,a )`, we immediately have the optimal policy.
 
-.. math::
-  P(s_{t+1} = s', R_{t+1} = r | a_t = a,s_t = s) \in [0,1]
+Solving the Bellman Optimality Equation
+#######################################
 
-of the new state at time :math:`t` being :math:`s′` and the reward obtained being :math:`r`, when the current state is :math:`s_t = s` and the agent takes action :math:`a_t = a`. Note that deterministic policies and transition models are special cases of the stochastic models.
-
-
-Discounting
-===========
-Rewards' value gets discounted over time. Discounting happens because 
-
-* sooner rewards probably have higher utility than later rewards
-* helps our algorithm converge.
-
-Discounting Example: discount of 0.5
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
-* :math:`U([1,2,3]) = 1*1 + 0.5*2 + 0.25*3`
-* :math:`U([1,2,3]) < U([3,2,1])`
-
-Rewards & Returns(sum of rewards)
-=================================
-As a consequence of taking the action :math:`a_t`, the agent receives a numerical **reward**
-
-.. math::
-  R_{t+1} = R(s_t,a_t)
+* Bellman optimality equation is non-linear
+* No closed form solution in general
+* Many iterative solution methods
   
-In many applications the overall goal is not to maximize the immediate reward :math:`R_{t+1}` but to maximize a long-term(cumulative) reward, i.e., the **expected discounted return**:
-
-.. math::
-  G_t \doteq R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3} + \cdots = \sum_{k=0}^{\infty} \gamma^k R_{t+k+1}
-
-where :math:`\gamma` is a parameter :math:`0 \leq \gamma \leq 1`, is called the discount rate.
-
-Returns at successive time steps are related to each other:
-
-.. math::
-  \begin{align}
-  G_t &\doteq R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3} + \cdots \\
-      &= R_{t+1} + \gamma(R_{t+2} + \gamma R_{t+3} + \gamma^2 R_{t+4} + \cdots )\\
-      &= R_{t+1} + \gamma G_{t+1}
-  \end{align}
-
-Although the return :math:`G_t` is a sum of an infinite number of terms, it is still finite if the reward is nonzero and constant, if :math:`\gamma  < 1`. For example, if the reward is a constant +1, then the return is
-
-.. math::
-  G_t = \sum_{k=0}^{\infty} \gamma^k = \frac{1}{1-\gamma}
+  * Value iteration
+  * Policy iteration
+  * Q-learning
+  * Sarsa
 
 
 
 
-Recursive definition of value
-=============================
 
-.. math::
-  \begin{align}
-  Q^*(s,a) &= \sum_{s'}T(s,a,s') \big[ R(s,a,s') + \gamma V^*(s') \big] \\
-  V^*(s) &= \max_a Q^*(s,a)\\
-         &= \max_a \sum_{s'}T(s,a,s') \big[ R(s,a,s') + \gamma V^*(s') \big]
-  \end{align}
+
 
 
 Q learning
@@ -262,3 +225,6 @@ Should an agent exploit the known working strategy or explore possibly better un
 .. rubric:: Reference
 
 .. [RL_course_mdp] https://www.youtube.com/watch?v=lfHX2hHRMVQ
+
+
+osascript -e 'set volume without output muted output volume 17 --100%'
