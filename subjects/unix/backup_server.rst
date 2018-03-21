@@ -89,6 +89,7 @@ In macOS, options `-O casesensitivity=insensitive -O normalization=formD` are `e
 
   -o ashift=12 # For advanced. http://louwrentius.com/zfs-performance-and-capacity-impact-of-ashift9-on-4k-sector-drives.html
 
+
 .. code-block:: bash
 
   #!/bin/bash
