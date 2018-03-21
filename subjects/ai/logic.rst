@@ -235,38 +235,6 @@ A formula :math:`\alpha` is in disjunctive normal form (DNF) if and only if has 
 
 ----------------------------------------
 
-Answer Set Programming(ASP)
-===========================
-ASP is a declarative programming method emphasizing on **what** to be computed rather than **how** to compute.
-
-.. figure:: /images/ai/declarative1.svg
-   :align: center
-   :alt: alternate text
-   :figclass: align-center
-
-   < Formulas as rules and satisfying assignments as answer sets. Source: Aalto AI [1]_ >
-
-Answer sets
-###########
-1. The set is closed under the rules of the program.
-2. If some particular atom belongs to the set, then there is at least one supporting rule instance having the atom in question as its head and the body of the rule is satisfied by the set. In other words, atoms cannot be true without a reason.
-3. The set is minimal in this sense. In other words, atoms are false by default.
-
-
-Positive programs
-#################
-A positive rule is is an expression of the form
-
-.. math::
-  a \leftarrow b_1, \cdots ,b_n
-
-where the head atom :math:`a` can be inferred if the body atoms :math:`b_1, \cdots ,b_n` have been inferred by other rules in the program. A rule with an empty body (:math:`n=0`) is called a fact.
-
-.. topic:: Definition
-  The (unique) answer set of a positive program is the least set :math:`S` of ground atoms which is closed under the ground instances of its rules:
-
-  1. If there is a ground instance :math:`h(t)\leftarrow b_1(t_1) \cdots b_n(t_n)` of some rule in the program such that :math:`b_1(t_1)\in S, \ldots, b_n(t_n)\in S`, then also :math:`h(t) \in S`
-  2. If some other set :math:`S'\subseteq S` is closed in this way, then :math:`S' = S`
 
 -------------------------------
 

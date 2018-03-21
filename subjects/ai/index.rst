@@ -6,6 +6,7 @@ AI
    :maxdepth: 2
 
    fundamentals.rst 
+   asp
    logic.rst
    mdp
    search.rst

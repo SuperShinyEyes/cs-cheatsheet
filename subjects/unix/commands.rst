@@ -7,9 +7,27 @@ grep
 
 .. code-block:: bash
 
-  // https://stackoverflow.com/a/16957078
+  # https://stackoverflow.com/a/16957078
   grep -rnw '/path/to/somewhere/' -e 'pattern'
   grep -rnw --exclude=\*.{html,js}  "Welcome"
+
+  grep -rnw . -e so | xargs egrep -v '^#'
+  grep -rnw . -e so | xargs -n 1 egrep -v '^#'
+  dpkg -L netatalk | grep etc | xargs -n 1 egrep -v '^#'
+  dpkg -L netatalk | grep etc | xargs -n 1 egrep -v '^#' | less
+  dpkg -L netatalk | grep etc | xargs -n 1 grep -v '^#' | less
+  dpkg -L netatalk | grep etc | xargs -n 1 grep -v '^#' | grep '\.so'
+  dpkg -L netatalk | grep etc | xargs grep -v '^#' | grep '\.so'
+
+  # Get only directories
+  ls -l | grep "^d"
+
+  # Get all non-empty lines
+  # Pattern matches "begin of string (^), directly followed by "end of string" ($)
+  grep -v '^$' file-name
+
+  # Get all, except empty & commented lines
+  grep -v '^$' .zshrc | grep -v '^#'
 
 
 .. code-block:: bash

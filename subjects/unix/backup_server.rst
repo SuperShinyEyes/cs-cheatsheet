@@ -89,6 +89,31 @@ In macOS, options `-O casesensitivity=insensitive -O normalization=formD` are `e
 
   -o ashift=12 # For advanced. http://louwrentius.com/zfs-performance-and-capacity-impact-of-ashift9-on-4k-sector-drives.html
 
+.. code-block:: bash
+
+  #!/bin/bash
+
+  USER=$1
+
+  # Test user exists
+  id $USER
+
+  zfs create timemachine_pool/$USER \
+    -o nbmand=off \
+    -o utf8only=on \
+    -o aclinherit=passthrough \
+    -o compression=lz4 \
+    -o casesensitivity=insensitive \
+    -o atime=off \
+    -o normalization=formD \
+    -o quota=300G
+
+
+  chown -R $USER /timemachine_pool/$USER
+
+  chmod 700 /timemachine_pool/$USER
+
+
 * compression=lz4, which not only saves space, but is faster as well. Loading a file from even an SSD is slow, decompressing it the CPU faster. So, the reduced file size helps loading it faster, while the time needed for decompression is still smaller, resulting in overall lesser time used. Follow this link for experimental results.
 * atime=off switches of the access time file attribute. Otherwise every time a file is read the access time would be set to the current date, issuing an unnecessary write (wearing down the hard drive and endangering the file).
 * `ashift=12` This specifies that your disk is Advanced Format, which is the same as saying it has 4096 byte sectors instead of the old 512 byte sectors. Most disks made after 2011 are advanced format so you'll need this option most of the time. If you forget, ZFS assumes the sector size is 512. If that's the wrong answer, you'll take a big performance hit.
