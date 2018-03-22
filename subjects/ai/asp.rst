@@ -92,9 +92,9 @@ Advanced
 
 	% Now the generator is a combination of few testers above.
 	% There is only one queen in a row
-	{ queen(I,1..n) } = 1 :- I = 1..n.
+	{ queen(I,1..n) } == 1 :- I = 1..n.
 
-	{ queen(1..n,J) } = 1 :- J = 1..n.
+	{ queen(1..n,J) } == 1 :- J = 1..n.
 
 	% There must be n queens only
 	:- { queen(I,J) : D = I+J-1 } >= 2, D=1,..2*n-1.
@@ -110,14 +110,15 @@ The above code is much faster than the basic one but it will still take much tim
 
 	% Now the generator is a combination of few testers above.
 	% There is only one queen in a row
-	{ queen(I,1..n) } = 1 :- I = 1..n.
+	{ queen(I,1..n) } == 1 :- I = 1..n.
 
-	{ queen(1..n,J) } = 1 :- J = 1..n.
+	{ queen(1..n,J) } == 1 :- J = 1..n.
 
 	% There must be n queens only
 	:- { queen(I,J) : diag1(I,J,D) } >= 2, D=1,..2*n-1.
 	:- { queen(I,J) : diag2(I,J,D) } >= 2, D=1,..2*n-1.
 
+	% The database is precomputed 
 	diag1(I,J,I+J-1) :- I = 1..n, J = 1..n.
 	diag2(I,J,I-J+n) :- I = 1..n, J = 1..n.
 	

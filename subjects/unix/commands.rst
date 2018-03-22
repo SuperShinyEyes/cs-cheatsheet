@@ -30,9 +30,48 @@ grep
   grep -v '^$' .zshrc | grep -v '^#'
 
 
+find
+####
+
 .. code-block:: bash
 
   find . -name "*netatalk*"
+
+  find . -type f
+  find . -type d
+
+  find -name shell
+  find -name '*shell*'
+
+  find ! -name '*shell*' -type d
+
+  # -iname for case insensitive
+  find -size +10M -sizee -100M -iname '*.jpg'
+
+  find . 2> /dev/null | grep bin
+
+  # Find a file that the user has such acl
+  find . -perm /u=rwx -name '*mine*'
+
+  # Find a file that the user has such EXACT acl
+  find . -perm +u=rwx -name '*mine*'
+
+  # Find a file that the user has such acl and remove acl for others
+  find . -perm /u=rwx -name '*mine*' -exec chmod o-rwx {} \;
+
+
+Piping & Redirecting
+####################
+
+.. code-block:: bash
+  
+  # Redirect error message. Two methods
+  find . -name awesome_file 2> /dev/null 1> files.txt
+  find . 2> /dev/null | grep awesome_file > files.txt
+
+  find . -name awesome_file &> /dev/null 
+
+---------------------------
 
 
 File system
@@ -60,6 +99,9 @@ Disk usage
 
   // The filesystem.
   df -h
+
+  // Search file size for the lowest directory
+  du -h | sort -h
 
 GPU info
 ########
@@ -114,6 +156,7 @@ Run commands from login shell via SSH
 .. code-block:: bash
 
   ssh false bash -c -l "module load tensorflow"
+  ssh kosh bash -c -l "python"
   
 
 Samba
@@ -228,3 +271,50 @@ Package management
   checkinstall
 
   dpkg -r <package>
+
+
+.. code-block:: bash
+
+  type -a ping  # better than which
+
+  file $(which ping)
+
+---------------------------------------
+Variables
+#########
+
+.. code-block:: bash
+
+  # Declare an integer
+  declare -i number
+  number=2
+  number+=1   
+  echo $number  # 3
+
+
+  unset var-name
+
+``$?`` is an exit code variable of last command.
+
+.. code-block:: bash
+
+  ping -c 1 8.8.8.8; echo $?  # 0. i.e. successful
+
+
+---------------------------------------
+Envrionments
+############
+
+.. code-block:: bash
+
+  #!$(which Bash)
+
+---------------------------------------
+E-mail
+######
+
+
+.. code-block:: bash
+
+   ls -l > listing && { mail -s "ls -l $(pwd) @ $(date +'%Y-%m-%d %H:%M')" email@email.fi < listing; mv listing listing.$(date +"%Y-%m-%d-%H-%M"); }
+
