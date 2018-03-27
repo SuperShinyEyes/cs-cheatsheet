@@ -173,7 +173,7 @@ Regularization - Normal Equation
    \end{align}
 
 .. math::
-   \theta = (X^TX + \lambda L)^{-1}X^T\vec{y}
+   \theta = (X^TX + \lambda L)^{-1}X^T y
 
 where L is a pseudo-diagonal matrix of
 

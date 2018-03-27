@@ -3,6 +3,73 @@ Variational Inference
 =====================
 *Variational* means you vary parameters in each step. 
 
+The idea is to approximate the posterior distribution of unknowns math:`p(Z|X)` with a tractable distribution math:`q(Z)`. For example math:`q(Z)` may be assumed to have a simple form, e.g., Gaussian, or to factorize in a certain way. For the GMM, it would be sufficient to assume
+
+.. math::
+	q ( \mathbf { z } ,\pi ,\Lambda ,\mu ) = q ( z ) q ( \pi ,\Lambda ,\mu )
+
+
+
+Basis
+=====
+When math:`q(Z)`is an approximation for math:`p(Z|X)`, it is always true that 
+
+.. math::
+	\log p ( x ) = \mathcal { L } ( q ) + K L ( q \| p ), \text{   where}
+
+.. math::
+	\mathcal { L } ( q ) = \int q ( \mathbf { z } ) \log \left\{ \frac { p ( x ,z ) } { q ( z ) } \right\} d \mathbf { z } \quad \text{(lower bound for $\log p(x)$)}
+
+.. math::
+	K L ( q \| \rho ) = - \int q ( z ) \log \left\{ \frac { p ( \mathbf { z } | \mathbf { x } ) } { q ( \mathbf { z } ) } \right\} d\mathbf { z } \quad \text{(KL-divergence btw q and p)}
+
+* Goal: to maximize :math:`\mathcal { L } ( q )` or, equivalently, to minimize the :math:`K L ( q \| p )`.
+* Note: :math:`\mathcal { L } ( q )` is also called the 'ELBO'(evidence lower bound)
+
+
+
+
+
+
+
+:math:``
+:math:``
+:math:``
+:math:``
+:math:``
+
+.. math::
+
+
+.. math::
+
+
+.. math::
+
+
+.. math::
+
+
+.. math::
+
+
+.. math::
+
+
+.. math::
+
+
+.. math::
+
+
+.. math::
+
+
+.. math::
+
+
+.. math::
+
 
 Mixture models
 ==============

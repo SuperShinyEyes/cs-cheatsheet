@@ -132,6 +132,12 @@ A measure of how one probability distribution diverges from a second, expected p
 
   < The Kullback-Leibler divergence for a normal Gaussian probability distribution. On the top left is an example of two Gaussian PDF’s and to the right of that is the area which when integrated gives the KL metric. >
 
+Here's another example,
+
+.. figure:: /images/calculus/kl_divergence.png
+  :align: center
+  :alt: alternate text
+  :figclass: align-center
 
 -----------------------------------
 

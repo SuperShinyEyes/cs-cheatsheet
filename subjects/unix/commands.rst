@@ -179,6 +179,17 @@ System
 
   journalctl
 
+
+Conditionals
+############
+
+.. code-block:: bash
+  # checks that file exists
+  [[ -f $file ]] && echo $file exists || { echo error; exit 1; }
+
+  # check that directory does not exist before creating one
+  [[ -d $dir ]] || mkdir $dir
+
 zfs
 ###
 
