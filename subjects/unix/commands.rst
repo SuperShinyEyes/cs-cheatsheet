@@ -3,7 +3,7 @@ Commands
 ========
 
 grep
-####
+====
 
 .. code-block:: bash
 
@@ -31,7 +31,7 @@ grep
 
 
 find
-####
+====
 
 .. code-block:: bash
 
@@ -61,7 +61,7 @@ find
 
 
 Piping & Redirecting
-####################
+======
 
 .. code-block:: bash
   
@@ -75,7 +75,7 @@ Piping & Redirecting
 
 
 File system
-###########
+======
 
 .. code-block:: bash
   
@@ -90,7 +90,7 @@ File system
   dd if=/dev/zero of=/dev/sda bs=512 count=1 conv=notrunc
 
 Disk usage
-##########
+======
 
 .. code-block:: bash
 
@@ -104,7 +104,7 @@ Disk usage
   du -h | sort -h
 
 GPU info
-########
+======
 
 .. code-block:: bash
 
@@ -118,7 +118,7 @@ GPU info
   lspci  -v -s  $(lspci | grep ' VGA ' | cut -d" " -f 1)
 
 Processes
-#########
+======
 
 Show process tree
 
@@ -129,7 +129,7 @@ Show process tree
 ------------------
 
 About Disks
-###########
+======
 
 .. code-block:: bash
 
@@ -149,7 +149,7 @@ About Disks
 ----------------------------
 
 SSH
-###
+======
 
 Run commands from login shell via SSH
 
@@ -160,7 +160,7 @@ Run commands from login shell via SSH
   
 
 Samba
-#####
+======
 
 .. code-block:: bash
   
@@ -173,7 +173,7 @@ Samba
 
 
 System
-######
+======
 
 .. code-block:: bash
 
@@ -181,7 +181,7 @@ System
 
 
 Conditionals
-############
+======
 
 .. code-block:: bash
   # checks that file exists
@@ -191,7 +191,7 @@ Conditionals
   [[ -d $dir ]] || mkdir $dir
 
 zfs
-###
+======
 
 .. code-block:: bash
 
@@ -236,7 +236,7 @@ zfs
   
 
 Network
-#######
+======
 
 .. code-block:: bash
   
@@ -245,7 +245,7 @@ Network
   
 
 Package management
-##################
+======
 
 .. code-block:: bash
 
@@ -292,7 +292,7 @@ Package management
 
 ---------------------------------------
 Variables
-#########
+======
 
 .. code-block:: bash
 
@@ -314,7 +314,7 @@ Variables
 
 ---------------------------------------
 Envrionments
-############
+======
 
 .. code-block:: bash
 
@@ -322,10 +322,54 @@ Envrionments
 
 ---------------------------------------
 E-mail
-######
+======
 
 
 .. code-block:: bash
 
    ls -l > listing && { mail -s "ls -l $(pwd) @ $(date +'%Y-%m-%d %H:%M')" email@email.fi < listing; mv listing listing.$(date +"%Y-%m-%d-%H-%M"); }
 
+
+Arrays
+======
+
+.. code-block:: bash
+
+  arr={first}
+  echo ${arr[0]}
+  echo ${arr[@]}    # List all items
+
+  arr+=(second)
+  arr+=("third 3rd")
+
+  printf "%s\n" ${arr[@]}
+
+  echo ${#arr[0]}   # Length of the item
+
+Array: For-loops
+################
+
+.. code-block:: bash
+
+  for i in ${!arr[@]}; do echo $i is ${arr[$i]}; done
+
+  echo ${!arr[@]} -- ${arr[@]}
+
+.. code-block:: bash
+  
+  w -h | cut -c1-8
+
+  declare =a arr
+
+  for i in $(w -h | cut -c1-8); do
+    arr+=($i)
+  done
+
+  w -h | cut -c1-8 | sort | uniq -c | sort -n
+
+Generate random numbers
+=======================
+
+.. code-block:: bash
+
+  shuf -i 0-65000 -n 10 
