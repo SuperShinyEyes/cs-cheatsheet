@@ -19,6 +19,7 @@ These docs are mainly maintained by `Seyoung Park <http://www.seyoung.xyz>`_.
    subjects/calculus/index
    subjects/computer_graphics/index
    subjects/deep_learning/index
+   subjects/info-viz/index
    subjects/linear_algebra/index
    subjects/machine_learning/index
    subjects/papers/papers

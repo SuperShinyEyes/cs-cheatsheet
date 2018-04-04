@@ -103,3 +103,7 @@ The steps are as following,
 When not to use PCA?
 ####################
 When the dataset is non-linear.
+
+`What is MDS? <https://youtu.be/GEn-_dAyYME>`_
+##############################################
+Metric Multi-Dimensional Scaling is similar to PCA. PCA creates plots based on **correlations** among samples while MDS creates plots based on **distances** among samples. That is the only difference.
