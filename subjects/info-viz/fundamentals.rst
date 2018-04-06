@@ -7,7 +7,7 @@ Terms
 
 Lie factor
 ##########
-The “Lie Factor” is a value to describe the relation between the size of effect shown in a graphic and the size of effect shown in the data.
+The “Lie Factor” is a value to describe the relation between the size of effect shown in a graphic and the size of effect shown in the data. To ensure the Integrity of a graphic, its Lie Factor should have a value between 0.95 and 1.05.
 
 Space-time narrative
 ####################
@@ -19,15 +19,36 @@ Data variation is when your data varies which are the most cases. The problem oc
 
 Data ink maximization
 #####################
-Data-ink ratio is how much ink is spent on actual data. To maximize it, simply erase redundant data-ink. One example would be deleting grids on graphs or ticks.
+Data-ink ratio is how much ink is spent on actual data. To maximize it, simply erase redundant & non data-ink. One example would be deleting grids on graphs or ticks.
 
 Chartjunk
 #########
 A visualization is chartjunk if it contains redundant visualization elements which troubles viewers understanding the visualization. Types of chartjunk is ducks, vibrations and grids.
 
+Graphical excellence
+####################
+* More ideas in shorter time.
+* Don't waste space, ink
+* Eliminate non-essentials
+
+Tufte's principles
+##################
+- Show the data
+- Induce the viewer to think about the substance
+- Avoid distortion
+- Data ink ratio maximization
+- Make large data sets coherent
+- Encourage the eye to compare different piece of data
+- Reveal the data at several levels of detail
+- serve a reasonably clear purpose: description, exploration, 
+- Be integrated with the statistcal and verbal descriptions of a data set
 
 Human perception
 ================
+
+Gibson's affordance theory
+##########################
+We perceive possibilities for action in the environment, known as affordance. For instance, an open terrain affords walking; a stone on the ground affords tripping while walking.
 
 Visual acuities
 ###############
@@ -107,3 +128,30 @@ When the dataset is non-linear.
 `What is MDS? <https://youtu.be/GEn-_dAyYME>`_
 ##############################################
 Metric Multi-Dimensional Scaling is similar to PCA. PCA creates plots based on **correlations** among samples while MDS creates plots based on **distances** among samples. That is the only difference.
+
+
+
+Graphical visualization and navigation
+======================================
+
+What is a graph?
+################
+A graph is a visual representation of data which contrasts to tables. A graph is visual/pictorial so it is intuitive and easy to comprehend compared to tables. On the other hand, as graphs are visual it inherently cannot convey sharp accuracies as tables or raw data and it is easy to misguide viewers. Some of the popular graphs are bar, violin, heatmap and lines.
+
+
+High-dimensional data
+#####################
+* small multiples with simple plots
+* heatmaps
+* parallel coordinates
+* glyphs
+* dimension reduction
+
+Design principles for eyes
+##########################
+* physical luminance and perceived brightness can be quite different
+• gray scale is bad at encoding absolute values, good at encoding relative values and shapes
+• if outline of the shapes of objects is important:
+	• background should have maximal contrast with foreground objects
+• if it is important to see variations in grayscale:
+	• background should have minimal contrast with foreground objects
