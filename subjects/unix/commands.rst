@@ -117,6 +117,13 @@ GPU info
   # 3. Device info
   lspci  -v -s  $(lspci | grep ' VGA ' | cut -d" " -f 1)
 
+CPU info
+========
+
+.. code-block:: bash
+
+  sudo lshw -short -C memory
+
 Processes
 ======
 
