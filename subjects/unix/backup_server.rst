@@ -21,6 +21,9 @@ We should remember that some zfs file system options cannot be changed once crea
 
 .. code-block:: bash
 
+  # First figure out your target disks
+  sudo lsblk -o NAME,FSTYPE,SIZE,MOUNTPOINT,LABEL
+
   # Create a pool
   zpool create -f timemachine_backup_zpool /dev/sda ...
   zpool status
