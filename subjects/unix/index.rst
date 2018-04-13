@@ -9,4 +9,5 @@ UNIX
   containers.rst
   backup_server.rst
   netatalk3
+  rpi
   references.rst
