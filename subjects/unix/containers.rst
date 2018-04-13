@@ -43,22 +43,61 @@ Docker solves the problem of having identical environments across various stages
 Singularity
 ===========
 
-Start a shell with Nvidia ``LD_PATH``
-#####################################
+Intro
+#####
 
 .. code-block:: bash
 
-  singularity shell --nv foo.simg
+  # Test
+  singularity selftest
 
-  # Mount a disk /l
-  singularity shell --nv -B /l:/l foo.simg
+  ####### Output #######
+  # + sh -c test -f /etc/singularity/singularity.conf                       (retval=0) OK
+  # + test -u /usr/lib/x86_64-linux-gnu/singularity/bin/action-suid         (retval=0) OK
+  # + test -u /usr/lib/x86_64-linux-gnu/singularity/bin/mount-suid          (retval=0) OK
+  # + test -u /usr/lib/x86_64-linux-gnu/singularity/bin/start-suid          (retval=0) OK
 
-  # Use your shell
-  singularity shell --nv -B /l:/l -s /usr/bash foo.simg
 
-  # My daily use
-  singularity shell --nv -B /l:/l -s /usr/bash opensciencegrid-osgvo-tensorflow-gpu-master-latest.simg
+Build
+#####
 
+.. code-block:: bash
+
+  # Build from Docker hub
+  singularity build englishspeechupsampler-latest.simg docker://shinyeyes/englishspeechupsampler
+
+
+Shell
+#####
+
+.. code-block:: bash
+
+  # Enter the shell of an image with specified shell and GPU
+  singularity shell -s /bin/bash --nv englishspeechupsampler-latest.simg
+
+  # Bind a dir
+  singularity shell -s /bin/bash --nv -B /l:/l englishspeechupsampler-latest.simg
+
+  singularity shell --nv -B /l:/l -s /usr/bash englishspeechupsampler-latest.simg
+
+
+Exec
+####
+
+.. code-block:: bash
+
+  # Run Python from the image
+  singularity exec python englishspeechupsampler-latest.simg
+
+
+Run
+###
+Execute the "Run" scripts from recipe.
+
+.. code-block:: bash
+
+  singularity run --nv -B /l:/l englishspeechupsampler-latest.img
+  
 
 .. rubric:: References
 
