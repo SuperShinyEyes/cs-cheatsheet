@@ -59,9 +59,6 @@ Basic management
 
 .. code-block:: bash
   
-  # Run Ubuntu Bash
-  docker run -it ubuntu bash  
-
   # Launch shell
   docker exec -ti my-nginx /bin/sh
 
@@ -114,6 +111,9 @@ Run
 
   # Run in background
   docker run -p 4000:80 image
+
+  # Run Ubuntu Bash
+  docker run -it ubuntu bash  
 
 
 Stop
@@ -189,7 +189,15 @@ Docker swarm
   # Take down the swarm
   docker swarm leave --force
 
+
+Cleanup containers & images for disk space
+##########################################
+
 .. code-block:: bash
+
+  # https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes
+  # https://github.com/moby/moby/issues/21925
+  docker rm $(docker ps -a -q)
 
 
 .. code-block:: bash
