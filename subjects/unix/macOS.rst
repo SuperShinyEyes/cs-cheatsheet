@@ -18,3 +18,14 @@ Time Machine
   # https://apple.stackexchange.com/questions/162544/how-to-restore-system-from-network-drive
   mount -t afp afp://adminname:password@ServerIPAddress/ShareName /Volumes/TimeMachine
   hdid /Volumes/TimeMachine/NameOfYourSparseBundle
+
+
+
+
+
+
+Useful SW
+=========
+
+- sshfs
+- snipping-tool(Latex reader)

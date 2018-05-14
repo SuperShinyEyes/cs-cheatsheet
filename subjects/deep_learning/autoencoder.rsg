@@ -1,0 +1,21 @@
+===========
+Autoencoder
+===========
+
+*"Autoencoding" is a data compression algorithm where the compression and decompression functions are 1) data-specific, 2) lossy, and 3) learned automatically from examples rather than engineered by a human. Additionally, in almost all contexts where the term "autoencoder" is used, the compression and decompression functions are implemented with neural networks.* [1]_
+
+Autoencoding is a self-supervised technique, a specific instance of supervised learning where the targets are generated from the input data
+
+Three parts of an autoencoder
+=============================
+
+- encoding function
+- decoding function
+- distance function
+
+
+
+
+.. rubric:: Reference
+
+.. [1] https://blog.keras.io/building-autoencoders-in-keras.html

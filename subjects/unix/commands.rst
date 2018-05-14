@@ -297,6 +297,9 @@ Package management
 
   file $(which ping)
 
+.. code-block:: bash
+
+  apt-file search 
 ---------------------------------------
 Variables
 ======
