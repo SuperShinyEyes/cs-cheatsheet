@@ -122,7 +122,10 @@ CPU info
 
 .. code-block:: bash
 
+  less /proc/cpuinfo
+
   sudo lshw -short -C memory
+  
 
 Processes
 ======

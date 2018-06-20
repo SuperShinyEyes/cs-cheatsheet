@@ -56,6 +56,27 @@ Loss function measures how good a given set of weights/parameters are compared t
 * sigmoid
 * tanh
 
+.. figure:: /images/deep_learning/sigmoid_and_tanh.png
+   :align: center
+   :alt: alternate text
+   :figclass: align-center
+
+   < Left: Sigmoid non-linearity squashes real numbers to range between [0,1] Right: The tanh non-linearity squashes real numbers to range between [-1,1]. Source: Stanford cs231n >
+
+*Sigmoid*: The sigmoid non-linearity has the mathematical form :math:`\sigma ( x ) = 1/ \left( 1+ e ^ { - x } \right)`. It's not zero-centered so in gradient descent it may cause zig-zag effects.
+
+*tanh*:  tanh neuron is simply a scaled sigmoid neuron, in particular the following holds: :math:`\tanh ( x ) = 2\sigma ( 2x ) - 1`.
+
+
+.. figure:: /images/deep_learning/relu_plot.png
+   :align: center
+   :alt: alternate text
+   :figclass: align-center
+
+   < Left: Rectified Linear Unit (ReLU) activation function, which is zero when x < 0 and then linear with slope 1 when x > 0. Right: A plot from Krizhevsky et al. (pdf) paper indicating the 6x improvement in convergence with the ReLU unit compared to the tanh unit. >
+
+
+*Maxout*: The Maxout neuron computes the function :math:`\max \left( w _ { 1} ^ { T } x + b _ { 1} ,w _ { 2} ^ { T } x + b _ { 2} \right)`. It's a generalized form of ReLU and Leaky ReLU.
 
 .. math::
    J(\theta) = - \frac{1}{m} \sum^{m}_{i=1} \sum^{K}_{k=1} [y_k^i \log((h_\theta (x^i))_k) + (1-y_k^i)\log(1-(h_\theta(x^i))_k)] \\

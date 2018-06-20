@@ -62,3 +62,7 @@ Minibatch size selection factors
 
 * Small batches can offer a regularizing effect (Wilson and Martinez, 2003), perhaps due to the noise they add to the learning process. Generalization error is often best for a batch size of 1. Training with such a small batch size might require a small learning rate to maintain stability because of the high variance in the estimate of the gradient. The total runtime can be very high as a result of the need to make more steps.
 
+
+Adam
+====
+Adam learns scale of loss.
