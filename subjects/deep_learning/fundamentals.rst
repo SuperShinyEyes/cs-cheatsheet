@@ -284,3 +284,38 @@ When performing gradient descent, **learning rate** measures how much the curren
 
 -----------------------------
 
+
+Batch normalization
+===================
+Adaptive reparameterization method
+
+1. Normalize output from activation function.
+
+.. math::
+
+  z = \frac { x - m } { s }
+
+2. Multiply normlized output by arbitrary parameter, g.
+
+.. math::
+
+  z * g
+
+3. Add arbitrary parameter, b, to resulting product
+
+.. math::
+
+  ( z * g ) + b
+
+
+At test time
+############
+https://www.youtube.com/watch?v=5qefnAek8OA
+
+.. math::
+
+  \left.\begin{aligned} \mu & = \frac { 1 } { m } \sum _ { i } z ^ { ( i ) } \\ 
+  \sigma ^ { 2 } & = \frac { 1 } { m } \sum _ { i } \left( z ^ { ( i ) } - \mu \right) ^ { 2 } \end{aligned} \right. \\
+  \left.\begin{aligned} Z _ { \text { norm } } ^ { ( i ) } & = \frac { Z ^ { ( i ) } - \mu } { \sqrt { \sigma ^ { 2 } + \varepsilon } } \\ 
+  \tilde { Z } ^ { ( i ) } = & \gamma Z _ { \text { norm } } ^ { ( i ) } + \beta \end{aligned} \right.
+
