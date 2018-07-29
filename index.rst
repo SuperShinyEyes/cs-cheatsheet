@@ -24,6 +24,7 @@ These docs are mainly maintained by `Seyoung Park <http://www.seyoung.xyz>`_.
    subjects/machine_learning/index
    subjects/papers/papers
    subjects/prob_stat/index
+   subjects/Python/index
    subjects/unix/index
 
 
