@@ -22,7 +22,10 @@ Current
 - `Linear Algebra by Khan academy <https://www.khanacademy.org/math/linear-algebra>`_
 - `Introduction to Probability and Statistics by MIT <https://www.coursera.org/learn/mathematical-thinking/home/welcome>`_
 
----
+------
+
+Contents
+========
 
 .. toctree::
    :maxdepth: 3
