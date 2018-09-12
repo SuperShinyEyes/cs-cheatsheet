@@ -59,6 +59,11 @@ find
   # Find a file that the user has such acl and remove acl for others
   find . -perm /u=rwx -name '*mine*' -exec chmod o-rwx {} \;
 
+  # Delete matching files in all subdirectories
+  # https://superuser.com/a/112079
+  find . -name .DS_Store -type f -print0 | xargs -0 rm -r
+
+
 
 Piping & Redirecting
 ======

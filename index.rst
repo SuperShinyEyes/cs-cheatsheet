@@ -11,6 +11,19 @@ This documentation is a public note of any topic regards computer science. May i
 
 These docs are mainly maintained by `Seyoung Park <http://www.seyoung.xyz>`_.
 
+Online courses
+==============
+
+Current
+#######
+
+- `Mathematics for Machine Learning Linear Algebra by Imperial College London <https://www.coursera.org/learn/linear-algebra-machine-learning/home/welcome>`_
+- `Introduction to Mathematical Thinking <https://www.coursera.org/learn/mathematical-thinking/home/welcome>`_
+- `Linear Algebra by Khan academy <https://www.khanacademy.org/math/linear-algebra>`_
+- `Introduction to Probability and Statistics by MIT <https://www.coursera.org/learn/mathematical-thinking/home/welcome>`_
+
+---
+
 .. toctree::
    :maxdepth: 3
 

@@ -9,3 +9,4 @@ Python
    dict_and_set
    web
    analysis_tools
+   visualization
